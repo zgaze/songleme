@@ -1,0 +1,187 @@
+<h2>极简首页方向</h2>
+<p class="subtitle">第一期首页只承担一个任务：让用户开始选礼物。社区、偏好发布、内容流都后置。</p>
+
+<style>
+  .minimal-wrap {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+  .phone {
+    width: 300px;
+    aspect-ratio: 9 / 16;
+    border: 10px solid #251f1b;
+    border-radius: 30px;
+    background: #fbf6ed;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+  }
+  .phone-top {
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .speaker {
+    width: 56px;
+    height: 5px;
+    border-radius: 99px;
+    background: #55483c;
+  }
+  .screen {
+    min-height: calc(100% - 24px);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Songti SC", "Source Han Serif SC", serif;
+    color: #2b241e;
+  }
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .quiet {
+    color: #8a7763;
+    font-size: 11px;
+    font-weight: 400;
+  }
+  .center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  .start-box {
+    width: 100%;
+    background: #fffdf8;
+    border: 1px solid #e4d2ba;
+    border-radius: 22px;
+    padding: 26px 20px 22px;
+    box-shadow: 0 16px 34px rgba(49, 39, 27, .08);
+  }
+  .start-box h1 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    line-height: 1.14;
+    letter-spacing: 0;
+  }
+  .start-box p {
+    margin: 0 0 20px;
+    color: #746453;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .primary {
+    background: #b84a3e;
+    color: white;
+    border-radius: 15px;
+    padding: 13px 14px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 800;
+  }
+  .hint-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+    color: #8a7763;
+    font-size: 11px;
+  }
+  .bottom {
+    text-align: center;
+    color: #9a8976;
+    font-size: 11px;
+    padding-bottom: 10px;
+  }
+  .notes {
+    background: #fffdf8;
+    border: 1px solid #e5d5c0;
+    border-radius: 16px;
+    padding: 20px;
+  }
+  .notes h3 {
+    margin-top: 0;
+  }
+  .notes p {
+    color: #655b50;
+    line-height: 1.65;
+  }
+  .copy-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .copy-card {
+    border: 1px solid #e1cfb8;
+    border-radius: 14px;
+    padding: 14px;
+    cursor: pointer;
+    background: #fffaf2;
+  }
+  .copy-card.selected {
+    border-color: #b84a3e;
+    box-shadow: 0 0 0 3px rgba(184, 74, 62, .14);
+  }
+  .copy-card strong {
+    display: block;
+    margin-bottom: 6px;
+  }
+  .copy-card span {
+    display: block;
+    color: #746453;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  @media (max-width: 900px) {
+    .minimal-wrap { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="minimal-wrap">
+  <div class="phone">
+    <div class="phone-top"><div class="speaker"></div></div>
+    <div class="screen">
+      <div class="topbar">
+        <div>送了么</div>
+        <div class="quiet">礼物推荐</div>
+      </div>
+      <div class="center">
+        <div class="start-box">
+          <h1>不知道送什么？</h1>
+          <p>回答几个问题，帮你挑一份有分寸的礼物。</p>
+          <div class="primary">开始选礼物</div>
+          <div class="hint-row">
+            <span>恋人</span>
+            <span>父母</span>
+            <span>生日</span>
+            <span>纪念日</span>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">先推荐，再购买</div>
+    </div>
+  </div>
+
+  <div class="notes">
+    <h3>我建议第一期这样定</h3>
+    <p>首页只放一个不大不小的启动框，文案直击用户痛点。用户点“开始选礼物”后，再进入大卡片问答流。</p>
+    <p>社区功能先不出现在首页第一屏。后续可以通过底部 Tab 或第二屏接入，不影响现在的首页结构。</p>
+
+    <div class="copy-options">
+      <div class="copy-card selected" data-choice="copy-unknown" onclick="toggleSelect(this)">
+        <strong>不知道送什么？</strong>
+        <span>更像用户真实问题，焦虑感和点击动机更强。</span>
+      </div>
+      <div class="copy-card" data-choice="copy-gift" onclick="toggleSelect(this)">
+        <strong>要送礼物吗？</strong>
+        <span>更轻，但问题太宽，推动力弱一点。</span>
+      </div>
+    </div>
+  </div>
+</div>

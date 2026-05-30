@@ -1,0 +1,242 @@
+<h2>问答如何映射到推荐字段</h2>
+<p class="subtitle">每一步都允许跳过；跳过不阻断流程，只降低个性化程度，进入万金油兜底。</p>
+
+<style>
+  .flow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .phone {
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 9 / 16;
+    border: 10px solid #251f1b;
+    border-radius: 30px;
+    background: #fbf6ed;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .phone-top {
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .speaker {
+    width: 56px;
+    height: 5px;
+    border-radius: 99px;
+    background: #55483c;
+  }
+  .screen {
+    padding: 16px;
+    font-family: "Songti SC", "Source Han Serif SC", serif;
+    color: #2b241e;
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #8a7763;
+    margin-bottom: 12px;
+  }
+  .skip {
+    border: 1px solid #e1cfb8;
+    border-radius: 999px;
+    padding: 5px 10px;
+    color: #6f6255;
+    background: #fffdf8;
+  }
+  .progress {
+    height: 6px;
+    background: #eadbca;
+    border-radius: 99px;
+    overflow: hidden;
+    margin-bottom: 18px;
+  }
+  .progress span {
+    display: block;
+    height: 100%;
+    background: #6e8b79;
+  }
+  h3 {
+    font-size: 20px;
+    line-height: 1.2;
+    margin: 0 0 16px;
+  }
+  .chip-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chip {
+    border: 1px solid #d9c4aa;
+    background: #fffdf8;
+    border-radius: 999px;
+    padding: 8px 11px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .chip.big {
+    font-size: 15px;
+    padding: 12px 15px;
+    border-radius: 16px;
+  }
+  .chip.selected {
+    background: #b84a3e;
+    border-color: #b84a3e;
+    color: #fff;
+  }
+  .axis {
+    margin: 56px 8px 18px;
+    height: 6px;
+    border-radius: 99px;
+    background: #dfcab0;
+    position: relative;
+  }
+  .axis-fill {
+    position: absolute;
+    left: 22%;
+    right: 22%;
+    height: 100%;
+    border-radius: 99px;
+    background: #b84a3e;
+  }
+  .knob {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: white;
+    border: 4px solid #b84a3e;
+    position: absolute;
+    top: -8px;
+  }
+  .knob.left { left: 18%; }
+  .knob.right { right: 18%; }
+  .budget-label {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    margin-top: 12px;
+  }
+  .preset-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+    margin-top: 28px;
+  }
+  .preset {
+    border: 1px solid #d9c4aa;
+    background: #fffdf8;
+    border-radius: 13px;
+    padding: 9px 4px;
+    text-align: center;
+    font-size: 11px;
+  }
+  .note {
+    margin-top: 16px;
+    color: #766755;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .map {
+    margin-top: 20px;
+    background: #fffdf8;
+    border: 1px solid #e5d5c0;
+    border-radius: 16px;
+    padding: 16px;
+  }
+  .map strong {
+    display: block;
+    margin-bottom: 8px;
+  }
+  .map p {
+    margin: 0;
+    color: #6f6255;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  @media (max-width: 980px) {
+    .flow-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="flow-grid">
+  <div>
+    <div class="phone">
+      <div class="phone-top"><div class="speaker"></div></div>
+      <div class="screen">
+        <div class="top"><span>第 2 步</span><span class="skip">跳过</span></div>
+        <div class="progress"><span style="width:34%"></span></div>
+        <h3>你们现在更像哪种关系？</h3>
+        <div class="chip-wrap">
+          <div class="chip big selected">刚在一起</div>
+          <div class="chip big">暧昧期</div>
+          <div class="chip">稳定情侣</div>
+          <div class="chip">异地恋</div>
+          <div class="chip">吵架冷战</div>
+          <div class="chip">形影不离</div>
+          <div class="chip">能对着放屁</div>
+          <div class="chip">快见家长</div>
+        </div>
+        <div class="note">映射到：intimacy_stage + risk_tags + emotional_tags</div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="phone">
+      <div class="phone-top"><div class="speaker"></div></div>
+      <div class="screen">
+        <div class="top"><span>第 4 步</span><span class="skip">跳过</span></div>
+        <div class="progress"><span style="width:68%"></span></div>
+        <h3>TA 喜欢什么感觉？</h3>
+        <div class="chip-wrap">
+          <div class="chip big selected">实用</div>
+          <div class="chip big">文艺</div>
+          <div class="chip big">追星</div>
+          <div class="chip">精致</div>
+          <div class="chip">可爱</div>
+          <div class="chip">数码</div>
+          <div class="chip">咖啡</div>
+          <div class="chip">养生</div>
+          <div class="chip">低调</div>
+          <div class="chip">仪式感</div>
+          <div class="chip">音乐</div>
+          <div class="chip">宠物</div>
+        </div>
+        <div class="note">大标签更大、更容易点；支持多选和全不选。</div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="phone">
+      <div class="phone-top"><div class="speaker"></div></div>
+      <div class="screen">
+        <div class="top"><span>第 5 步</span><span class="skip">跳过</span></div>
+        <div class="progress"><span style="width:84%"></span></div>
+        <h3>预算大概在哪个范围？</h3>
+        <div class="axis">
+          <div class="axis-fill"></div>
+          <div class="knob left"></div>
+          <div class="knob right"></div>
+        </div>
+        <div class="budget-label">¥200 - ¥800</div>
+        <div class="preset-row">
+          <div class="preset">随便</div>
+          <div class="preset">¥300内</div>
+          <div class="preset">¥800内</div>
+        </div>
+        <div class="note">不呼出键盘；跳过后进入默认预算段。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="map">
+  <strong>推荐映射原则</strong>
+  <p>每个问题都能跳过。跳过不是空值，而是写入 unknown/default，让推荐系统走万金油候选；用户选得越多，过滤和匹配越明确。亲密关系负责分寸和风险；兴趣/风格负责个性化；预算和时效负责硬过滤。</p>
+</div>

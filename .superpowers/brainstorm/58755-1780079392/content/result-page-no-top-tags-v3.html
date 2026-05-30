@@ -1,0 +1,216 @@
+<h2>结果页修正版：去掉顶层关系标签</h2>
+<p class="subtitle">关系阶段只用于后台判断，不直接暴露。结果页主要展示短判断 + 推荐品亮点。</p>
+
+<style>
+  .preview-wrap {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .phone {
+    width: 300px;
+    aspect-ratio: 9 / 16;
+    border: 10px solid #181818;
+    border-radius: 30px;
+    background: #f8f5ef;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .phone-top {
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .speaker {
+    width: 56px;
+    height: 5px;
+    border-radius: 99px;
+    background: #444;
+  }
+  .screen {
+    height: calc(100% - 24px);
+    display: flex;
+    flex-direction: column;
+    font-family: "Songti SC", "Source Han Serif SC", serif;
+    color: #25211d;
+  }
+  .body {
+    flex: 1;
+    overflow: hidden;
+    padding: 15px;
+  }
+  .reason {
+    background: #fffdf9;
+    border: 1px solid #e1d1bd;
+    border-radius: 17px;
+    padding: 13px 13px 12px;
+    color: #4f463e;
+    font-size: 14px;
+    line-height: 1.45;
+    margin-bottom: 14px;
+  }
+  .reason small {
+    display: block;
+    color: #867766;
+    font-size: 11px;
+    margin-top: 7px;
+  }
+  .section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 13px;
+    font-weight: 900;
+    margin: 12px 0 8px;
+  }
+  .section-title span {
+    color: #806f5f;
+    font-size: 10px;
+    font-weight: 400;
+  }
+  .mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .gift {
+    background: #fffdf9;
+    border: 1px solid #e1d1bd;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  .pic {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #e2c8a6, #b8cbbd);
+  }
+  .gift-body {
+    padding: 7px 7px 8px;
+  }
+  .gift strong {
+    display: block;
+    font-size: 11px;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+  .badge {
+    color: #c64f42;
+    background: #f5e4df;
+    border-radius: 999px;
+    padding: 2px 5px;
+    font-size: 9px;
+    font-weight: 900;
+  }
+  .gift span.price {
+    display: block;
+    color: #756858;
+    font-size: 9px;
+    line-height: 1.25;
+    margin-top: 4px;
+  }
+  .pair-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .pair {
+    background: #fffdf9;
+    border: 1px solid #e1d1bd;
+    border-radius: 14px;
+    padding: 9px;
+  }
+  .pair strong {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+  .pair span {
+    color: #756858;
+    font-size: 10px;
+  }
+  .footer {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 9px;
+    padding: 10px 14px 14px;
+    border-top: 1px solid #e3d9ca;
+    background: rgba(248, 245, 239, .96);
+  }
+  .btn {
+    border-radius: 15px;
+    padding: 12px 8px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 900;
+  }
+  .btn.secondary {
+    background: #eee4d6;
+    color: #665a4c;
+  }
+  .btn.primary {
+    background: #c64f42;
+    color: white;
+  }
+  .notes {
+    background: #fffdf8;
+    border: 1px solid #e5d5c0;
+    border-radius: 16px;
+    padding: 18px;
+  }
+  .notes h3 { margin-top: 0; }
+  .notes p {
+    color: #655b50;
+    line-height: 1.65;
+  }
+  @media (max-width: 900px) {
+    .preview-wrap { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="preview-wrap">
+  <div class="phone">
+    <div class="phone-top"><div class="speaker"></div></div>
+    <div class="screen">
+      <div class="body">
+        <div class="reason">
+          这次更适合选有回忆感、低压力、能马上说清心意的礼物。
+          <small>已避开过度贵重和太私人化的选择</small>
+        </div>
+
+        <div class="section-title">推荐品 <span>可横滑查看更多</span></div>
+        <div class="mini-grid">
+          <div class="gift"><div class="pic"></div><div class="gift-body"><strong>定制照片书</strong><div class="badge-row"><span class="badge">有回忆</span><span class="badge">能保存</span></div><span class="price">¥129-299</span></div></div>
+          <div class="gift"><div class="pic"></div><div class="gift-body"><strong>鲜花甜品</strong><div class="badge-row"><span class="badge">当天送</span><span class="badge">仪式感</span></div><span class="price">¥199起</span></div></div>
+          <div class="gift"><div class="pic"></div><div class="gift-body"><strong>香薰礼盒</strong><div class="badge-row"><span class="badge">氛围好</span><span class="badge">放松</span></div><span class="price">香味风险</span></div></div>
+          <div class="gift"><div class="pic"></div><div class="gift-body"><strong>手写卡片</strong><div class="badge-row"><span class="badge">不贵重</span><span class="badge">真诚</span></div><span class="price">适合搭配</span></div></div>
+          <div class="gift"><div class="pic"></div><div class="gift-body"><strong>拍立得相册</strong><div class="badge-row"><span class="badge">好出片</span><span class="badge">惊喜</span></div><span class="price">¥300-800</span></div></div>
+          <div class="gift"><div class="pic"></div><div class="gift-body"><strong>纪念摆件</strong><div class="badge-row"><span class="badge">能保存</span><span class="badge">精致</span></div><span class="price">看审美</span></div></div>
+        </div>
+
+        <div class="section-title">推荐搭配 <span>让礼物更完整</span></div>
+        <div class="pair-row">
+          <div class="pair"><strong>照片书 + 卡片</strong><span>回忆感更强</span></div>
+          <div class="pair"><strong>鲜花 + 甜品</strong><span>当天更稳</span></div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="btn secondary">换方案</div>
+        <div class="btn primary">看更多</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="notes">
+    <h3>调整点</h3>
+    <p>顶层不再展示“稳定情侣”这类关系标签。关系阶段、亲密度、吵架冷战等信息只用于后台判断和过滤，不直接暴露在结果页。</p>
+    <p>结果页只保留一句自然语言判断。商品元素自己带 1-2 个亮点标签，用户扫商品时就能得到“为什么可以选”。</p>
+    <p>如果需要解释依据，可以用更克制的表达，例如“已避开过度贵重和太私人化的选择”，不要暴露用户选择的具体关系状态。</p>
+  </div>
+</div>

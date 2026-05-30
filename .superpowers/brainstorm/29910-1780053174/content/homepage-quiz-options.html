@@ -1,0 +1,226 @@
+<h2>第一期首页与问答形态</h2>
+<p class="subtitle">先比较三种方向：点选你觉得最像这个产品气质的一种。我的推荐是 B。</p>
+
+<style>
+  .gift-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .gift-card {
+    border: 1px solid #e6ded2;
+    border-radius: 14px;
+    background: #fffaf2;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .gift-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(45, 34, 22, .12);
+  }
+  .gift-card.selected {
+    border-color: #b84a3e;
+    box-shadow: 0 0 0 3px rgba(184, 74, 62, .16);
+  }
+  .phone {
+    width: 100%;
+    max-width: 260px;
+    margin: 16px auto 0;
+    aspect-ratio: 9 / 16;
+    border: 10px solid #251f1b;
+    border-radius: 28px;
+    background: #fbf6ed;
+    overflow: hidden;
+    position: relative;
+  }
+  .phone-top {
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .speaker {
+    width: 54px;
+    height: 5px;
+    border-radius: 99px;
+    background: #53483d;
+  }
+  .screen {
+    padding: 14px;
+    font-family: "Songti SC", "Source Han Serif SC", serif;
+    color: #2b241e;
+  }
+  .mini-label {
+    font-size: 10px;
+    color: #8a7763;
+    margin-bottom: 8px;
+  }
+  .hero-title {
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+  .hero-copy {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #736353;
+    margin-bottom: 14px;
+  }
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 10px 0 14px;
+  }
+  .pill {
+    border: 1px solid #ddcab1;
+    background: #fffdf8;
+    border-radius: 999px;
+    padding: 6px 9px;
+    font-size: 10px;
+  }
+  .big-btn {
+    background: #b84a3e;
+    color: #fff;
+    border-radius: 14px;
+    padding: 10px 12px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .chat-bubble {
+    background: #fffdf8;
+    border: 1px solid #e5d5c0;
+    border-radius: 18px 18px 18px 6px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .choice-tile {
+    background: #fffdf8;
+    border: 1px solid #dfccb2;
+    border-radius: 16px;
+    padding: 12px;
+    margin-bottom: 9px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .progress {
+    height: 6px;
+    background: #eadbca;
+    border-radius: 99px;
+    overflow: hidden;
+    margin: 2px 0 18px;
+  }
+  .progress > span {
+    display: block;
+    width: 34%;
+    height: 100%;
+    background: #6e8b79;
+  }
+  .festival-banner {
+    background: #2f4f43;
+    color: #fff;
+    border-radius: 18px;
+    padding: 13px;
+    margin-bottom: 12px;
+  }
+  .festival-banner strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  .gift-card-body {
+    padding: 14px 16px 18px;
+  }
+  .gift-card-body h3 {
+    margin: 0 0 6px;
+    font-size: 17px;
+  }
+  .gift-card-body p {
+    margin: 0;
+    color: #6c6258;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .rec {
+    display: inline-block;
+    margin-top: 10px;
+    color: #b84a3e;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  @media (max-width: 980px) {
+    .gift-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="gift-grid">
+  <div class="gift-card" data-choice="a-chat" onclick="toggleSelect(this)">
+    <div class="phone">
+      <div class="phone-top"><div class="speaker"></div></div>
+      <div class="screen">
+        <div class="mini-label">送礼顾问</div>
+        <div class="chat-bubble">想送一份什么感觉的礼物？我先问你几个问题。</div>
+        <div class="chat-bubble">这份礼物是送给恋人，还是父母？</div>
+        <div class="pill-row">
+          <span class="pill">恋人</span>
+          <span class="pill">父母</span>
+        </div>
+        <div class="big-btn">开始对话</div>
+      </div>
+    </div>
+    <div class="gift-card-body">
+      <h3>A. 对话式首页</h3>
+      <p>像一个送礼顾问在聊天，亲和力强，但容易让用户以为是纯 AI 聊天，决策效率偏慢。</p>
+    </div>
+  </div>
+
+  <div class="gift-card" data-choice="b-guided" onclick="toggleSelect(this)">
+    <div class="phone">
+      <div class="phone-top"><div class="speaker"></div></div>
+      <div class="screen">
+        <div class="mini-label">今日送礼任务</div>
+        <h1 class="hero-title">这份礼物，要送给谁？</h1>
+        <div class="hero-copy">先选对象和场景，我们帮你把分寸、预算和表达都想清楚。</div>
+        <div class="choice-tile">送恋人</div>
+        <div class="choice-tile">送父母</div>
+        <div class="pill-row">
+          <span class="pill">生日</span>
+          <span class="pill">纪念日</span>
+          <span class="pill">最近节日</span>
+        </div>
+        <div class="big-btn">开始选礼物</div>
+      </div>
+    </div>
+    <div class="gift-card-body">
+      <h3>B. 引导式决策入口</h3>
+      <p>首页明确、转化直接。问答页可以用大卡片，接近多邻国的轻量闯关感，但更克制。</p>
+      <span class="rec">推荐</span>
+    </div>
+  </div>
+
+  <div class="gift-card" data-choice="c-calendar" onclick="toggleSelect(this)">
+    <div class="phone">
+      <div class="phone-top"><div class="speaker"></div></div>
+      <div class="screen">
+        <div class="festival-banner">
+          <strong>最近节日</strong>
+          端午将近，给亲近的人准备一份有心意的礼物
+        </div>
+        <h1 class="hero-title">按场景快速推荐</h1>
+        <div class="choice-tile">生日礼物</div>
+        <div class="choice-tile">纪念日礼物</div>
+        <div class="choice-tile">节日礼物</div>
+        <div class="big-btn">看看适合送什么</div>
+      </div>
+    </div>
+    <div class="gift-card-body">
+      <h3>C. 节日/场景优先</h3>
+      <p>很适合节日前转化，但第一期如果只靠节日驱动，会弱化“送给谁”的分寸判断。</p>
+    </div>
+  </div>
+</div>

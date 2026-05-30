@@ -1,0 +1,209 @@
+<h2>首页导航入口选择</h2>
+<p class="subtitle">首页保持极简，但需要给“我的 / 收礼人档案 / 偏好维护”留入口。我的推荐是 A。</p>
+
+<style>
+  .nav-options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .option-card {
+    border: 1px solid #e4d2ba;
+    border-radius: 16px;
+    background: #fffaf2;
+    padding: 16px;
+    cursor: pointer;
+  }
+  .option-card.selected {
+    border-color: #b84a3e;
+    box-shadow: 0 0 0 3px rgba(184, 74, 62, .14);
+  }
+  .phone {
+    width: 100%;
+    max-width: 260px;
+    aspect-ratio: 9 / 16;
+    border: 10px solid #251f1b;
+    border-radius: 30px;
+    background: #fbf6ed;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto 14px;
+  }
+  .phone-top {
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .speaker {
+    width: 56px;
+    height: 5px;
+    border-radius: 99px;
+    background: #55483c;
+  }
+  .screen {
+    min-height: calc(100% - 24px);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Songti SC", "Source Han Serif SC", serif;
+    color: #2b241e;
+    position: relative;
+  }
+  .topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 800;
+  }
+  .menu {
+    width: 22px;
+    display: grid;
+    gap: 4px;
+  }
+  .menu span {
+    height: 2px;
+    background: #5b4c3f;
+    border-radius: 99px;
+  }
+  .avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid #d8c4aa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b5b4a;
+    font-size: 12px;
+  }
+  .center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cta {
+    width: 100%;
+    background: #b84a3e;
+    color: white;
+    border-radius: 18px;
+    padding: 15px 16px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 800;
+    box-shadow: 0 14px 30px rgba(184, 74, 62, .18);
+  }
+  .tabbar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: rgba(255, 253, 248, .96);
+    border-top: 1px solid #e8d9c7;
+    padding: 9px 0 11px;
+    font-size: 12px;
+    text-align: center;
+    color: #7b6a58;
+  }
+  .tabbar div:first-child {
+    color: #b84a3e;
+    font-weight: 800;
+  }
+  .drawer {
+    position: absolute;
+    top: 56px;
+    left: 14px;
+    width: 150px;
+    background: #fffdf8;
+    border: 1px solid #e2d0b9;
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: 0 14px 28px rgba(49, 39, 27, .12);
+  }
+  .drawer div {
+    padding: 9px 8px;
+    font-size: 12px;
+    border-bottom: 1px solid #efe3d4;
+  }
+  .drawer div:last-child {
+    border-bottom: 0;
+  }
+  .option-card h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+  }
+  .option-card p {
+    margin: 0;
+    color: #6f6255;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .rec {
+    display: inline-block;
+    margin-top: 8px;
+    color: #b84a3e;
+    font-size: 12px;
+    font-weight: 800;
+  }
+  @media (max-width: 980px) {
+    .nav-options { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="nav-options">
+  <div class="option-card selected" data-choice="bottom-tabs" onclick="toggleSelect(this)">
+    <div class="phone">
+      <div class="phone-top"><div class="speaker"></div></div>
+      <div class="screen">
+        <div class="topline"><span>送了么</span></div>
+        <div class="center"><div class="cta">开始选礼物</div></div>
+        <div class="tabbar">
+          <div>首页</div>
+          <div>我的</div>
+        </div>
+      </div>
+    </div>
+    <h3>A. 底部两个 Tab</h3>
+    <p>最符合小程序习惯。首页仍然很空，但用户知道有“我的”可以管理档案和历史。</p>
+    <span class="rec">推荐</span>
+  </div>
+
+  <div class="option-card" data-choice="hamburger" onclick="toggleSelect(this)">
+    <div class="phone">
+      <div class="phone-top"><div class="speaker"></div></div>
+      <div class="screen">
+        <div class="topline">
+          <div class="menu"><span></span><span></span><span></span></div>
+          <span>送了么</span>
+        </div>
+        <div class="drawer">
+          <div>我的档案</div>
+          <div>收礼人</div>
+          <div>历史推荐</div>
+        </div>
+        <div class="center"><div class="cta">开始选礼物</div></div>
+      </div>
+    </div>
+    <h3>B. 左上角三横菜单</h3>
+    <p>页面最干净，但入口隐藏，且在小程序里不像底部 Tab 那么自然。</p>
+  </div>
+
+  <div class="option-card" data-choice="profile-top" onclick="toggleSelect(this)">
+    <div class="phone">
+      <div class="phone-top"><div class="speaker"></div></div>
+      <div class="screen">
+        <div class="topline">
+          <span>送了么</span>
+          <div class="avatar">我</div>
+        </div>
+        <div class="center"><div class="cta">开始选礼物</div></div>
+      </div>
+    </div>
+    <h3>C. 右上角“我的”</h3>
+    <p>比三横更明确，也更省空间。但未来加社区时，还是可能要补底部 Tab。</p>
+  </div>
+</div>

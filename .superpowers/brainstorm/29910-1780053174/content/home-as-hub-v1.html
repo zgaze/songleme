@@ -1,0 +1,284 @@
+<h2>修正版：首页作为入口 Hub</h2>
+<p class="subtitle">首页不直接答题，而是先承载主入口、节日提醒和未来社区内容；点击主按钮后进入 B 型问答流。</p>
+
+<style>
+  .hub-wrap {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 22px;
+    align-items: start;
+  }
+  .phone {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    aspect-ratio: 9 / 16;
+    border: 10px solid #251f1b;
+    border-radius: 30px;
+    background: #fbf6ed;
+    overflow: hidden;
+    position: relative;
+  }
+  .phone-top {
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .speaker {
+    width: 56px;
+    height: 5px;
+    border-radius: 99px;
+    background: #55483c;
+  }
+  .screen {
+    padding: 15px;
+    font-family: "Songti SC", "Source Han Serif SC", serif;
+    color: #2b241e;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    font-size: 12px;
+  }
+  .brand {
+    font-weight: 800;
+    letter-spacing: 0;
+  }
+  .subtle {
+    color: #8a7763;
+    font-size: 11px;
+  }
+  .hero {
+    background: #fffdf8;
+    border: 1px solid #e5d5c0;
+    border-radius: 20px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    font-size: 22px;
+    line-height: 1.18;
+    margin: 0 0 9px;
+  }
+  .hero p {
+    color: #736353;
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0 0 14px;
+  }
+  .primary {
+    background: #b84a3e;
+    color: white;
+    border-radius: 14px;
+    padding: 11px 12px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .quick {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+    margin-bottom: 12px;
+  }
+  .quick > div {
+    background: #fffdf8;
+    border: 1px solid #e3d0b8;
+    border-radius: 14px;
+    padding: 9px 6px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .section-title {
+    font-size: 13px;
+    font-weight: 800;
+    margin: 14px 0 8px;
+  }
+  .feed {
+    background: #fffdf8;
+    border: 1px solid #e5d5c0;
+    border-radius: 16px;
+    padding: 11px;
+    margin-bottom: 8px;
+  }
+  .feed strong {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .feed span {
+    display: block;
+    color: #776755;
+    font-size: 10px;
+    line-height: 1.45;
+  }
+  .tab {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: rgba(255, 253, 248, .96);
+    border-top: 1px solid #e8d9c7;
+    padding: 8px 0 10px;
+    font-size: 10px;
+    text-align: center;
+    color: #705f4d;
+  }
+  .question h1 {
+    font-size: 23px;
+    line-height: 1.18;
+    margin: 12px 0 18px;
+  }
+  .progress {
+    height: 6px;
+    background: #eadbca;
+    border-radius: 99px;
+    overflow: hidden;
+    margin: 4px 0 12px;
+  }
+  .progress span {
+    display: block;
+    height: 100%;
+    width: 18%;
+    background: #6e8b79;
+  }
+  .answer {
+    background: #fffdf8;
+    border: 2px solid #ddcab1;
+    border-radius: 18px;
+    padding: 18px 14px;
+    margin-bottom: 11px;
+    font-size: 17px;
+    font-weight: 800;
+  }
+  .answer small {
+    display: block;
+    color: #806f5e;
+    font-size: 11px;
+    font-weight: 400;
+    margin-top: 5px;
+  }
+  .flow {
+    background: #fffdf8;
+    border: 1px solid #e5d5c0;
+    border-radius: 18px;
+    padding: 18px;
+  }
+  .flow h3 {
+    margin: 0 0 12px;
+  }
+  .flow-step {
+    display: grid;
+    grid-template-columns: 26px 1fr;
+    gap: 10px;
+    align-items: start;
+    margin-bottom: 13px;
+  }
+  .num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2f4f43;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+  }
+  .flow-step strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+  .flow-step span {
+    display: block;
+    color: #6f6255;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  @media (max-width: 920px) {
+    .hub-wrap { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="hub-wrap">
+  <div class="mockup">
+    <div class="mockup-header">首页：不是答题页，是送礼入口和社区容器</div>
+    <div class="mockup-body">
+      <div class="phone">
+        <div class="phone-top"><div class="speaker"></div></div>
+        <div class="screen">
+          <div class="nav">
+            <div class="brand">送了么</div>
+            <div class="subtle">今日适合准备礼物</div>
+          </div>
+          <div class="hero">
+            <h1>不知道送什么？先让我们帮你判断。</h1>
+            <p>从对象、场景、预算和分寸开始，几步生成一份合适的礼物建议。</p>
+            <div class="primary">帮我挑一份礼物</div>
+          </div>
+          <div class="quick">
+            <div>送恋人</div>
+            <div>送父母</div>
+            <div>最近节日</div>
+          </div>
+          <div class="section-title">大家的礼物偏好</div>
+          <div class="feed">
+            <strong>我想收到实用但有质感的东西</strong>
+            <span>适合：生日、纪念日；预算：300-800</span>
+          </div>
+          <div class="feed">
+            <strong>给妈妈送礼，别太花哨</strong>
+            <span>偏好：健康、舒适、日常能用</span>
+          </div>
+        </div>
+        <div class="tab">
+          <div>首页</div>
+          <div>偏好</div>
+          <div>我的</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="mockup" style="margin-bottom: 18px;">
+      <div class="mockup-header">点击主按钮后：进入大卡片问答流</div>
+      <div class="mockup-body">
+        <div class="phone">
+          <div class="phone-top"><div class="speaker"></div></div>
+          <div class="screen question">
+            <div class="subtle">第 1 步，共 5 步</div>
+            <div class="progress"><span></span></div>
+            <h1>这份礼物，主要送给谁？</h1>
+            <div class="answer">恋人<small>生日、纪念日、表达心意</small></div>
+            <div class="answer">父母<small>生日、节日、日常关心</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow">
+      <h3>建议的信息架构</h3>
+      <div class="flow-step">
+        <div class="num">1</div>
+        <div><strong>首页负责吸引和承载</strong><span>主入口足够醒目，同时预留社区内容、节日内容和用户偏好内容。</span></div>
+      </div>
+      <div class="flow-step">
+        <div class="num">2</div>
+        <div><strong>答题流负责决策</strong><span>点击“帮我挑一份礼物”后才进入一步一步选择，减少首页压迫感。</span></div>
+      </div>
+      <div class="flow-step">
+        <div class="num">3</div>
+        <div><strong>社区未来自然接入</strong><span>用户发布“我想收到什么/我送过什么”，首页可以变成灵感流。</span></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,162 @@
+<h2>更极简：首页只保留启动动作</h2>
+<p class="subtitle">去掉说明文案、对象标签和场景标签。比较三个“空”的程度，我建议 B。</p>
+
+<style>
+  .variants {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .variant {
+    border: 1px solid #e4d2ba;
+    border-radius: 16px;
+    background: #fffaf2;
+    padding: 16px;
+    cursor: pointer;
+  }
+  .variant.selected {
+    border-color: #b84a3e;
+    box-shadow: 0 0 0 3px rgba(184, 74, 62, .14);
+  }
+  .phone {
+    width: 100%;
+    max-width: 260px;
+    aspect-ratio: 9 / 16;
+    border: 10px solid #251f1b;
+    border-radius: 30px;
+    background: #fbf6ed;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto 14px;
+  }
+  .phone-top {
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .speaker {
+    width: 56px;
+    height: 5px;
+    border-radius: 99px;
+    background: #55483c;
+  }
+  .screen {
+    min-height: calc(100% - 24px);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Songti SC", "Source Han Serif SC", serif;
+    color: #2b241e;
+  }
+  .brand {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0;
+  }
+  .center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .center-inner {
+    width: 100%;
+  }
+  .tiny {
+    text-align: center;
+    color: #8a7763;
+    font-size: 12px;
+    margin-bottom: 18px;
+  }
+  .cta {
+    background: #b84a3e;
+    color: white;
+    border-radius: 18px;
+    padding: 15px 16px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 800;
+    box-shadow: 0 14px 30px rgba(184, 74, 62, .18);
+  }
+  .bottom-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #d8c4aa;
+    margin: 0 auto 12px;
+  }
+  .variant h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+  }
+  .variant p {
+    margin: 0;
+    color: #6f6255;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .rec {
+    display: inline-block;
+    margin-top: 8px;
+    color: #b84a3e;
+    font-size: 12px;
+    font-weight: 800;
+  }
+  @media (max-width: 980px) {
+    .variants { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="variants">
+  <div class="variant" data-choice="button-only" onclick="toggleSelect(this)">
+    <div class="phone">
+      <div class="phone-top"><div class="speaker"></div></div>
+      <div class="screen">
+        <div class="center">
+          <div class="center-inner">
+            <div class="cta">开始选礼物</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>A. 只有按钮</h3>
+    <p>最极简，但风险是用户刚进来时会觉得页面信息不足，像一个未完成入口。</p>
+  </div>
+
+  <div class="variant selected" data-choice="brand-button" onclick="toggleSelect(this)">
+    <div class="phone">
+      <div class="phone-top"><div class="speaker"></div></div>
+      <div class="screen">
+        <div class="brand">送了么</div>
+        <div class="center">
+          <div class="center-inner">
+            <div class="cta">开始选礼物</div>
+          </div>
+        </div>
+        <div class="bottom-dot"></div>
+      </div>
+    </div>
+    <h3>B. 品牌 + 按钮</h3>
+    <p>保留最大留白，也有一点产品识别和完成度。后续加社区时，首页结构也容易扩展。</p>
+    <span class="rec">推荐</span>
+  </div>
+
+  <div class="variant" data-choice="tiny-copy-button" onclick="toggleSelect(this)">
+    <div class="phone">
+      <div class="phone-top"><div class="speaker"></div></div>
+      <div class="screen">
+        <div class="brand">送了么</div>
+        <div class="center">
+          <div class="center-inner">
+            <div class="tiny">不知道送什么的时候</div>
+            <div class="cta">开始选礼物</div>
+          </div>
+        </div>
+        <div class="bottom-dot"></div>
+      </div>
+    </div>
+    <h3>C. 极短提示 + 按钮</h3>
+    <p>比 B 多一点语境，但如果你想要最安静的首页，这句也可以不留。</p>
+  </div>
+</div>

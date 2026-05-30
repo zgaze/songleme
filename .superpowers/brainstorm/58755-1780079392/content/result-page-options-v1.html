@@ -1,0 +1,277 @@
+<h2>结果页怎么展现</h2>
+<p class="subtitle">比较三种结构。我的推荐是 B：先给一个主推荐方案，再给备选和商品，不把用户直接丢进商品列表。</p>
+
+<style>
+  .result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .choice {
+    border: 1px solid #e4d2ba;
+    border-radius: 16px;
+    background: #fffaf2;
+    padding: 16px;
+    cursor: pointer;
+  }
+  .choice.selected {
+    border-color: #c64f42;
+    box-shadow: 0 0 0 3px rgba(198, 79, 66, .14);
+  }
+  .phone {
+    width: 100%;
+    max-width: 272px;
+    aspect-ratio: 9 / 16;
+    border: 10px solid #181818;
+    border-radius: 30px;
+    background: #f8f5ef;
+    overflow: hidden;
+    margin: 0 auto 14px;
+  }
+  .phone-top {
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .speaker {
+    width: 56px;
+    height: 5px;
+    border-radius: 99px;
+    background: #444;
+  }
+  .screen {
+    height: calc(100% - 24px);
+    display: flex;
+    flex-direction: column;
+    font-family: "Songti SC", "Source Han Serif SC", serif;
+    color: #25211d;
+  }
+  .body {
+    flex: 1;
+    overflow: hidden;
+    padding: 16px;
+  }
+  .eyebrow {
+    color: #806f5f;
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+  h3.main {
+    margin: 0 0 10px;
+    font-size: 24px;
+    line-height: 1.16;
+  }
+  .reason {
+    background: #fffdf9;
+    border: 1px solid #e1d1bd;
+    border-radius: 16px;
+    padding: 11px 12px;
+    color: #5f554b;
+    font-size: 12px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 13px;
+  }
+  .tag {
+    background: #e6eee9;
+    color: #2f6f5f;
+    border-radius: 999px;
+    padding: 5px 8px;
+    font-size: 10px;
+    font-weight: 800;
+  }
+  .section-title {
+    font-size: 13px;
+    font-weight: 900;
+    margin: 13px 0 8px;
+  }
+  .product {
+    display: grid;
+    grid-template-columns: 54px 1fr;
+    gap: 10px;
+    background: #fffdf9;
+    border: 1px solid #e1d1bd;
+    border-radius: 14px;
+    padding: 9px;
+    margin-bottom: 8px;
+  }
+  .pic {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #e2c8a6, #b8cbbd);
+  }
+  .product strong {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  .product span {
+    display: block;
+    color: #756858;
+    font-size: 10px;
+    line-height: 1.35;
+  }
+  .alt {
+    background: #fffdf9;
+    border: 1px solid #e1d1bd;
+    border-radius: 14px;
+    padding: 10px;
+    margin-bottom: 7px;
+  }
+  .alt strong {
+    display: block;
+    font-size: 12px;
+  }
+  .alt span {
+    color: #756858;
+    font-size: 10px;
+  }
+  .footer {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 9px;
+    padding: 10px 14px 14px;
+    border-top: 1px solid #e3d9ca;
+    background: rgba(248, 245, 239, .96);
+  }
+  .btn {
+    border-radius: 15px;
+    padding: 12px 8px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 900;
+  }
+  .btn.secondary {
+    background: #eee4d6;
+    color: #665a4c;
+  }
+  .btn.primary {
+    background: #c64f42;
+    color: white;
+  }
+  .score {
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    gap: 8px;
+    align-items: center;
+    background: #fffdf9;
+    border: 1px solid #e1d1bd;
+    border-radius: 14px;
+    padding: 9px;
+    margin-bottom: 8px;
+  }
+  .score-num {
+    font-size: 26px;
+    font-weight: 900;
+    color: #2f6f5f;
+  }
+  .choice h4 {
+    margin: 0 0 6px;
+    font-size: 16px;
+  }
+  .choice p {
+    margin: 0;
+    color: #6f6255;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .rec {
+    display: inline-block;
+    margin-top: 8px;
+    color: #c64f42;
+    font-size: 12px;
+    font-weight: 900;
+  }
+  @media (max-width: 980px) {
+    .result-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="result-grid">
+  <div class="choice" data-choice="product-first" onclick="toggleSelect(this)">
+    <div class="phone">
+      <div class="phone-top"><div class="speaker"></div></div>
+      <div class="screen">
+        <div class="body">
+          <div class="eyebrow">为你找到 6 个礼物</div>
+          <h3 class="main">适合送 TA 的商品</h3>
+          <div class="product"><div class="pic"></div><div><strong>香薰礼盒</strong><span>¥268 · 纪念日 · 氛围感</span></div></div>
+          <div class="product"><div class="pic"></div><div><strong>照片书套装</strong><span>¥189 · 需要提前准备</span></div></div>
+          <div class="product"><div class="pic"></div><div><strong>手写卡片套装</strong><span>¥39 · 适合搭配</span></div></div>
+          <div class="product"><div class="pic"></div><div><strong>鲜花甜品组合</strong><span>当天可送 · 仪式感</span></div></div>
+        </div>
+        <div class="footer">
+          <div class="btn secondary">换一批</div>
+          <div class="btn primary">去看看</div>
+        </div>
+      </div>
+    </div>
+    <h4>A. 商品列表优先</h4>
+    <p>转化直接，但容易像普通电商。用户还没理解“为什么适合”。</p>
+  </div>
+
+  <div class="choice selected" data-choice="plan-first" onclick="toggleSelect(this)">
+    <div class="phone">
+      <div class="phone-top"><div class="speaker"></div></div>
+      <div class="screen">
+        <div class="body">
+          <div class="eyebrow">推荐方案</div>
+          <h3 class="main">送一份有纪念感的小礼物</h3>
+          <div class="reason">你们关系已经比较稳定，纪念日不需要过度贵重，更适合表达“我记得，也在乎”。</div>
+          <div class="tags">
+            <span class="tag">稳定情侣</span>
+            <span class="tag">纪念日</span>
+            <span class="tag">低压力</span>
+          </div>
+          <div class="section-title">可以这样搭配</div>
+          <div class="alt"><strong>照片书 + 手写卡片</strong><span>主打回忆和陪伴，适合有共同经历的人。</span></div>
+          <div class="alt"><strong>鲜花 + 甜品</strong><span>适合当天送达，仪式感更强。</span></div>
+          <div class="section-title">下方商品可选</div>
+          <div class="product"><div class="pic"></div><div><strong>定制照片书</strong><span>¥129-299 · 3-7天</span></div></div>
+        </div>
+        <div class="footer">
+          <div class="btn secondary">换方案</div>
+          <div class="btn primary">看商品</div>
+        </div>
+      </div>
+    </div>
+    <h4>B. 方案优先</h4>
+    <p>先给结论和分寸，再下放搭配和商品。更像送礼顾问。</p>
+    <span class="rec">推荐</span>
+  </div>
+
+  <div class="choice" data-choice="score-explain" onclick="toggleSelect(this)">
+    <div class="phone">
+      <div class="phone-top"><div class="speaker"></div></div>
+      <div class="screen">
+        <div class="body">
+          <div class="eyebrow">匹配结果</div>
+          <h3 class="main">这份推荐适配度高</h3>
+          <div class="score"><div class="score-num">86</div><div><strong>适合纪念日</strong><span>关系、预算、时效都匹配</span></div></div>
+          <div class="reason">推荐理由拆成关系、场景、预算、时效几个维度，适合更理性的用户。</div>
+          <div class="section-title">匹配点</div>
+          <div class="tags">
+            <span class="tag">预算内</span>
+            <span class="tag">3-7天</span>
+            <span class="tag">纪念意义</span>
+            <span class="tag">风险低</span>
+          </div>
+          <div class="product"><div class="pic"></div><div><strong>照片书套装</strong><span>¥189 · 推荐指数 86</span></div></div>
+        </div>
+        <div class="footer">
+          <div class="btn secondary">不喜欢</div>
+          <div class="btn primary">保存</div>
+        </div>
+      </div>
+    </div>
+    <h4>C. 解释/评分优先</h4>
+    <p>可解释性强，但分数感太重，可能显得机械，不像送礼。</p>
+  </div>
+</div>
