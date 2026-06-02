@@ -3,7 +3,7 @@
   flex-direction: column;
   min-height: 100vh;
   padding: 72rpx 48rpx calc(176rpx + env(safe-area-inset-bottom));
-  background: #f6f9ff;
+  background: var(--bg);
   box-sizing: border-box;
 }
 
@@ -22,32 +22,30 @@
   height: 112rpx;
   margin: 0;
   padding: 0;
-  border-radius: 999rpx;
-  color: #202833;
-  font-size: 34rpx;
+  border-radius: var(--r-pill);
+  color: var(--text);
+  font-size: var(--fs-h1);
   font-weight: 600;
   line-height: 112rpx;
-  box-shadow:
-    16rpx 18rpx 38rpx rgba(23, 28, 33, 0.055),
-    inset -7rpx -8rpx 16rpx rgba(23, 28, 33, 0.06),
-    inset 8rpx 8rpx 18rpx rgba(255, 255, 255, 0.76);
+  box-shadow: var(--out-md), var(--ins-rose);
   transition: transform 120ms ease, box-shadow 120ms ease;
 }
 
 .home-button--primary {
-  background: #ffd7e5;
+  background: var(--rose);
+  color: var(--on-rose);
+  box-shadow: var(--out-md), var(--ins-rose);
 }
 
 .home-button--guide {
-  background: #cfe8ff;
+  background: var(--blue);
+  color: var(--on-blue);
+  box-shadow: var(--out-md), var(--ins-blue);
 }
 
 .home-button:active {
   transform: scale(0.975);
-  box-shadow:
-    10rpx 12rpx 26rpx rgba(23, 28, 33, 0.045),
-    inset -5rpx -6rpx 13rpx rgba(23, 28, 33, 0.065),
-    inset 6rpx 6rpx 14rpx rgba(255, 255, 255, 0.8);
+  box-shadow: var(--out-sm), var(--ins-press);
 }
 
 .home-button::after {
