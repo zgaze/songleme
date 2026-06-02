@@ -9,7 +9,9 @@
 
 1. `RecommendationContext` —— 用户这次送礼的意图（来自问卷）。
 2. `GiftDirection` —— 礼物方向（我们维护/AI 生成，不绑定具体商品）。
-3. `ProductOffer` —— 商品供给（名称/链接/价格），**v3 暂不实现**，见「未来钩子」。
+3. `ProductOffer` —— 结构化商品供给（名称/链接/价格）。**v3 不做，且已决定不引入商品两层模型**（见下）。
+
+> **2026-06-03 决定（品牌/爆品）**：推荐品保持**单层**，颗粒度到方向（如"面膜"），**不**引入 `ProductOffer` 商品层、**不**把品牌塞进方向（否则破坏方向定义边界）。改为在 `GiftDirection` 上加一个软字段 `searchKeywords`：让 DeepSeek 顺带产出几个爆品/经典款/品牌名作为**下游电商搜索的种子**。这些关键词**不参与问卷匹配/打分**，只供后续用电商平台 API 检索真实商品。
 
 数据层一律存机器值（英文枚举 value）；中文 label 只在问卷和运营工具里维护。
 
@@ -139,6 +141,7 @@
 | `requiresKnownPreference` | 需已知偏好 | `boolean` | 软 | 香水/尺码/专业品类为 true |
 | `tags` | 展示标签 | `string[]` | 展示 | 2-3 个，每个 ≤6 字 |
 | `pairingTags` | 搭配建议 | `string[]` | 展示 | 0-3 个，每个 ≤6 字，驱动"建议搭配" |
+| `searchKeywords` | 搜索关键词 | `string[]` | 软 | 0-8 个；爆品/经典款/品牌名，**仅作下游电商搜索种子，不参与问卷匹配/打分** |
 | `specificOccasions` | 具体节日 | `SpecificOccasion[]` | 软 | 仅节日相关礼物才标 |
 | `seasons` | 适合季节 | `Season[]` | 软 | 留空=四季皆可 |
 
@@ -164,6 +167,7 @@
   "requiresKnownPreference": true,
   "tags": ["专柜感", "包装体面"],
   "pairingTags": ["手写卡片"],
+  "searchKeywords": ["口红礼盒", "圣诞限定口红", "YSL 口红套装"],
   "specificOccasions": ["520", "qixi"],
   "seasons": [],
   "recommendReason": "有礼盒仪式感、开箱体面，适合想表达审美和用心的亲密关系。"

@@ -59,6 +59,7 @@
     "requiresKnownPreference": { "type": "boolean" },
     "tags": { "type": "array", "maxItems": 4, "items": { "type": "string", "maxLength": 8 } },
     "pairingTags": { "type": "array", "maxItems": 3, "items": { "type": "string", "maxLength": 8 } },
+    "searchKeywords": { "type": "array", "maxItems": 8, "items": { "type": "string", "minLength": 2, "maxLength": 20 } },
     "specificOccasions": { "type": "array", "items": { "$ref": "#/definitions/specificOccasion" } },
     "seasons": { "type": "array", "items": { "$ref": "#/definitions/season" } }
   },
