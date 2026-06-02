@@ -1,0 +1,19 @@
+{
+  "name": "songleme-admin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "送了么 · 纯本地离线管理后台（推荐品方向 CRUD + 审核 + 导出运行时）",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "node server/server.js",
+    "start": "node server/server.js",
+    "test": "node --test",
+    "export": "node server/export-cli.js"
+  },
+  "comments": {
+    "deps": "零运行时依赖：Node 内置 http + 内置 schema 校验器 + node:test。保证 npm i 与断网均可用。"
+  }
+}

@@ -1,0 +1,5 @@
+# 导出产物是派生物，可重新生成，不跟踪；data/directions.json（catalog 真源）要跟踪。
+dist/
+node_modules/
+*.log
+.tmp-test-*/
