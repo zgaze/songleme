@@ -1,0 +1,270 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Songleme Guide Content",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "channels", "articles"],
+  "properties": {
+    "version": { "type": "string", "minLength": 1 },
+    "channels": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/channel" }
+    },
+    "articles": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/article" }
+    }
+  },
+  "definitions": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*(-[a-z0-9_]+)*$"
+    },
+    "accent": {
+      "type": "string",
+      "enum": ["blue", "pink", "green", "apricot"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["published", "draft"]
+    },
+    "channel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "summary", "note", "accent", "articleIds"],
+      "properties": {
+        "id": { "$ref": "#/definitions/id" },
+        "name": { "type": "string", "minLength": 1 },
+        "summary": { "type": "string", "minLength": 1 },
+        "note": { "type": "string", "minLength": 1 },
+        "accent": { "$ref": "#/definitions/accent" },
+        "articleIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/id" }
+        }
+      }
+    },
+    "article": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "channelId",
+        "status",
+        "title",
+        "summary",
+        "updatedAt",
+        "readingMinutes",
+        "tags",
+        "scenes",
+        "targets",
+        "budgets",
+        "blocks"
+      ],
+      "properties": {
+        "id": { "$ref": "#/definitions/id" },
+        "channelId": { "$ref": "#/definitions/id" },
+        "status": { "$ref": "#/definitions/status" },
+        "title": { "type": "string", "minLength": 1 },
+        "subtitle": { "type": "string" },
+        "summary": { "type": "string", "minLength": 1 },
+        "updatedAt": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "readingMinutes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 15
+        },
+        "tags": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "scenes": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "targets": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "budgets": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "blocks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "oneOf": [
+              { "$ref": "#/definitions/headingBlock" },
+              { "$ref": "#/definitions/paragraphBlock" },
+              { "$ref": "#/definitions/tipBlock" },
+              { "$ref": "#/definitions/listBlock" },
+              { "$ref": "#/definitions/checklistBlock" },
+              { "$ref": "#/definitions/compareBlock" },
+              { "$ref": "#/definitions/giftRefsBlock" }
+            ]
+          }
+        }
+      }
+    },
+    "baseBlock": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": { "$ref": "#/definitions/id" },
+        "type": { "type": "string" }
+      }
+    },
+    "headingBlock": {
+      "allOf": [
+        { "$ref": "#/definitions/baseBlock" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "type", "text"],
+          "properties": {
+            "id": { "$ref": "#/definitions/id" },
+            "type": { "const": "heading" },
+            "text": { "type": "string", "minLength": 1 }
+          }
+        }
+      ]
+    },
+    "paragraphBlock": {
+      "allOf": [
+        { "$ref": "#/definitions/baseBlock" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "type", "text"],
+          "properties": {
+            "id": { "$ref": "#/definitions/id" },
+            "type": { "const": "paragraph" },
+            "text": { "type": "string", "minLength": 1 }
+          }
+        }
+      ]
+    },
+    "tipBlock": {
+      "allOf": [
+        { "$ref": "#/definitions/baseBlock" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "type", "title", "text"],
+          "properties": {
+            "id": { "$ref": "#/definitions/id" },
+            "type": { "const": "tip" },
+            "title": { "type": "string", "minLength": 1 },
+            "text": { "type": "string", "minLength": 1 }
+          }
+        }
+      ]
+    },
+    "listBlock": {
+      "allOf": [
+        { "$ref": "#/definitions/baseBlock" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "type", "title", "items"],
+          "properties": {
+            "id": { "$ref": "#/definitions/id" },
+            "type": { "const": "list" },
+            "title": { "type": "string", "minLength": 1 },
+            "items": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      ]
+    },
+    "checklistBlock": {
+      "allOf": [
+        { "$ref": "#/definitions/baseBlock" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "type", "title", "items"],
+          "properties": {
+            "id": { "$ref": "#/definitions/id" },
+            "type": { "const": "checklist" },
+            "title": { "type": "string", "minLength": 1 },
+            "items": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      ]
+    },
+    "compareBlock": {
+      "allOf": [
+        { "$ref": "#/definitions/baseBlock" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "type", "title", "items"],
+          "properties": {
+            "id": { "$ref": "#/definitions/id" },
+            "type": { "const": "compare" },
+            "title": { "type": "string", "minLength": 1 },
+            "items": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["label", "good", "caution"],
+                "properties": {
+                  "label": { "type": "string", "minLength": 1 },
+                  "good": { "type": "string", "minLength": 1 },
+                  "caution": { "type": "string", "minLength": 1 }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "giftRefsBlock": {
+      "allOf": [
+        { "$ref": "#/definitions/baseBlock" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "type", "title", "items"],
+          "properties": {
+            "id": { "$ref": "#/definitions/id" },
+            "type": { "const": "giftRefs" },
+            "title": { "type": "string", "minLength": 1 },
+            "items": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["name", "note"],
+                "properties": {
+                  "name": { "type": "string", "minLength": 1 },
+                  "note": { "type": "string", "minLength": 1 }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

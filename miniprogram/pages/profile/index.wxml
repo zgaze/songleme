@@ -1,0 +1,18 @@
+<view class="page profile safe-bottom">
+  <view class="profile__header">
+    <text class="profile__title">我的</text>
+  </view>
+
+  <view class="profile__list">
+    <view
+      wx:for="{{entries}}"
+      wx:key="value"
+      class="profile__row"
+      data-title="{{item.title}}"
+      bindtap="openEntry"
+    >
+      <text>{{item.title}}</text>
+      <text class="profile__arrow">›</text>
+    </view>
+  </view>
+</view>

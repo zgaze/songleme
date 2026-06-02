@@ -1,0 +1,8 @@
+{
+  "model": "gemma4:e2b",
+  "createdAt": "2026-05-31T03:57:27+08:00",
+  "source": "scripts/generate-gifts-ollama.py",
+  "gifts": [
+    {"id": "comfort-robe-set", "name": "舒适家居服套装", "target": ["partner", "parents"], "gender": ["female", "male"], "scene": ["daily", "birthday"], "occupation": ["homemaker", "student"], "recipientStyle": ["quality", "aesthetic"], "budget": ["200_500", "500_1000"], "preparationTime": ["today", "within_3_days"], "emotionalTags": ["care", "surprise"], "visualStyle": ["warm", "minimal"], "highlights": ["面料柔软", "居家舒适"], "tags": ["居家舒适", "质感高级"], "riskTags": [], "pairingTags": ["一起放松", "慢生活"], "recommendReason": "一套舒适的家居服能让对方在日常生活中感受到被呵护和放松的温暖。"}
+  ]
+}

@@ -1,0 +1,1036 @@
+[
+  {
+    "id": "photo-book",
+    "gift_direction": "定制照片书",
+    "target": [
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary"
+    ],
+    "budget_range": [
+      "100_300",
+      "300_800"
+    ],
+    "preparation_time": [
+      "within_7_days",
+      "after_7_days"
+    ],
+    "emotional_tags": [
+      "company",
+      "memory"
+    ],
+    "visual_style_tags": [
+      "warm",
+      "classic"
+    ],
+    "risk_tags": [
+      "需提前"
+    ],
+    "recommend_reason": "适合把共同经历变成实体纪念，表达稳定陪伴。"
+  },
+  {
+    "id": "same-day-flowers-dessert",
+    "gift_direction": "鲜花甜品组合",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget_range": [
+      "under_100",
+      "100_300"
+    ],
+    "preparation_time": [
+      "today",
+      "tomorrow",
+      "within_3_days"
+    ],
+    "emotional_tags": [
+      "care",
+      "surprise",
+      "romantic"
+    ],
+    "visual_style_tags": [
+      "warm",
+      "delicate"
+    ],
+    "risk_tags": [
+      "看审美"
+    ],
+    "recommend_reason": "适合当天制造心意感，轻巧但不敷衍。"
+  },
+  {
+    "id": "massage-device",
+    "gift_direction": "肩颈按摩仪",
+    "target": [
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget_range": [
+      "300_800",
+      "800_plus"
+    ],
+    "preparation_time": [
+      "tomorrow",
+      "within_3_days",
+      "within_7_days"
+    ],
+    "emotional_tags": [
+      "care",
+      "company"
+    ],
+    "visual_style_tags": [
+      "minimal",
+      "tech"
+    ],
+    "risk_tags": [
+      "需确认习惯"
+    ],
+    "recommend_reason": "适合表达日常照顾，父母也容易理解价值。"
+  },
+  {
+    "id": "coffee-gift-box",
+    "gift_direction": "咖啡礼盒",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget_range": [
+      "100_300",
+      "300_800"
+    ],
+    "preparation_time": [
+      "tomorrow",
+      "within_3_days",
+      "within_7_days"
+    ],
+    "emotional_tags": [
+      "care",
+      "surprise"
+    ],
+    "visual_style_tags": [
+      "minimal",
+      "delicate",
+      "classic"
+    ],
+    "risk_tags": [
+      "口味风险"
+    ],
+    "recommend_reason": "适合偏实用的关系表达，体面又不容易过重。"
+  },
+  {
+    "id": "digital-membership",
+    "gift_direction": "数字会员礼物",
+    "target": [
+      "partner"
+    ],
+    "scene": [
+      "daily",
+      "festival"
+    ],
+    "budget_range": [
+      "under_100",
+      "100_300"
+    ],
+    "preparation_time": [
+      "today"
+    ],
+    "emotional_tags": [
+      "company",
+      "surprise"
+    ],
+    "visual_style_tags": [
+      "minimal",
+      "tech"
+    ],
+    "risk_tags": [
+      "需知道偏好"
+    ],
+    "recommend_reason": "适合临时但不随便的表达，重点是贴近日常喜好。"
+  },
+  {
+    "id": "home-textile",
+    "gift_direction": "舒适家居织物",
+    "target": [
+      "parents",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget_range": [
+      "100_300",
+      "300_800"
+    ],
+    "preparation_time": [
+      "tomorrow",
+      "within_3_days",
+      "within_7_days"
+    ],
+    "emotional_tags": [
+      "care",
+      "company"
+    ],
+    "visual_style_tags": [
+      "warm",
+      "classic"
+    ],
+    "risk_tags": [
+      "看审美"
+    ],
+    "recommend_reason": "适合表达长期关心，使用频率高，负担感低。"
+  },
+  {
+    "id": "aroma-night-light",
+    "gift_direction": "香氛小夜灯",
+    "target": [
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary",
+      "daily"
+    ],
+    "budget_range": [
+      "100_300",
+      "300_800"
+    ],
+    "preparation_time": [
+      "tomorrow",
+      "within_3_days",
+      "within_7_days"
+    ],
+    "emotional_tags": [
+      "romantic",
+      "care"
+    ],
+    "visual_style_tags": [
+      "warm",
+      "delicate"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合把日常空间变得更柔和，也容易搭配祝福。"
+  },
+  {
+    "id": "craft-experience",
+    "gift_direction": "手作体验券",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary",
+      "daily"
+    ],
+    "budget_range": [
+      "100_300",
+      "300_800"
+    ],
+    "preparation_time": [
+      "within_3_days",
+      "within_7_days",
+      "after_7_days"
+    ],
+    "emotional_tags": [
+      "company",
+      "memory",
+      "surprise"
+    ],
+    "visual_style_tags": [
+      "warm",
+      "classic"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合把礼物变成一段共同时间，而不是只交付一个物件。"
+  },
+  {
+    "id": "wellness-tea-box",
+    "gift_direction": "养生茶礼盒",
+    "target": [
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget_range": [
+      "under_100",
+      "100_300",
+      "300_800"
+    ],
+    "preparation_time": [
+      "today",
+      "tomorrow",
+      "within_3_days",
+      "within_7_days"
+    ],
+    "emotional_tags": [
+      "care"
+    ],
+    "visual_style_tags": [
+      "classic",
+      "minimal"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合表达照顾身体和生活节奏的心意。"
+  },
+  {
+    "id": "soft-scarf",
+    "gift_direction": "质感围巾",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "festival"
+    ],
+    "budget_range": [
+      "100_300",
+      "300_800",
+      "800_plus"
+    ],
+    "preparation_time": [
+      "tomorrow",
+      "within_3_days",
+      "within_7_days"
+    ],
+    "emotional_tags": [
+      "care",
+      "romantic"
+    ],
+    "visual_style_tags": [
+      "classic",
+      "delicate"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合有温度的节日表达，既体面也容易被使用。"
+  },
+  {
+    "id": "digital-photo-frame",
+    "gift_direction": "电子相框",
+    "target": [
+      "parents",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "anniversary"
+    ],
+    "budget_range": [
+      "300_800",
+      "800_plus"
+    ],
+    "preparation_time": [
+      "within_3_days",
+      "within_7_days",
+      "after_7_days"
+    ],
+    "emotional_tags": [
+      "memory",
+      "company"
+    ],
+    "visual_style_tags": [
+      "tech",
+      "classic"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合把照片和陪伴感放进日常空间里。"
+  },
+  {
+    "id": "handmade-chocolate",
+    "gift_direction": "手工巧克力",
+    "target": [
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary",
+      "festival",
+      "daily"
+    ],
+    "budget_range": [
+      "under_100",
+      "100_300"
+    ],
+    "preparation_time": [
+      "today",
+      "tomorrow",
+      "within_3_days"
+    ],
+    "emotional_tags": [
+      "romantic",
+      "surprise"
+    ],
+    "visual_style_tags": [
+      "delicate",
+      "warm"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合轻巧地补上仪式感，也方便和其它小礼物组合。"
+  },
+  {
+    "id": "perfume-discovery-set",
+    "gift_direction": "香水小样套装",
+    "target": [
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary",
+      "festival",
+      "daily"
+    ],
+    "budget_range": [
+      "100_300",
+      "300_800"
+    ],
+    "preparation_time": [
+      "tomorrow",
+      "within_3_days",
+      "within_7_days"
+    ],
+    "emotional_tags": [
+      "romantic",
+      "surprise"
+    ],
+    "visual_style_tags": [
+      "delicate",
+      "classic"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合不知道具体香型时降低选择压力，也有精致感。"
+  },
+  {
+    "id": "skincare-travel-set",
+    "gift_direction": "护肤旅行套装",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget_range": [
+      "100_300",
+      "300_800"
+    ],
+    "preparation_time": [
+      "today",
+      "tomorrow",
+      "within_3_days",
+      "within_7_days"
+    ],
+    "emotional_tags": [
+      "care"
+    ],
+    "visual_style_tags": [
+      "minimal",
+      "delicate"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合把照顾感放进日常使用里，不显得太重。"
+  },
+  {
+    "id": "smart-speaker",
+    "gift_direction": "智能音箱",
+    "target": [
+      "parents",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget_range": [
+      "300_800",
+      "800_plus"
+    ],
+    "preparation_time": [
+      "tomorrow",
+      "within_3_days",
+      "within_7_days"
+    ],
+    "emotional_tags": [
+      "company",
+      "care"
+    ],
+    "visual_style_tags": [
+      "tech",
+      "minimal"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合把陪伴感做成每天都能用到的小工具。"
+  },
+  {
+    "id": "heated-eye-mask",
+    "gift_direction": "蒸汽眼罩礼盒",
+    "target": [
+      "parents",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget_range": [
+      "under_100",
+      "100_300"
+    ],
+    "preparation_time": [
+      "today",
+      "tomorrow",
+      "within_3_days"
+    ],
+    "emotional_tags": [
+      "care"
+    ],
+    "visual_style_tags": [
+      "warm",
+      "minimal"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合表达休息和照顾，轻巧但不随便。"
+  },
+  {
+    "id": "desk-plant",
+    "gift_direction": "桌面绿植",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget_range": [
+      "under_100",
+      "100_300"
+    ],
+    "preparation_time": [
+      "today",
+      "tomorrow",
+      "within_3_days"
+    ],
+    "emotional_tags": [
+      "care",
+      "company"
+    ],
+    "visual_style_tags": [
+      "warm",
+      "minimal"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合日常关心场景，让桌面多一点持续的陪伴感。"
+  },
+  {
+    "id": "dinner-voucher",
+    "gift_direction": "餐厅礼券",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary",
+      "festival"
+    ],
+    "budget_range": [
+      "300_800",
+      "800_plus"
+    ],
+    "preparation_time": [
+      "within_3_days",
+      "within_7_days",
+      "after_7_days"
+    ],
+    "emotional_tags": [
+      "company",
+      "romantic"
+    ],
+    "visual_style_tags": [
+      "classic",
+      "delicate"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合把礼物变成一次相处，而不是只送一个物品。"
+  },
+  {
+    "id": "custom-mug",
+    "gift_direction": "定制马克杯",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "daily",
+      "anniversary"
+    ],
+    "budget_range": [
+      "under_100",
+      "100_300"
+    ],
+    "preparation_time": [
+      "within_7_days",
+      "after_7_days"
+    ],
+    "emotional_tags": [
+      "memory",
+      "care"
+    ],
+    "visual_style_tags": [
+      "warm",
+      "classic"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合把小回忆做成可日常使用的物件。"
+  },
+  {
+    "id": "sleep-pillow",
+    "gift_direction": "助眠枕",
+    "target": [
+      "parents",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget_range": [
+      "100_300",
+      "300_800"
+    ],
+    "preparation_time": [
+      "tomorrow",
+      "within_3_days",
+      "within_7_days"
+    ],
+    "emotional_tags": [
+      "care"
+    ],
+    "visual_style_tags": [
+      "minimal",
+      "warm"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合把关心落到睡眠和休息这类高频生活里。"
+  },
+  {
+    "id": "music-box",
+    "gift_direction": "八音盒",
+    "target": [
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary"
+    ],
+    "budget_range": [
+      "100_300",
+      "300_800"
+    ],
+    "preparation_time": [
+      "within_3_days",
+      "within_7_days",
+      "after_7_days"
+    ],
+    "emotional_tags": [
+      "romantic",
+      "memory"
+    ],
+    "visual_style_tags": [
+      "classic",
+      "delicate"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合偏纪念和浪漫的表达，体积小但情绪明确。"
+  },
+  {
+    "id": "wool-blanket",
+    "gift_direction": "羊毛毯",
+    "target": [
+      "parents",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget_range": [
+      "300_800",
+      "800_plus"
+    ],
+    "preparation_time": [
+      "tomorrow",
+      "within_3_days",
+      "within_7_days"
+    ],
+    "emotional_tags": [
+      "care",
+      "company"
+    ],
+    "visual_style_tags": [
+      "warm",
+      "classic"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合天气和生活场景里的长期陪伴感。"
+  },
+  {
+    "id": "art-print",
+    "gift_direction": "装饰画",
+    "target": [
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary",
+      "daily"
+    ],
+    "budget_range": [
+      "100_300",
+      "300_800"
+    ],
+    "preparation_time": [
+      "within_3_days",
+      "within_7_days",
+      "after_7_days"
+    ],
+    "emotional_tags": [
+      "memory",
+      "surprise"
+    ],
+    "visual_style_tags": [
+      "minimal",
+      "warm",
+      "classic"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合把审美和回忆放进空间里，表达更含蓄。"
+  },
+  {
+    "id": "fruit-gift-box",
+    "gift_direction": "水果礼盒",
+    "target": [
+      "parents"
+    ],
+    "scene": [
+      "festival",
+      "daily",
+      "birthday"
+    ],
+    "budget_range": [
+      "under_100",
+      "100_300"
+    ],
+    "preparation_time": [
+      "today",
+      "tomorrow",
+      "within_3_days"
+    ],
+    "emotional_tags": [
+      "care"
+    ],
+    "visual_style_tags": [
+      "classic",
+      "warm"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合需要稳妥送达的关心表达，接受度比较高。"
+  },
+  {
+    "id": "bath-care-set",
+    "gift_direction": "沐浴护理套装",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget_range": [
+      "100_300",
+      "300_800"
+    ],
+    "preparation_time": [
+      "today",
+      "tomorrow",
+      "within_3_days",
+      "within_7_days"
+    ],
+    "emotional_tags": [
+      "care",
+      "surprise"
+    ],
+    "visual_style_tags": [
+      "delicate",
+      "warm"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合把放松感和精致感一起送出去。"
+  },
+  {
+    "id": "travel-storage-set",
+    "gift_direction": "旅行收纳套装",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget_range": [
+      "under_100",
+      "100_300"
+    ],
+    "preparation_time": [
+      "today",
+      "tomorrow",
+      "within_3_days"
+    ],
+    "emotional_tags": [
+      "care"
+    ],
+    "visual_style_tags": [
+      "minimal",
+      "classic"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合偏实用的表达，尤其适合常出门的人。"
+  },
+  {
+    "id": "instant-camera",
+    "gift_direction": "拍立得相机",
+    "target": [
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary"
+    ],
+    "budget_range": [
+      "300_800",
+      "800_plus"
+    ],
+    "preparation_time": [
+      "within_3_days",
+      "within_7_days"
+    ],
+    "emotional_tags": [
+      "memory",
+      "surprise"
+    ],
+    "visual_style_tags": [
+      "tech",
+      "classic"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合把之后的相处也变成可以保存的回忆。"
+  },
+  {
+    "id": "fountain-pen",
+    "gift_direction": "钢笔礼盒",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "festival"
+    ],
+    "budget_range": [
+      "100_300",
+      "300_800",
+      "800_plus"
+    ],
+    "preparation_time": [
+      "tomorrow",
+      "within_3_days",
+      "within_7_days"
+    ],
+    "emotional_tags": [
+      "care",
+      "memory"
+    ],
+    "visual_style_tags": [
+      "classic",
+      "minimal"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合更正式、低调的表达，质感容易被感知。"
+  },
+  {
+    "id": "sleep-spray",
+    "gift_direction": "助眠喷雾",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "daily",
+      "birthday"
+    ],
+    "budget_range": [
+      "under_100",
+      "100_300"
+    ],
+    "preparation_time": [
+      "today",
+      "tomorrow",
+      "within_3_days"
+    ],
+    "emotional_tags": [
+      "care"
+    ],
+    "visual_style_tags": [
+      "delicate",
+      "minimal"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合日常关心，用很轻的方式表达照顾。"
+  },
+  {
+    "id": "hobby-kit",
+    "gift_direction": "兴趣体验套装",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "daily",
+      "festival"
+    ],
+    "budget_range": [
+      "100_300",
+      "300_800"
+    ],
+    "preparation_time": [
+      "within_3_days",
+      "within_7_days",
+      "after_7_days"
+    ],
+    "emotional_tags": [
+      "company",
+      "surprise"
+    ],
+    "visual_style_tags": [
+      "warm",
+      "classic"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "适合鼓励对方尝试兴趣，也能自然延伸出陪伴。"
+  },
+  {
+    "id": "couple-bracelet",
+    "gift_direction": "情侣手链",
+    "target": [
+      "partner"
+    ],
+    "scene": [
+      "birthday"
+    ],
+    "budget_range": [
+      "100_300"
+    ],
+    "preparation_time": [
+      "within_3_days",
+      "within_7_days"
+    ],
+    "emotional_tags": [
+      "romantic",
+      "surprise"
+    ],
+    "visual_style_tags": [
+      "delicate",
+      "warm"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "送情侣手链，把你们的名字刻在一起，低调又甜蜜，他/她一定会感动。"
+  },
+  {
+    "id": "star-projector-light",
+    "gift_direction": "星空投影灯",
+    "target": [
+      "partner"
+    ],
+    "scene": [
+      "birthday"
+    ],
+    "budget_range": [
+      "100_300"
+    ],
+    "preparation_time": [
+      "today",
+      "tomorrow"
+    ],
+    "emotional_tags": [
+      "romantic",
+      "surprise"
+    ],
+    "visual_style_tags": [
+      "warm",
+      "classic"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "把星空搬到卧室，打开投影灯，两人一起看星河，浪漫到冒泡。"
+  },
+  {
+    "id": "custom-calendar",
+    "gift_direction": "定制日历",
+    "target": [
+      "partner"
+    ],
+    "scene": [
+      "birthday"
+    ],
+    "budget_range": [
+      "100_300"
+    ],
+    "preparation_time": [
+      "within_7_days",
+      "after_7_days"
+    ],
+    "emotional_tags": [
+      "memory",
+      "care"
+    ],
+    "visual_style_tags": [
+      "minimal",
+      "warm"
+    ],
+    "risk_tags": [],
+    "recommend_reason": "用你们的合照做成日历，每个月翻开都是回忆，天天都能想到你。"
+  }
+]

@@ -1,0 +1,19 @@
+<view class="page share-product safe-bottom">
+  <view class="share-product__card">
+    <view class="share-product__media">
+      <image wx:if="{{product.imageUrl}}" class="share-product__image" src="{{product.imageUrl}}" mode="aspectFill"></image>
+      <view wx:else class="share-product__placeholder"></view>
+    </view>
+
+    <view class="share-product__body">
+      <text class="share-product__label">有人觉得这个礼物很适合</text>
+      <text class="share-product__name">{{product.name}}</text>
+      <view wx:if="{{product.tags.length}}" class="share-product__tags">
+        <text wx:for="{{product.tags}}" wx:key="*this" class="share-product__tag">{{item}}</text>
+      </view>
+      <text class="share-product__reason">{{product.reason}}</text>
+    </view>
+  </view>
+
+  <button class="share-product__button" bindtap="startQuestionnaire">我也想这样选</button>
+</view>

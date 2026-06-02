@@ -1,0 +1,23 @@
+<view class="page question">
+  <view class="question__header">
+    <text class="question__title">{{current.title}}</text>
+  </view>
+
+  <view class="question__options">
+    <view
+      wx:for="{{current.options}}"
+      wx:key="value"
+      class="option {{item.shapeClass}} {{item.sizeClass}} {{item.selected ? 'option--active' : ''}}"
+      data-value="{{item.value}}"
+      bindtap="selectOption"
+    >
+      <text class="option__label">{{item.label}}</text>
+      <view wx:if="{{item.selected}}" class="option__mark"></view>
+    </view>
+  </view>
+
+  <view class="question__footer">
+    <button class="ghost-button" bindtap="goBack">上一个</button>
+    <button wx:if="{{showNextButton}}" class="dark-button" bindtap="goNext">{{nextButtonText}}</button>
+  </view>
+</view>

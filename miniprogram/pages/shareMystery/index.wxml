@@ -1,0 +1,13 @@
+<view class="page share-mystery safe-bottom">
+  <view class="share-mystery__panel">
+    <view class="share-mystery__gift">
+      <view class="share-mystery__ribbon"></view>
+    </view>
+    <text class="share-mystery__kicker">一份神秘礼物</text>
+    <text class="share-mystery__title">有人给你准备了一个小惊喜</text>
+    <text class="share-mystery__summary">{{summary}}</text>
+    <text wx:if="{{pairingText}}" class="share-mystery__pairing">可能还会搭配“{{pairingText}}”</text>
+  </view>
+
+  <button class="share-mystery__button" bindtap="startQuestionnaire">我也去选礼物</button>
+</view>

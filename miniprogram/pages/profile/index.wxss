@@ -1,0 +1,46 @@
+.profile {
+  min-height: 100vh;
+  padding: 56rpx 32rpx 180rpx;
+  box-sizing: border-box;
+}
+
+.profile__header {
+  padding: 0 8rpx;
+}
+
+.profile__title {
+  color: #201814;
+  font-size: 44rpx;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.profile__list {
+  margin-top: 40rpx;
+  overflow: hidden;
+  border-radius: 8rpx;
+  background: #fffdf9;
+  border: 1rpx solid rgba(32, 24, 20, 0.08);
+}
+
+.profile__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 108rpx;
+  padding: 0 30rpx;
+  color: #201814;
+  font-size: 30rpx;
+  font-weight: 650;
+  border-bottom: 1rpx solid rgba(32, 24, 20, 0.07);
+}
+
+.profile__row:last-child {
+  border-bottom: 0;
+}
+
+.profile__arrow {
+  color: #9b9186;
+  font-size: 44rpx;
+  line-height: 1;
+}

@@ -1,0 +1,444 @@
+.guide {
+  min-height: 100vh;
+  padding: 34rpx 28rpx calc(54rpx + env(safe-area-inset-bottom));
+  background: #f6f9ff;
+  box-sizing: border-box;
+}
+
+.guide__head {
+  padding: 8rpx 8rpx 16rpx;
+}
+
+.guide__kicker {
+  display: block;
+  color: rgba(32, 40, 51, 0.48);
+  font-size: 22rpx;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.guide__title {
+  display: block;
+  margin-top: 14rpx;
+  color: #202833;
+  font-size: 42rpx;
+  font-weight: 600;
+  line-height: 1.24;
+}
+
+.guide__channels {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  margin: 0 -28rpx;
+  padding: 10rpx 0 18rpx;
+  background: rgba(246, 249, 255, 0.92);
+}
+
+.guide__channel-row,
+.guide__article-row {
+  display: flex;
+  padding: 0 28rpx;
+  white-space: nowrap;
+}
+
+.guide__channel {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 124rpx;
+  height: 62rpx;
+  margin: 0 16rpx 0 0;
+  padding: 0 28rpx;
+  border-radius: 999rpx;
+  color: rgba(32, 40, 51, 0.68);
+  font-size: 25rpx;
+  font-weight: 600;
+  line-height: 62rpx;
+  box-shadow:
+    10rpx 12rpx 24rpx rgba(23, 28, 33, 0.045),
+    inset -5rpx -6rpx 12rpx rgba(23, 28, 33, 0.045),
+    inset 6rpx 6rpx 14rpx rgba(255, 255, 255, 0.76);
+}
+
+.guide__channel::after,
+.guide-article-card::after {
+  border: 0;
+}
+
+.guide__channel--blue {
+  background: #d8ecff;
+}
+
+.guide__channel--pink {
+  background: #ffdbe8;
+}
+
+.guide__channel--green {
+  background: #d2f0dc;
+}
+
+.guide__channel--apricot {
+  background: #ffe3b7;
+}
+
+.guide__channel--active {
+  color: #202833;
+  transform: translateY(-2rpx);
+  box-shadow:
+    14rpx 16rpx 32rpx rgba(23, 28, 33, 0.065),
+    inset -6rpx -7rpx 14rpx rgba(23, 28, 33, 0.06),
+    inset 7rpx 7rpx 16rpx rgba(255, 255, 255, 0.82);
+}
+
+.guide__feature {
+  margin-top: 10rpx;
+  padding: 30rpx 32rpx;
+  border-radius: 34rpx;
+  box-shadow:
+    16rpx 20rpx 40rpx rgba(23, 28, 33, 0.06),
+    inset -9rpx -10rpx 22rpx rgba(23, 28, 33, 0.055),
+    inset 9rpx 9rpx 20rpx rgba(255, 255, 255, 0.78);
+}
+
+.guide__feature--blue {
+  background: #cfe8ff;
+}
+
+.guide__feature--pink {
+  background: #ffd7e5;
+}
+
+.guide__feature--green {
+  background: #c9efd9;
+}
+
+.guide__feature--apricot {
+  background: #ffe0ad;
+}
+
+.guide__feature-title {
+  display: block;
+  color: #202833;
+  font-size: 34rpx;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.guide__feature-copy {
+  display: block;
+  margin-top: 12rpx;
+  color: rgba(32, 40, 51, 0.64);
+  font-size: 25rpx;
+  font-weight: 400;
+  line-height: 1.46;
+}
+
+.guide__note {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20rpx;
+  padding: 22rpx 24rpx;
+  border-radius: 28rpx;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow:
+    10rpx 12rpx 28rpx rgba(23, 28, 33, 0.045),
+    inset 6rpx 7rpx 15rpx rgba(255, 255, 255, 0.8);
+}
+
+.guide__note-label {
+  flex: 0 0 auto;
+  margin-right: 18rpx;
+  padding: 8rpx 16rpx;
+  border-radius: 999rpx;
+  background: #fff4c7;
+  color: #775a16;
+  font-size: 21rpx;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.guide__note-copy {
+  flex: 1;
+  min-width: 0;
+  color: rgba(32, 40, 51, 0.66);
+  font-size: 24rpx;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.guide__articles {
+  margin: 22rpx -28rpx 0;
+  padding-bottom: 4rpx;
+}
+
+.guide-article-card {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 368rpx;
+  min-height: 176rpx;
+  margin-right: 18rpx;
+  padding: 22rpx 24rpx;
+  border-radius: 28rpx;
+  text-align: left;
+  box-sizing: border-box;
+  box-shadow:
+    12rpx 16rpx 32rpx rgba(23, 28, 33, 0.045),
+    inset -6rpx -7rpx 14rpx rgba(23, 28, 33, 0.035),
+    inset 8rpx 8rpx 18rpx rgba(255, 255, 255, 0.7);
+}
+
+.guide-article-card--sky {
+  background: #e6f3ff;
+}
+
+.guide-article-card--rose {
+  background: #ffeaf1;
+}
+
+.guide-article-card--leaf {
+  background: #e4f6ea;
+}
+
+.guide-article-card--apricot {
+  background: #fff0d4;
+}
+
+.guide-article-card--active {
+  transform: translateY(-2rpx);
+  box-shadow:
+    14rpx 18rpx 34rpx rgba(23, 28, 33, 0.07),
+    inset -6rpx -7rpx 14rpx rgba(23, 28, 33, 0.045),
+    inset 8rpx 8rpx 18rpx rgba(255, 255, 255, 0.78);
+}
+
+.guide-article-card__title {
+  display: block;
+  color: #202833;
+  font-size: 27rpx;
+  font-weight: 600;
+  line-height: 1.28;
+  white-space: normal;
+}
+
+.guide-article-card__summary {
+  display: block;
+  flex: 1;
+  margin-top: 10rpx;
+  color: rgba(32, 40, 51, 0.58);
+  font-size: 22rpx;
+  font-weight: 400;
+  line-height: 1.42;
+  white-space: normal;
+}
+
+.guide-article-card__time {
+  display: block;
+  margin-top: 14rpx;
+  color: rgba(32, 40, 51, 0.44);
+  font-size: 20rpx;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.guide-article {
+  margin-top: 24rpx;
+  padding: 6rpx 4rpx 0;
+}
+
+.guide-article__meta {
+  display: flex;
+  flex-wrap: wrap;
+  color: rgba(32, 40, 51, 0.45);
+  font-size: 21rpx;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.guide-article__meta text {
+  margin: 0 12rpx 8rpx 0;
+}
+
+.guide-article__title {
+  display: block;
+  margin-top: 16rpx;
+  color: #202833;
+  font-size: 38rpx;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.guide-article__subtitle {
+  display: block;
+  margin-top: 12rpx;
+  color: rgba(32, 40, 51, 0.62);
+  font-size: 25rpx;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.guide-article__tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 18rpx;
+}
+
+.guide-article__tag {
+  margin: 0 12rpx 12rpx 0;
+  padding: 8rpx 16rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.82);
+  color: rgba(32, 40, 51, 0.56);
+  font-size: 21rpx;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.guide-blocks {
+  margin-top: 10rpx;
+}
+
+.guide-block {
+  margin-top: 20rpx;
+  box-sizing: border-box;
+}
+
+.guide-block--heading {
+  margin-top: 32rpx;
+  color: #202833;
+  font-size: 31rpx;
+  font-weight: 650;
+  line-height: 1.28;
+}
+
+.guide-block--paragraph {
+  color: rgba(32, 40, 51, 0.72);
+  font-size: 26rpx;
+  font-weight: 400;
+  line-height: 1.66;
+}
+
+.guide-block--tip,
+.guide-block--list,
+.guide-block--checklist,
+.guide-block--compare,
+.guide-block--gift-refs {
+  padding: 24rpx;
+  border-radius: 28rpx;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow:
+    10rpx 12rpx 28rpx rgba(23, 28, 33, 0.045),
+    inset 6rpx 7rpx 15rpx rgba(255, 255, 255, 0.78);
+}
+
+.guide-block--tip {
+  background: #fff8db;
+}
+
+.guide-block__label {
+  display: inline-flex;
+  margin-bottom: 12rpx;
+  padding: 7rpx 14rpx;
+  border-radius: 999rpx;
+  background: rgba(119, 90, 22, 0.12);
+  color: #775a16;
+  font-size: 20rpx;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.guide-block__title {
+  display: block;
+  color: #202833;
+  font-size: 28rpx;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.guide-block__copy {
+  display: block;
+  margin-top: 12rpx;
+  color: rgba(32, 40, 51, 0.66);
+  font-size: 24rpx;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.guide-list,
+.guide-checklist,
+.guide-compare,
+.guide-gift-refs {
+  margin-top: 16rpx;
+}
+
+.guide-list__item,
+.guide-checklist__item {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 14rpx;
+  color: rgba(32, 40, 51, 0.68);
+  font-size: 24rpx;
+  font-weight: 400;
+  line-height: 1.48;
+}
+
+.guide-list__dot {
+  flex: 0 0 auto;
+  width: 10rpx;
+  height: 10rpx;
+  margin: 14rpx 16rpx 0 2rpx;
+  border-radius: 50%;
+  background: #6c9fc9;
+}
+
+.guide-checklist__mark {
+  flex: 0 0 auto;
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 14rpx;
+  border-radius: 50%;
+  background: #c9efd9;
+  color: #2f6b42;
+  font-size: 22rpx;
+  font-weight: 700;
+  line-height: 34rpx;
+  text-align: center;
+}
+
+.guide-compare__item,
+.guide-gift-ref {
+  margin-top: 14rpx;
+  padding: 18rpx 20rpx;
+  border-radius: 22rpx;
+  background: rgba(246, 249, 255, 0.78);
+}
+
+.guide-compare__label,
+.guide-gift-ref__name {
+  display: block;
+  color: #202833;
+  font-size: 25rpx;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.guide-compare__good,
+.guide-gift-ref__note {
+  display: block;
+  margin-top: 8rpx;
+  color: rgba(32, 40, 51, 0.66);
+  font-size: 23rpx;
+  font-weight: 500;
+  line-height: 1.42;
+}
+
+.guide-compare__caution {
+  display: block;
+  margin-top: 6rpx;
+  color: rgba(32, 40, 51, 0.48);
+  font-size: 22rpx;
+  font-weight: 400;
+  line-height: 1.45;
+}

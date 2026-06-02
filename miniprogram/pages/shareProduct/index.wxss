@@ -1,0 +1,116 @@
+.share-product {
+  min-height: 100vh;
+  padding: 54rpx 36rpx calc(58rpx + env(safe-area-inset-bottom));
+  background: #f6f9ff;
+  box-sizing: border-box;
+}
+
+.share-product__card {
+  overflow: hidden;
+  border-radius: 34rpx;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow:
+    18rpx 22rpx 44rpx rgba(23, 28, 33, 0.06),
+    inset -8rpx -9rpx 18rpx rgba(191, 201, 212, 0.2),
+    inset 8rpx 8rpx 18rpx rgba(255, 255, 255, 0.82);
+}
+
+.share-product__media {
+  position: relative;
+  width: 100%;
+  height: 520rpx;
+  overflow: hidden;
+  background: #cfe8ff;
+}
+
+.share-product__image,
+.share-product__placeholder {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.share-product__placeholder::before {
+  position: absolute;
+  right: 52rpx;
+  bottom: 48rpx;
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.38);
+  content: "";
+}
+
+.share-product__body {
+  padding: 32rpx 34rpx 38rpx;
+}
+
+.share-product__label {
+  display: block;
+  color: rgba(32, 40, 51, 0.48);
+  font-size: 23rpx;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.share-product__name {
+  display: block;
+  margin-top: 12rpx;
+  color: #202833;
+  font-size: 38rpx;
+  font-weight: 600;
+  line-height: 1.28;
+}
+
+.share-product__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+  margin-top: 20rpx;
+}
+
+.share-product__tag {
+  max-width: 180rpx;
+  height: 42rpx;
+  padding: 0 16rpx;
+  border-radius: 999rpx;
+  background: #ffd7e5;
+  color: rgba(32, 40, 51, 0.62);
+  box-sizing: border-box;
+  font-size: 22rpx;
+  font-weight: 500;
+  line-height: 42rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.share-product__reason {
+  display: block;
+  margin-top: 24rpx;
+  color: rgba(32, 40, 51, 0.64);
+  font-size: 27rpx;
+  font-weight: 400;
+  line-height: 1.52;
+}
+
+.share-product__button {
+  width: 560rpx;
+  height: 104rpx;
+  margin: 42rpx auto 0;
+  padding: 0;
+  border-radius: 999rpx;
+  background: #c9efd9;
+  color: #202833;
+  font-size: 32rpx;
+  font-weight: 600;
+  line-height: 104rpx;
+  box-shadow:
+    16rpx 18rpx 38rpx rgba(23, 28, 33, 0.055),
+    inset -7rpx -8rpx 16rpx rgba(23, 28, 33, 0.06),
+    inset 8rpx 8rpx 18rpx rgba(255, 255, 255, 0.76);
+}
+
+.share-product__button::after {
+  border: 0;
+}

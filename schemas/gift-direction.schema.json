@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://songleme/schemas/gift-direction.schema.json",
+  "title": "GiftDirection v3",
+  "description": "礼物方向 v3。硬必填字段缺失则该候选丢弃；软字段缺失=该维度中性，不得回填假值。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "category", "target", "scene", "budget", "recommendReason"],
+  "definitions": {
+    "target": { "type": "string", "enum": ["partner", "parents", "bestie"] },
+    "gender": { "type": "string", "enum": ["female", "male"] },
+    "scene": { "type": "string", "enum": ["birthday", "anniversary", "festival", "apology", "daily"] },
+    "recipientStyle": { "type": "string", "enum": ["practical", "aesthetic", "experiential", "quality"] },
+    "toneFit": { "type": "string", "enum": ["romantic", "memory", "surprise", "playful", "warm", "sincere"] },
+    "personaTag": {
+      "type": "string",
+      "enum": [
+        "tech_geek", "office_pro", "creative", "student", "night_owl", "homebody",
+        "outdoorsy", "fitness", "coffee_tea", "foodie", "pet_owner", "beauty_lover",
+        "fandom_gamer", "bookish"
+      ]
+    },
+    "budget": { "type": "string", "enum": ["under_200", "200_500", "500_1000", "1000_2000", "2000_plus"] },
+    "commerceType": { "type": "string", "enum": ["ecommerce", "o2o"] },
+    "riskLevel": { "type": "string", "enum": ["low", "medium", "high"] },
+    "category": {
+      "type": "string",
+      "enum": [
+        "beauty_personal_care", "fragrance", "bags_accessories", "digital_accessories",
+        "desk_office", "fashion_wear", "food_dessert", "coffee_tea", "nutrition_wellness",
+        "home_appliance", "travel_commute", "sports_outdoor", "fandom_ip",
+        "books_music_video", "pet_lifestyle", "o2o_experience", "custom_craft"
+      ]
+    },
+    "specificOccasion": {
+      "type": "string",
+      "enum": [
+        "none", "520", "qixi", "valentines_day", "mothers_day", "fathers_day",
+        "graduation", "new_year", "spring_festival", "mid_autumn", "christmas"
+      ]
+    },
+    "season": { "type": "string", "enum": ["spring", "summer", "autumn", "winter"] }
+  },
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "name": { "type": "string", "minLength": 2, "maxLength": 24 },
+    "category": { "$ref": "#/definitions/category" },
+    "target": { "type": "array", "minItems": 1, "maxItems": 3, "items": { "$ref": "#/definitions/target" } },
+    "scene": { "type": "array", "minItems": 1, "maxItems": 5, "items": { "$ref": "#/definitions/scene" } },
+    "budget": { "type": "array", "minItems": 1, "maxItems": 4, "items": { "$ref": "#/definitions/budget" } },
+    "recommendReason": { "type": "string", "minLength": 8, "maxLength": 40 },
+    "recipientStyle": { "type": "array", "maxItems": 4, "items": { "$ref": "#/definitions/recipientStyle" } },
+    "toneFit": { "type": "array", "maxItems": 4, "items": { "$ref": "#/definitions/toneFit" } },
+    "personaTags": { "type": "array", "maxItems": 5, "items": { "$ref": "#/definitions/personaTag" } },
+    "gender": { "type": "array", "maxItems": 2, "items": { "$ref": "#/definitions/gender" } },
+    "commerceType": { "$ref": "#/definitions/commerceType" },
+    "riskLevel": { "$ref": "#/definitions/riskLevel" },
+    "riskTags": { "type": "array", "items": { "type": "string", "maxLength": 10 } },
+    "requiresKnownPreference": { "type": "boolean" },
+    "tags": { "type": "array", "maxItems": 4, "items": { "type": "string", "maxLength": 8 } },
+    "pairingTags": { "type": "array", "maxItems": 3, "items": { "type": "string", "maxLength": 8 } },
+    "specificOccasions": { "type": "array", "items": { "$ref": "#/definitions/specificOccasion" } },
+    "seasons": { "type": "array", "items": { "$ref": "#/definitions/season" } }
+  },
+  "allOf": [
+    {
+      "$comment": "安全规则：浪漫语气的礼物不得标 apology 场景（道歉不送暧昧礼物）。",
+      "if": {
+        "properties": { "toneFit": { "type": "array", "contains": { "const": "romantic" } } },
+        "required": ["toneFit"]
+      },
+      "then": {
+        "properties": { "scene": { "items": { "not": { "const": "apology" } } } }
+      }
+    }
+  ]
+}

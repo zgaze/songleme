@@ -1,0 +1,117 @@
+<view class="page guide safe-bottom">
+  <view class="guide__head">
+    <text class="guide__kicker">送礼攻略</text>
+    <text class="guide__title">先看含义，再决定怎么送</text>
+  </view>
+
+  <scroll-view class="guide__channels" scroll-x enhanced show-scrollbar="{{false}}">
+    <view class="guide__channel-row">
+      <button
+        wx:for="{{channels}}"
+        wx:key="id"
+        class="guide__channel guide__channel--{{item.accent}} {{selectedChannelId == item.id ? 'guide__channel--active' : ''}}"
+        data-id="{{item.id}}"
+        bindtap="selectChannel"
+      >
+        {{item.name}}
+      </button>
+    </view>
+  </scroll-view>
+
+  <view wx:if="{{currentChannel}}" class="guide__feature guide__feature--{{currentChannel.accent}}">
+    <text class="guide__feature-title">{{currentChannel.name}}</text>
+    <text class="guide__feature-copy">{{currentChannel.summary}}</text>
+  </view>
+
+  <view wx:if="{{currentChannel}}" class="guide__note">
+    <text class="guide__note-label">轻提醒</text>
+    <text class="guide__note-copy">{{currentChannel.note}}</text>
+  </view>
+
+  <scroll-view wx:if="{{articles.length > 1}}" class="guide__articles" scroll-x enhanced show-scrollbar="{{false}}">
+    <view class="guide__article-row">
+      <button
+        wx:for="{{articles}}"
+        wx:key="id"
+        class="guide-article-card guide-article-card--{{item.tone}} {{selectedArticleId == item.id ? 'guide-article-card--active' : ''}}"
+        data-id="{{item.id}}"
+        bindtap="selectArticle"
+      >
+        <text class="guide-article-card__title">{{item.title}}</text>
+        <text class="guide-article-card__summary">{{item.summary}}</text>
+        <text class="guide-article-card__time">{{item.readingMinutes}} 分钟</text>
+      </button>
+    </view>
+  </scroll-view>
+
+  <view wx:if="{{currentArticle}}" class="guide-article">
+    <view class="guide-article__meta">
+      <text>{{currentArticle.updatedAt}}</text>
+      <text>{{currentArticle.readingMinutes}} 分钟读完</text>
+    </view>
+    <text class="guide-article__title">{{currentArticle.title}}</text>
+    <text wx:if="{{currentArticle.subtitle}}" class="guide-article__subtitle">{{currentArticle.subtitle}}</text>
+    <view class="guide-article__tags">
+      <text wx:for="{{currentArticle.tags}}" wx:key="*this" class="guide-article__tag">{{item}}</text>
+    </view>
+
+    <view class="guide-blocks">
+      <block wx:for="{{currentArticle.blocks}}" wx:key="id">
+        <view wx:if="{{item.type == 'heading'}}" class="guide-block guide-block--heading">
+          <text>{{item.text}}</text>
+        </view>
+
+        <view wx:elif="{{item.type == 'paragraph'}}" class="guide-block guide-block--paragraph">
+          <text>{{item.text}}</text>
+        </view>
+
+        <view wx:elif="{{item.type == 'tip'}}" class="guide-block guide-block--tip">
+          <text class="guide-block__label">建议</text>
+          <text class="guide-block__title">{{item.title}}</text>
+          <text class="guide-block__copy">{{item.text}}</text>
+        </view>
+
+        <view wx:elif="{{item.type == 'list'}}" class="guide-block guide-block--list">
+          <text class="guide-block__title">{{item.title}}</text>
+          <view class="guide-list">
+            <view wx:for="{{item.items}}" wx:key="*this" wx:for-item="listItem" class="guide-list__item">
+              <view class="guide-list__dot"></view>
+              <text>{{listItem}}</text>
+            </view>
+          </view>
+        </view>
+
+        <view wx:elif="{{item.type == 'checklist'}}" class="guide-block guide-block--checklist">
+          <text class="guide-block__title">{{item.title}}</text>
+          <view class="guide-checklist">
+            <view wx:for="{{item.items}}" wx:key="*this" wx:for-item="checkItem" class="guide-checklist__item">
+              <text class="guide-checklist__mark">✓</text>
+              <text>{{checkItem}}</text>
+            </view>
+          </view>
+        </view>
+
+        <view wx:elif="{{item.type == 'compare'}}" class="guide-block guide-block--compare">
+          <text class="guide-block__title">{{item.title}}</text>
+          <view class="guide-compare">
+            <view wx:for="{{item.items}}" wx:key="label" wx:for-item="compareItem" class="guide-compare__item">
+              <text class="guide-compare__label">{{compareItem.label}}</text>
+              <text class="guide-compare__good">{{compareItem.good}}</text>
+              <text class="guide-compare__caution">{{compareItem.caution}}</text>
+            </view>
+          </view>
+        </view>
+
+        <view wx:elif="{{item.type == 'giftRefs'}}" class="guide-block guide-block--gift-refs">
+          <text class="guide-block__title">{{item.title}}</text>
+          <view class="guide-gift-refs">
+            <view wx:for="{{item.items}}" wx:key="name" wx:for-item="giftItem" class="guide-gift-ref">
+              <text class="guide-gift-ref__name">{{giftItem.name}}</text>
+              <text class="guide-gift-ref__note">{{giftItem.note}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

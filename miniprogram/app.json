@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/guide/index",
+    "pages/question/index",
+    "pages/result/index",
+    "pages/shareMystery/index",
+    "pages/shareProduct/index",
+    "pages/profile/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "送了么",
+    "navigationBarBackgroundColor": "#F6F9FF",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F6F9FF",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#766F66",
+    "selectedColor": "#201814",
+    "backgroundColor": "#FFFDF9",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

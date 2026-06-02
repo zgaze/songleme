@@ -1,0 +1,29 @@
+<view class="result-card {{item.toneClass}}">
+  <view class="result-card__media">
+    <image wx:if="{{item.imageUrl}}" class="result-card__image" src="{{item.imageUrl}}" mode="aspectFill"></image>
+    <view wx:else class="result-card__image-placeholder"></view>
+  </view>
+  <view class="result-card__body">
+    <text class="result-card__name">{{item.name}}</text>
+    <view wx:if="{{item.displayTags.length}}" class="result-card__tags">
+      <text wx:for="{{item.displayTags}}" wx:key="*this" class="result-card__tag">{{item}}</text>
+    </view>
+    <text wx:if="{{item.shortReason}}" class="result-card__reason">{{item.shortReason}}</text>
+  </view>
+  <button
+    wx:if="{{showProductShareButton}}"
+    class="result-card__share"
+    open-type="share"
+    data-share-type="product"
+    data-product-id="{{item.id}}"
+    aria-label="分享商品"
+  >
+    <view class="result-card__share-icon">
+      <view class="result-card__share-line result-card__share-line--top"></view>
+      <view class="result-card__share-line result-card__share-line--bottom"></view>
+      <view class="result-card__share-dot result-card__share-dot--left"></view>
+      <view class="result-card__share-dot result-card__share-dot--top"></view>
+      <view class="result-card__share-dot result-card__share-dot--bottom"></view>
+    </view>
+  </button>
+</view>
