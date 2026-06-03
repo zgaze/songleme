@@ -160,7 +160,7 @@
     "_updatedAt": "2026-06-02T18:11:58.940Z"
   },
   {
-    "_status": "rejected",
+    "_status": "approved",
     "_source": "deepseek",
     "_note": "",
     "id": "makeup-brush-set",
@@ -207,10 +207,10 @@
     "specificOccasions": [],
     "seasons": [],
     "recommendReason": "专业化妆刷套装提升上妆体验，是化妆爱好者可长久使用的实用礼物。",
-    "_updatedAt": "2026-06-02T18:11:58.942Z"
+    "_updatedAt": "2026-06-03T04:29:52.808Z"
   },
   {
-    "_status": "rejected",
+    "_status": "approved",
     "_source": "deepseek",
     "_note": "",
     "id": "anti-aging-skincare-set",
@@ -256,10 +256,10 @@
     "specificOccasions": [],
     "seasons": [],
     "recommendReason": "高端抗老护肤礼盒，适合送给关心肌肤保养的父母，体现孝心与品质。",
-    "_updatedAt": "2026-06-02T18:11:58.943Z"
+    "_updatedAt": "2026-06-03T04:30:02.613Z"
   },
   {
-    "_status": "pending",
+    "_status": "approved",
     "_source": "deepseek",
     "_note": "",
     "id": "hair-care-kit",
@@ -308,10 +308,10 @@
     "specificOccasions": [],
     "seasons": [],
     "recommendReason": "高端头发护理套装，在家享受沙龙级护理，适合送给注重发质的她。",
-    "_updatedAt": "2026-06-02T18:04:49.589Z"
+    "_updatedAt": "2026-06-03T04:30:00.338Z"
   },
   {
-    "_status": "pending",
+    "_status": "approved",
     "_source": "deepseek",
     "_note": "",
     "id": "brand-sampler-set",
@@ -360,7 +360,7 @@
     "specificOccasions": [],
     "seasons": [],
     "recommendReason": "一次体验多种香型，找到本命香，适合喜欢探索的收礼人。",
-    "_updatedAt": "2026-06-02T18:04:49.589Z"
+    "_updatedAt": "2026-06-03T04:30:09.545Z"
   },
   {
     "_status": "pending",

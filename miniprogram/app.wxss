@@ -1,8 +1,92 @@
+/* ============================================================
+   送了么 — Design Tokens (Matte Clay Aesthetic)
+   Single source of truth. Edit values here; every page/component
+   references these via var(). Do not hardcode hex or shadows in
+   page WXSS — add or adjust a token instead.
+
+   CSS custom properties inherit into custom components in WeChat,
+   so result-card etc. can use these tokens directly.
+   ============================================================ */
+
 page {
+  /* --- Canvas & surfaces ---------------------------------- */
+  /* Bright, warm blush ground — romantic gift mood. Kept light;
+     clay depth comes from the tinted insets + outer floats below. */
+  --bg: #fdf4f7;
+  --bg-veil: rgba(253, 244, 247, 0.88);    /* sticky headers over --bg */
+  --surface: rgba(255, 255, 255, 0.9);      /* translucent white card  */
+  --surface-solid: #fff7fa;                 /* opaque raised tile      */
+
+  /* --- Text (warm charcoal, accessible on pastels) -------- */
+  --text: #2a2126;       /* primary  */
+  --text-2: #4a4046;     /* secondary */
+  --text-3: #6b626a;     /* tertiary / meta */
+
+  /* --- Pastel fills --------------------------------------- */
+  --blue: #cde5ff;
+  --blue-soft: #e6f3ff;
+  --blue-deep: #a2d2ff;
+  --rose: #ffd9e4;
+  --rose-soft: #e3d9dc;
+  --rose-deep: #eacdd8;
+  --gold: #ffddb2;
+  --gold-soft: #fff0d4;
+  --mint: #c9efd9;
+  --mint-soft: #e4f6ea;
+
+  /* --- Text colors on pastel fills ------------------------ */
+  --on-blue: #1d4f74;
+  --on-rose: #6e334c;
+  --on-gold: #5f4006;
+  --on-mint: #2f6b42;
+
+  /* --- Radius scale --------------------------------------- */
+  --r-sm: 16rpx;
+  --r-md: 28rpx;
+  --r-lg: 40rpx;
+  --r-xl: 56rpx;
+  --r-pill: 999rpx;
+
+  /* --- Type scale (readable floor: 22rpx) ----------------- */
+  --fs-display: 48rpx;
+  --fs-title: 40rpx;
+  --fs-h1: 36rpx;
+  --fs-h2: 32rpx;
+  --fs-body: 28rpx;
+  --fs-sm: 26rpx;
+  --fs-label: 24rpx;
+  --fs-cap: 22rpx;       /* minimum — tiny meta only */
+
+  /* --- Font ----------------------------------------------- */
+  --font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+
+  /* --- Clay shadows --------------------------------------------
+     Compose a clay surface by combining ONE outer drop with ONE
+     inset tint, e.g.:
+         box-shadow: var(--out-md), var(--ins-blue);
+     Use --ins-press (concave, no outer) for :active and sunken
+     inputs. Outer + neutral tints are warm-toned so depth still
+     reads softly on the bright blush canvas. */
+
+  /* outer float (warm shadow) */
+  --out-sm: 8rpx 10rpx 22rpx rgba(74, 48, 60, 0.09);
+  --out-md: 14rpx 18rpx 36rpx rgba(74, 48, 60, 0.12);
+  --out-lg: 18rpx 24rpx 48rpx rgba(74, 48, 60, 0.15);
+
+  /* inset tints: white top-left highlight + tinted bottom-right depth */
+  --ins-neutral: inset 8rpx 8rpx 18rpx rgba(255, 255, 255, 0.95), inset -8rpx -8rpx 18rpx rgba(196, 168, 180, 0.32);
+  --ins-blue: inset 9rpx 9rpx 19rpx rgba(255, 255, 255, 0.85), inset -9rpx -10rpx 20rpx rgba(48, 98, 138, 0.18);
+  --ins-rose: inset 8rpx 8rpx 18rpx rgba(255, 255, 255, 0.82), inset -8rpx -8rpx 18rpx rgba(116, 51, 77, 0.16);
+  --ins-gold: inset 8rpx 8rpx 18rpx rgba(255, 255, 255, 0.84), inset -8rpx -8rpx 18rpx rgba(98, 64, 0, 0.14);
+  --ins-mint: inset 8rpx 8rpx 18rpx rgba(255, 255, 255, 0.84), inset -8rpx -8rpx 18rpx rgba(47, 107, 66, 0.14);
+
+  /* pressed / concave (no outer float) */
+  --ins-press: inset 9rpx 10rpx 20rpx rgba(74, 48, 60, 0.16), inset -8rpx -8rpx 18rpx rgba(255, 255, 255, 0.75);
+
   min-height: 100%;
-  background: #f6f9ff;
-  color: #171c21;
-  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
 }
 
 button {
