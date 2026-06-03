@@ -1,0 +1,4112 @@
+[
+  {
+    "_status": "approved",
+    "_source": "deepseek",
+    "_note": "通过",
+    "id": "lipstick-gift-set",
+    "name": "专柜口红礼盒",
+    "category": "beauty_personal_care",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "festival"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "quality"
+    ],
+    "toneFit": [
+      "romantic",
+      "surprise"
+    ],
+    "personaTags": [
+      "beauty_lover"
+    ],
+    "gender": [
+      "female"
+    ],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "色号需确认",
+      "正品渠道"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "高颜值",
+      "热门色号"
+    ],
+    "pairingTags": [
+      "化妆镜",
+      "礼袋"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "大牌口红礼盒，色号丰富包装精美，是让妆容出彩的节日惊喜。",
+    "_updatedAt": "2026-06-02T18:11:58.937Z",
+    "searchKeywords": [
+      "口红礼盒",
+      "YSL 口红套装"
+    ]
+  },
+  {
+    "_status": "approved",
+    "_source": "deepseek",
+    "_note": "通过",
+    "id": "hand-cream-gift-box",
+    "name": "护手霜礼盒",
+    "category": "beauty_personal_care",
+    "target": [
+      "bestie",
+      "parents"
+    ],
+    "scene": [
+      "daily",
+      "festival"
+    ],
+    "budget": [
+      "under_200",
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical",
+      "aesthetic"
+    ],
+    "toneFit": [
+      "warm"
+    ],
+    "personaTags": [
+      "office_pro",
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "肤质偏好"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "精致实用",
+      "多支装"
+    ],
+    "pairingTags": [
+      "护手霜套装",
+      "手写卡片"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "护手霜礼盒实用又精致，呵护双手传递日常温暖。",
+    "_updatedAt": "2026-06-02T18:11:58.939Z"
+  },
+  {
+    "_status": "approved",
+    "_source": "deepseek",
+    "_note": "通过",
+    "id": "body-care-gift-set",
+    "name": "身体护理礼盒",
+    "category": "beauty_personal_care",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "anniversary",
+      "festival"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "experiential",
+      "quality"
+    ],
+    "toneFit": [
+      "romantic",
+      "sincere"
+    ],
+    "personaTags": [
+      "beauty_lover",
+      "homebody"
+    ],
+    "gender": [
+      "female"
+    ],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "肤质适合"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "spa级体验",
+      "香氛升级"
+    ],
+    "pairingTags": [
+      "浴球",
+      "香薰蜡烛"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "身体护理套装带来居家spa体验，适合送给注重自我呵护的她。",
+    "_updatedAt": "2026-06-02T18:11:58.940Z"
+  },
+  {
+    "_status": "approved",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "makeup-brush-set",
+    "name": "化妆刷套装",
+    "category": "beauty_personal_care",
+    "target": [
+      "bestie"
+    ],
+    "scene": [
+      "birthday"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical"
+    ],
+    "toneFit": [
+      "surprise",
+      "playful"
+    ],
+    "personaTags": [
+      "beauty_lover",
+      "creative"
+    ],
+    "gender": [
+      "female"
+    ],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "刷毛材质",
+      "需确认习惯"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "专业级",
+      "化妆仪式"
+    ],
+    "pairingTags": [
+      "刷具清洁剂",
+      "化妆包"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "专业化妆刷套装提升上妆体验，是化妆爱好者可长久使用的实用礼物。",
+    "_updatedAt": "2026-06-03T04:29:52.808Z"
+  },
+  {
+    "_status": "approved",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "anti-aging-skincare-set",
+    "name": "抗老护肤礼盒",
+    "category": "beauty_personal_care",
+    "target": [
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary"
+    ],
+    "budget": [
+      "500_1000",
+      "1000_2000"
+    ],
+    "recipientStyle": [
+      "quality"
+    ],
+    "toneFit": [
+      "sincere",
+      "warm"
+    ],
+    "personaTags": [
+      "office_pro"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "high",
+    "riskTags": [
+      "肤质兼容",
+      "正品渠道"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "抗皱紧致",
+      "核心成分"
+    ],
+    "pairingTags": [
+      "精华液",
+      "面膜"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "高端抗老护肤礼盒，适合送给关心肌肤保养的父母，体现孝心与品质。",
+    "_updatedAt": "2026-06-03T04:30:02.613Z"
+  },
+  {
+    "_status": "approved",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "hair-care-kit",
+    "name": "头发护理套装",
+    "category": "beauty_personal_care",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "daily",
+      "festival"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "beauty_lover",
+      "homebody"
+    ],
+    "gender": [
+      "female"
+    ],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "发质匹配",
+      "香味偏好"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "沙龙级",
+      "修护滋养"
+    ],
+    "pairingTags": [
+      "发膜",
+      "气垫梳"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "高端头发护理套装，在家享受沙龙级护理，适合送给注重发质的她。",
+    "_updatedAt": "2026-06-03T04:30:00.338Z"
+  },
+  {
+    "_status": "approved",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "brand-sampler-set",
+    "name": "品牌综合试香盒",
+    "category": "fragrance",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget": [
+      "under_200",
+      "200_500"
+    ],
+    "recipientStyle": [
+      "experiential"
+    ],
+    "toneFit": [
+      "surprise",
+      "playful"
+    ],
+    "personaTags": [
+      "beauty_lover",
+      "creative"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "气味偏好",
+      "晕香可能"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "入门试香",
+      "多风格"
+    ],
+    "pairingTags": [
+      "试香纸条",
+      "香水指南"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "一次体验多种香型，找到本命香，适合喜欢探索的收礼人。",
+    "_updatedAt": "2026-06-03T04:30:09.545Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "travel-size-perfume-set",
+    "name": "便携旅行香氛套装",
+    "category": "fragrance",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "office_pro",
+      "night_owl"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "容量较小",
+      "气味偏好"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "便携",
+      "多场合"
+    ],
+    "pairingTags": [
+      "分装瓶",
+      "随身包"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "方便随身携带补香，实用又精致，适合忙碌的都市人。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "reed-diffuser-set",
+    "name": "艺术造型无火香薰",
+    "category": "fragrance",
+    "target": [
+      "parents",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "festival"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "romantic"
+    ],
+    "personaTags": [
+      "homebody",
+      "creative"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "香味浓度",
+      "藤条装饰"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "扩香持久",
+      "家居装饰"
+    ],
+    "pairingTags": [
+      "香薰液补充",
+      "扩香配件"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "既是香氛也是装饰，无声提升居家格调，适合爱生活的亲友。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "scented-candle-gift-box",
+    "name": "高级香薰蜡烛礼盒",
+    "category": "fragrance",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "experiential",
+      "aesthetic"
+    ],
+    "toneFit": [
+      "romantic",
+      "surprise"
+    ],
+    "personaTags": [
+      "homebody",
+      "night_owl"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "蜡材质",
+      "燃烧时间"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "仪式感",
+      "多香型"
+    ],
+    "pairingTags": [
+      "火柴",
+      "烛台"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "点燃蜡烛营造浪漫氛围，适合纪念日或需要温暖表达的时刻。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "car-fragrance-clip",
+    "name": "车载香薰出风口夹",
+    "category": "fragrance",
+    "target": [
+      "parents",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget": [
+      "under_200"
+    ],
+    "recipientStyle": [
+      "practical"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "office_pro",
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "夹子适配",
+      "耐高温"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "清新车内",
+      "简洁设计"
+    ],
+    "pairingTags": [
+      "香薰片替换",
+      "通风口夹"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "让爱车时刻有好气味，实用小物体现贴心关怀。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "fabric-freshner-spray",
+    "name": "衣物香氛喷雾套装",
+    "category": "fragrance",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "experiential",
+      "aesthetic"
+    ],
+    "toneFit": [
+      "playful",
+      "surprise"
+    ],
+    "personaTags": [
+      "beauty_lover",
+      "creative"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "味道持久",
+      "面料测试"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "留香织物",
+      "便携喷雾"
+    ],
+    "pairingTags": [
+      "衣架",
+      "香薰卡"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "出门前喷一喷，自带高级体香，适合追求精致细节的人。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "commuter-tote-bag",
+    "name": "通勤托特包",
+    "category": "bags_accessories",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "practical",
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "office_pro"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "风格偏好",
+      "材质手感"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "实用高频",
+      "质感百搭"
+    ],
+    "pairingTags": [
+      "丝巾",
+      "手账本"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "每日通勤必备，选对风格能陪伴很久，有郑重交付感。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "card-holder-mini-wallet",
+    "name": "卡包迷你钱包",
+    "category": "bags_accessories",
+    "target": [
+      "partner",
+      "bestie",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "festival"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical",
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "office_pro"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "颜色喜好"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "轻巧便携",
+      "体面实用"
+    ],
+    "pairingTags": [
+      "钥匙扣",
+      "手写祝福卡"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "把日常零碎收纳好，小巧又体面，适合想表达细心关心。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "silver-necklace",
+    "name": "纯银锁骨链",
+    "category": "bags_accessories",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary",
+      "daily"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "quality"
+    ],
+    "toneFit": [
+      "romantic",
+      "memory"
+    ],
+    "personaTags": [
+      "beauty_lover",
+      "creative"
+    ],
+    "gender": [
+      "female"
+    ],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "链长调节",
+      "过敏体质"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "简约百搭",
+      "不易过时"
+    ],
+    "pairingTags": [
+      "耳钉",
+      "手写卡片"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "日常好搭配又显心意，银饰自带温柔光泽，是低调的浪漫。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "silver-bracelet",
+    "name": "银饰手链",
+    "category": "bags_accessories",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "experiential"
+    ],
+    "toneFit": [
+      "playful",
+      "memory"
+    ],
+    "personaTags": [
+      "beauty_lover",
+      "student"
+    ],
+    "gender": [
+      "female"
+    ],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "手腕尺寸",
+      "风格偏好"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "叠戴好看",
+      "有纪念感"
+    ],
+    "pairingTags": [
+      "锁骨链",
+      "香薰蜡烛"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "腕间小惊喜，可以叠戴或单独佩戴，适合制造日常仪式感。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "silk-hair-accessories-set",
+    "name": "真丝发饰套装",
+    "category": "bags_accessories",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "under_200",
+      "200_500"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "playful"
+    ],
+    "personaTags": [
+      "beauty_lover",
+      "creative"
+    ],
+    "gender": [
+      "female"
+    ],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "发质粗细",
+      "颜色偏好"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "护发不伤",
+      "精致小巧"
+    ],
+    "pairingTags": [
+      "护发精油",
+      "礼物袋"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "真丝质感温柔不伤发，每天使用都能想起你，细腻又体贴。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "passport-holder-document-wallet",
+    "name": "证件护照夹",
+    "category": "bags_accessories",
+    "target": [
+      "partner",
+      "parents",
+      "bestie"
+    ],
+    "scene": [
+      "festival",
+      "daily"
+    ],
+    "budget": [
+      "under_200",
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical",
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "office_pro",
+      "outdoorsy"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "内层结构",
+      "尺寸适配"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "出差利器",
+      "分类收纳"
+    ],
+    "pairingTags": [
+      "行李牌",
+      "手写旅行清单"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "把重要证件整齐收纳，出行更从容，是实用又贴心的陪伴。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "wireless-noise-cancelling-headphones",
+    "name": "无线降噪耳机",
+    "category": "digital_accessories",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "500_1000",
+      "1000_2000"
+    ],
+    "recipientStyle": [
+      "practical",
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "tech_geek",
+      "office_pro",
+      "night_owl"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "需确认舒适度",
+      "注意蓝牙版本"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "降噪",
+      "无线",
+      "长续航"
+    ],
+    "pairingTags": [
+      "耳机收纳盒",
+      "清洁布"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "隔绝嘈杂，送TA一份安静的陪伴，适合通勤或专注时使用。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "desktop-charging-station",
+    "name": "桌面充电站",
+    "category": "digital_accessories",
+    "target": [
+      "partner",
+      "bestie",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "practical"
+    ],
+    "toneFit": [
+      "warm",
+      "playful"
+    ],
+    "personaTags": [
+      "tech_geek",
+      "office_pro",
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "注意插口类型"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "收纳",
+      "快充",
+      "多口"
+    ],
+    "pairingTags": [
+      "充电线套装",
+      "理线器"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "告别桌面线缆混乱，实用又整洁的礼物，提升工作效率和心情。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "portable-power-bank",
+    "name": "移动电源套装",
+    "category": "digital_accessories",
+    "target": [
+      "partner",
+      "bestie",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "daily",
+      "festival"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "practical"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "office_pro",
+      "outdoorsy",
+      "student"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "注意手机快充协议"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "大容量",
+      "便携",
+      "快充"
+    ],
+    "pairingTags": [
+      "数据线",
+      "收纳包"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "出门在外的安全感，随时充电不断联，贴心又实用。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "selfie-ring-light",
+    "name": "自拍补光灯",
+    "category": "digital_accessories",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "under_200",
+      "200_500"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "experiential"
+    ],
+    "toneFit": [
+      "playful",
+      "surprise"
+    ],
+    "personaTags": [
+      "creative",
+      "beauty_lover",
+      "student"
+    ],
+    "gender": [
+      "female"
+    ],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [],
+    "requiresKnownPreference": false,
+    "tags": [
+      "补光",
+      "可调色温",
+      "手机支架"
+    ],
+    "pairingTags": [
+      "蓝牙遥控器",
+      "美妆镜"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "让自拍/视频更美，适合爱记录生活或直播的TA，氛围感神器。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "tablet-stand-multifunctional",
+    "name": "平板支架",
+    "category": "digital_accessories",
+    "target": [
+      "partner",
+      "bestie",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "practical",
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "office_pro",
+      "homebody",
+      "student"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "确认支架尺寸兼容"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "多角度",
+      "稳固",
+      "便携"
+    ],
+    "pairingTags": [
+      "蓝牙键盘",
+      "鼠标垫"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "解放双手，看剧办公都舒适，保护颈椎，实用又贴心。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "mechanical-keyboard-premade",
+    "name": "机械键盘成品",
+    "category": "digital_accessories",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "festival"
+    ],
+    "budget": [
+      "500_1000",
+      "1000_2000"
+    ],
+    "recipientStyle": [
+      "quality",
+      "practical"
+    ],
+    "toneFit": [
+      "romantic",
+      "warm"
+    ],
+    "personaTags": [
+      "tech_geek",
+      "office_pro"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "需确认轴体偏好",
+      "注意是否有线/无线"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "机械轴",
+      "背光",
+      "铝合金"
+    ],
+    "pairingTags": [
+      "手托",
+      "键帽"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "每天打字都能想起你，手感好颜值高，适合重度键盘用户。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "wooden-desk-organizer",
+    "name": "桌面木质收纳盒",
+    "category": "desk_office",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "under_200"
+    ],
+    "recipientStyle": [
+      "practical",
+      "aesthetic"
+    ],
+    "toneFit": [
+      "warm"
+    ],
+    "personaTags": [
+      "homebody",
+      "office_pro"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [],
+    "requiresKnownPreference": false,
+    "tags": [
+      "实用",
+      "质感",
+      "收纳"
+    ],
+    "pairingTags": [
+      "桌面小物",
+      "干花"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "把散乱文具收进温润木盒，让桌面整洁又有仪式感。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "led-eye-care-desk-lamp",
+    "name": "简约护眼台灯",
+    "category": "desk_office",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "daily",
+      "festival"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical",
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "homebody",
+      "office_pro",
+      "student"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "注意光照范围"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "护眼",
+      "长寿命",
+      "简约"
+    ],
+    "pairingTags": [
+      "眼药水",
+      "绿植"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "一盏好灯守护双眼，适合常伏案工作学习的他/她。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "monitor-riser-with-storage",
+    "name": "显示器增高架",
+    "category": "desk_office",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "under_200",
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical"
+    ],
+    "toneFit": [
+      "surprise"
+    ],
+    "personaTags": [
+      "tech_geek",
+      "office_pro"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "确认显示器尺寸"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "人体工学",
+      "收纳",
+      "稳定"
+    ],
+    "pairingTags": [
+      "桌面收纳",
+      "理线"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "抬高视线、释放桌面空间，实用又贴心的办公升级。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "cable-management-kit",
+    "name": "桌面理线器套装",
+    "category": "desk_office",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "under_200"
+    ],
+    "recipientStyle": [
+      "practical"
+    ],
+    "toneFit": [
+      "playful",
+      "warm"
+    ],
+    "personaTags": [
+      "tech_geek",
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [],
+    "requiresKnownPreference": false,
+    "tags": [
+      "整洁",
+      "易粘贴",
+      "多规格"
+    ],
+    "pairingTags": [
+      "显示器架",
+      "桌垫"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "告别线缆杂乱，让桌面清爽有序，适合爱整理的人。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "creative-desk-clock",
+    "name": "创意桌面闹钟",
+    "category": "desk_office",
+    "target": [
+      "partner",
+      "bestie",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "under_200",
+      "200_500"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "practical"
+    ],
+    "toneFit": [
+      "surprise",
+      "playful"
+    ],
+    "personaTags": [
+      "creative",
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "注意噪音偏好"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "设计感",
+      "静音",
+      "夜灯"
+    ],
+    "pairingTags": [
+      "台灯",
+      "日历"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "既是时钟也是桌面装饰，让看时间变成一件有趣的事。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "brass-desk-organizer-set",
+    "name": "黄铜桌面收纳套装",
+    "category": "desk_office",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "quality"
+    ],
+    "toneFit": [
+      "romantic",
+      "memory"
+    ],
+    "personaTags": [
+      "creative",
+      "office_pro"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [],
+    "requiresKnownPreference": false,
+    "tags": [
+      "黄铜",
+      "简约",
+      "精致"
+    ],
+    "pairingTags": [
+      "钢笔",
+      "名片夹"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "黄铜质感随时间沉淀，适合送给注重细节与品质的人。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "premium-coffee-bean-subscription",
+    "name": "精品咖啡豆订阅盒",
+    "category": "coffee_tea",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "experiential",
+      "quality"
+    ],
+    "toneFit": [
+      "surprise",
+      "warm"
+    ],
+    "personaTags": [
+      "coffee_tea",
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "看口味偏好",
+      "建议先了解喜好"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "按月配送",
+      "新鲜烘焙"
+    ],
+    "pairingTags": [
+      "手写卡片",
+      "咖啡豆"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "持续投喂惊喜，让每个月份都值得期待",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "cold-brew-coffee-set",
+    "name": "冷萃咖啡壶套装",
+    "category": "coffee_tea",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical",
+      "experiential"
+    ],
+    "toneFit": [
+      "warm"
+    ],
+    "personaTags": [
+      "coffee_tea",
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "看口味"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "夏日必备",
+      "简单操作"
+    ],
+    "pairingTags": [
+      "咖啡豆",
+      "冰块模具"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "一杯清凉冷萃，把宅家时光变成精品咖啡馆体验",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "french-press-gift-set",
+    "name": "法压壶礼盒",
+    "category": "coffee_tea",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "festival"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical",
+      "quality"
+    ],
+    "toneFit": [
+      "warm"
+    ],
+    "personaTags": [
+      "coffee_tea",
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "看使用习惯"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "经典器具",
+      "浓郁口感"
+    ],
+    "pairingTags": [
+      "咖啡豆",
+      "滤纸"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "经典法压，还原咖啡本味，适合喜欢醇厚口感的咖啡控",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "drip-bag-coffee-gift-box",
+    "name": "挂耳咖啡礼盒装",
+    "category": "coffee_tea",
+    "target": [
+      "bestie",
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget": [
+      "under_200",
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical",
+      "aesthetic"
+    ],
+    "toneFit": [
+      "warm"
+    ],
+    "personaTags": [
+      "coffee_tea",
+      "office_pro",
+      "student"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "看口味"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "方便快捷",
+      "混合风味"
+    ],
+    "pairingTags": [
+      "马克杯",
+      "手写卡片"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "随手一冲就是好咖啡，适合忙碌中也能享受片刻的人",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "portable-insulated-coffee-mug",
+    "name": "便携保温咖啡杯",
+    "category": "coffee_tea",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "daily",
+      "birthday"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical",
+      "aesthetic"
+    ],
+    "toneFit": [
+      "warm"
+    ],
+    "personaTags": [
+      "coffee_tea",
+      "office_pro",
+      "outdoorsy"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "看容量偏好"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "保温持久",
+      "随身携带"
+    ],
+    "pairingTags": [
+      "咖啡豆",
+      "杯刷"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "让每一口咖啡都保持温热，陪伴通勤和户外时光",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "travel-tea-set",
+    "name": "旅行茶具套装",
+    "category": "coffee_tea",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "experiential"
+    ],
+    "toneFit": [
+      "warm"
+    ],
+    "personaTags": [
+      "coffee_tea",
+      "homebody",
+      "outdoorsy"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "看茶叶偏好"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "精致便携",
+      "功夫茶道"
+    ],
+    "pairingTags": [
+      "茶叶",
+      "茶巾"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "随时泡一壶好茶，于奔波中寻得片刻安宁",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "ice-cream-cake-gift-box",
+    "name": "手工冰淇淋蛋糕礼盒",
+    "category": "food_dessert",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "experiential"
+    ],
+    "toneFit": [
+      "romantic",
+      "surprise"
+    ],
+    "personaTags": [
+      "foodie"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "需冷链配送",
+      "收到需冷冻"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "网红甜品",
+      "仪式感"
+    ],
+    "pairingTags": [
+      "生日蜡烛",
+      "卡片"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "冰淇淋蛋糕是生日或纪念日的甜蜜惊喜，适合共享甜蜜时刻。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "macaron-gift-box",
+    "name": "精致马卡龙礼盒",
+    "category": "food_dessert",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "aesthetic"
+    ],
+    "toneFit": [
+      "romantic",
+      "playful"
+    ],
+    "personaTags": [
+      "foodie",
+      "beauty_lover"
+    ],
+    "gender": [
+      "female"
+    ],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "保质期短"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "法式甜品",
+      "高颜值"
+    ],
+    "pairingTags": [
+      "花茶",
+      "香薰"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "色彩缤纷的马卡龙是颜值与美味兼备的礼物，传递甜蜜与浪漫。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "dark-chocolate-health-gift",
+    "name": "养生黑巧礼盒",
+    "category": "food_dessert",
+    "target": [
+      "parents",
+      "partner"
+    ],
+    "scene": [
+      "daily",
+      "festival"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "quality",
+      "practical"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "foodie"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "高可可含量可能偏苦"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "健康零食",
+      "抗氧化"
+    ],
+    "pairingTags": [
+      "坚果",
+      "茶叶"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "高可可黑巧既满足巧克力瘾又兼顾健康，适合关心对方身体的人。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "traditional-chinese-pastry-gift",
+    "name": "中式传统点心礼盒",
+    "category": "food_dessert",
+    "target": [
+      "parents",
+      "partner"
+    ],
+    "scene": [
+      "festival",
+      "daily"
+    ],
+    "budget": [
+      "under_200",
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical",
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "homebody",
+      "bookish"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "注意保质期",
+      "可能含坚果"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "传统风味",
+      "精美包装"
+    ],
+    "pairingTags": [
+      "茶叶",
+      "鲜花"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "经典中式点心礼盒，传递传统味道与团圆心意，适合节日或探望长辈。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "trendy-cookie-gift-box",
+    "name": "网红曲奇饼干礼盒",
+    "category": "food_dessert",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "daily",
+      "birthday"
+    ],
+    "budget": [
+      "under_200",
+      "200_500"
+    ],
+    "recipientStyle": [
+      "aesthetic"
+    ],
+    "toneFit": [
+      "playful",
+      "warm"
+    ],
+    "personaTags": [
+      "foodie",
+      "student"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "可能含乳制品"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "酥脆口感",
+      "铁盒包装"
+    ],
+    "pairingTags": [
+      "牛奶",
+      "咖啡"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "多种口味的曲奇，装在精美铁盒里，是日常小确幸的礼物。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "nougat-candy-gift-box",
+    "name": "手工牛轧糖雪花酥礼盒",
+    "category": "food_dessert",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "festival"
+    ],
+    "budget": [
+      "under_200",
+      "200_500"
+    ],
+    "recipientStyle": [
+      "experiential"
+    ],
+    "toneFit": [
+      "warm",
+      "memory"
+    ],
+    "personaTags": [
+      "foodie",
+      "student"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "可能含花生等坚果"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "怀旧味道",
+      "手工制作"
+    ],
+    "pairingTags": [
+      "水果茶",
+      "卡片"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "手工牛轧糖或雪花酥，带着记忆中的甜味，适合送给喜欢零食的朋友。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "capsule-coffee-machine-gift-set",
+    "name": "胶囊咖啡机礼盒",
+    "category": "home_appliance",
+    "target": [
+      "partner",
+      "bestie",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "daily",
+      "festival"
+    ],
+    "budget": [
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "quality",
+      "experiential"
+    ],
+    "toneFit": [
+      "warm",
+      "surprise"
+    ],
+    "personaTags": [
+      "coffee_tea",
+      "homebody",
+      "office_pro"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "需确认胶囊系统"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "有格调",
+      "省心快捷"
+    ],
+    "pairingTags": [
+      "精品咖啡豆",
+      "定制杯"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "一键现磨咖啡，提升日常幸福感，送咖啡爱好者完美礼物。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "sandwich-breakfast-maker",
+    "name": "三明治早餐机",
+    "category": "home_appliance",
+    "target": [
+      "partner",
+      "bestie",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "daily",
+      "festival"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical",
+      "experiential"
+    ],
+    "toneFit": [
+      "warm",
+      "playful"
+    ],
+    "personaTags": [
+      "foodie",
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "注意尺寸"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "颜值高",
+      "轻松做早餐"
+    ],
+    "pairingTags": [
+      "吐司面包",
+      "果酱"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "亲手做一份热腾腾早餐，让每天的早安更有仪式感。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "quiet-desktop-humidifier",
+    "name": "静音桌面加湿器",
+    "category": "home_appliance",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "daily",
+      "festival",
+      "birthday"
+    ],
+    "budget": [
+      "under_200"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "practical"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "office_pro",
+      "homebody",
+      "night_owl"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "注意水箱清洁"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "静音",
+      "氛围感"
+    ],
+    "pairingTags": [
+      "精油",
+      "氛围灯"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "水雾轻柔，缓解干燥空气，给工作或睡眠添一份舒适。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "mini-home-projector",
+    "name": "家用小型投影仪",
+    "category": "home_appliance",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary",
+      "festival"
+    ],
+    "budget": [
+      "1000_2000"
+    ],
+    "recipientStyle": [
+      "experiential",
+      "quality"
+    ],
+    "toneFit": [
+      "romantic",
+      "surprise",
+      "memory"
+    ],
+    "personaTags": [
+      "homebody",
+      "tech_geek",
+      "fandom_gamer"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "需暗光环境",
+      "注意分辨率"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "家庭影院",
+      "浪漫影院"
+    ],
+    "pairingTags": [
+      "投影幕布",
+      "蓝牙音箱"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "把房间变成私人影院，共享浪漫电影之夜，惊喜感满满。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "ultrasonic-aroma-diffuser",
+    "name": "超声波香薰机",
+    "category": "home_appliance",
+    "target": [
+      "bestie",
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "daily",
+      "festival"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "experiential"
+    ],
+    "toneFit": [
+      "warm",
+      "romantic"
+    ],
+    "personaTags": [
+      "homebody",
+      "bookish",
+      "beauty_lover"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "注意精油品质"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "舒缓放松",
+      "氛围灯"
+    ],
+    "pairingTags": [
+      "香薰精油",
+      "火柴"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "水汽载香，舒缓身心，精致礼物点亮生活角落。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "portable-garment-steamer",
+    "name": "手持挂烫机",
+    "category": "home_appliance",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "daily",
+      "birthday",
+      "festival"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical",
+      "quality"
+    ],
+    "toneFit": [
+      "sincere",
+      "warm"
+    ],
+    "personaTags": [
+      "office_pro",
+      "beauty_lover"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "注意水箱容量"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "快速除皱",
+      "轻便易用"
+    ],
+    "pairingTags": [
+      "衣物收纳箱",
+      "防尘袋"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "让衣物时刻平整精致，适合注重细节的优雅人士。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "senior-protein-powder-gift-box",
+    "name": "中老年高钙蛋白粉礼盒",
+    "category": "nutrition_wellness",
+    "target": [
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical",
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "homebody",
+      "foodie"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "按说明食用",
+      "看过敏原"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "补充营养",
+      "骨骼健康"
+    ],
+    "pairingTags": [
+      "牛奶",
+      "蜂蜜"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "为父母补充优质蛋白与钙质，是对他们日常健康的贴心关怀。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "calcium-vitamin-d-tablet-gift-box",
+    "name": "高钙维生素D片礼盒",
+    "category": "nutrition_wellness",
+    "target": [
+      "parents"
+    ],
+    "scene": [
+      "festival",
+      "daily"
+    ],
+    "budget": [
+      "under_200",
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical"
+    ],
+    "toneFit": [
+      "warm"
+    ],
+    "personaTags": [
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "看适宜人群"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "骨骼保健",
+      "方便服用"
+    ],
+    "pairingTags": [
+      "鱼油",
+      "多种维生素"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "简单易坚持的日常补充，帮助父母维持骨骼强健。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "ready-to-eat-fish-maw-gift-box",
+    "name": "即食花胶礼盒",
+    "category": "nutrition_wellness",
+    "target": [
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "festival"
+    ],
+    "budget": [
+      "500_1000",
+      "200_500"
+    ],
+    "recipientStyle": [
+      "quality",
+      "aesthetic"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "foodie",
+      "beauty_lover"
+    ],
+    "gender": [
+      "female"
+    ],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "看贮存条件"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "滋补养颜",
+      "即食方便"
+    ],
+    "pairingTags": [
+      "红枣",
+      "枸杞"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "开盖即食的滋补佳品，让父母轻松享受传统食养。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "ready-to-eat-bird-nest-gift-box",
+    "name": "即食冰糖燕窝礼盒",
+    "category": "nutrition_wellness",
+    "target": [
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "festival"
+    ],
+    "budget": [
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "foodie",
+      "beauty_lover"
+    ],
+    "gender": [
+      "female"
+    ],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "看适宜人群"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "传统滋补",
+      "精致礼盒"
+    ],
+    "pairingTags": [
+      "蜂蜜",
+      "牛奶"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "一份经典的滋补好礼，传递对父母健康美丽的祝福。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "lutein-ester-gummy-gift-box",
+    "name": "叶黄素酯软糖礼盒",
+    "category": "nutrition_wellness",
+    "target": [
+      "parents"
+    ],
+    "scene": [
+      "daily",
+      "festival"
+    ],
+    "budget": [
+      "200_500",
+      "under_200"
+    ],
+    "recipientStyle": [
+      "practical"
+    ],
+    "toneFit": [
+      "warm",
+      "playful"
+    ],
+    "personaTags": [
+      "homebody",
+      "foodie"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "看成分",
+      "适量食用"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "护眼",
+      "软糖形态"
+    ],
+    "pairingTags": [
+      "蓝莓干",
+      "护眼贴"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "像零食一样好吃的护眼软糖，让父母在甜蜜中爱护眼睛。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "pangdahai-luohanguo-throat-tea-gift-box",
+    "name": "胖大海罗汉果护嗓茶礼盒",
+    "category": "nutrition_wellness",
+    "target": [
+      "parents"
+    ],
+    "scene": [
+      "daily",
+      "festival"
+    ],
+    "budget": [
+      "under_200",
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "coffee_tea",
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "看体质",
+      "孕妇慎用"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "润喉",
+      "草本茶"
+    ],
+    "pairingTags": [
+      "蜂蜜",
+      "金嗓子"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "温和的草本护嗓茶饮，适合讲课后或平时润喉的父母。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "travel-storage-bag-set",
+    "name": "旅行收纳袋套装",
+    "category": "travel_commute",
+    "target": [
+      "bestie",
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget": [
+      "under_200"
+    ],
+    "recipientStyle": [
+      "practical",
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "outdoorsy",
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "注意尺寸"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "实用",
+      "分类收纳"
+    ],
+    "pairingTags": [
+      "行李牌",
+      "洗漱包"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "让旅行装箱井井有条，一份贴心实用的礼物。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "silk-sleep-mask",
+    "name": "真丝遮光眼罩",
+    "category": "travel_commute",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "under_200"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "experiential"
+    ],
+    "toneFit": [
+      "warm",
+      "playful"
+    ],
+    "personaTags": [
+      "night_owl",
+      "outdoorsy"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [],
+    "requiresKnownPreference": false,
+    "tags": [
+      "助眠",
+      "质感"
+    ],
+    "pairingTags": [
+      "助眠喷雾",
+      "眼罩袋"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "高颜值助眠神器，出差旅行或午休都能用。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "foldable-backpack",
+    "name": "折叠轻便双肩包",
+    "category": "travel_commute",
+    "target": [
+      "partner",
+      "bestie",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "daily",
+      "festival"
+    ],
+    "budget": [
+      "under_200"
+    ],
+    "recipientStyle": [
+      "practical"
+    ],
+    "toneFit": [
+      "sincere",
+      "warm"
+    ],
+    "personaTags": [
+      "office_pro",
+      "outdoorsy",
+      "student"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "看容量需求"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "便携",
+      "可折叠"
+    ],
+    "pairingTags": [
+      "收纳袋",
+      "钥匙扣"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "日常通勤或短途游玩都能用，轻便又实用。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "multi-function-passport-wallet",
+    "name": "旅行护照证件包",
+    "category": "travel_commute",
+    "target": [
+      "partner",
+      "parents",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget": [
+      "under_200"
+    ],
+    "recipientStyle": [
+      "practical",
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "outdoorsy"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [],
+    "requiresKnownPreference": false,
+    "tags": [
+      "防盗",
+      "多卡位"
+    ],
+    "pairingTags": [
+      "行李牌",
+      "护照夹"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "安全收纳护照和卡片，送给常旅行的人很合适。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "portable-toiletry-cup-set",
+    "name": "便携旅行洗漱杯套装",
+    "category": "travel_commute",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "under_200"
+    ],
+    "recipientStyle": [
+      "practical",
+      "aesthetic"
+    ],
+    "toneFit": [
+      "playful",
+      "warm"
+    ],
+    "personaTags": [
+      "outdoorsy",
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [],
+    "requiresKnownPreference": false,
+    "tags": [
+      "便携",
+      "收纳"
+    ],
+    "pairingTags": [
+      "分装瓶",
+      "毛巾"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "小巧不占地，提升出差幸福感。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "memory-foam-travel-pillow",
+    "name": "记忆棉U型颈枕",
+    "category": "travel_commute",
+    "target": [
+      "partner",
+      "bestie",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "daily",
+      "festival"
+    ],
+    "budget": [
+      "under_200"
+    ],
+    "recipientStyle": [
+      "quality",
+      "practical"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "office_pro",
+      "outdoorsy"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "注意材质偏好"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "舒适",
+      "支撑好"
+    ],
+    "pairingTags": [
+      "眼罩",
+      "收纳袋"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "飞机高铁必备，让旅途更放松。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "fitness-gloves-set",
+    "name": "健身防滑手套礼盒",
+    "category": "sports_outdoor",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "under_200"
+    ],
+    "recipientStyle": [
+      "practical"
+    ],
+    "toneFit": [
+      "warm"
+    ],
+    "personaTags": [
+      "fitness"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "尺码需确认"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "防滑",
+      "透气"
+    ],
+    "pairingTags": [
+      "护腕",
+      "运动毛巾"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "健身房实用配件，让每次训练更舒适，贴心又实用。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "foldable-outdoor-bucket",
+    "name": "户外折叠储水桶",
+    "category": "sports_outdoor",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "festival",
+      "daily"
+    ],
+    "budget": [
+      "under_200"
+    ],
+    "recipientStyle": [
+      "practical"
+    ],
+    "toneFit": [
+      "sincere"
+    ],
+    "personaTags": [
+      "outdoorsy"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "检查容量"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "便携",
+      "户外必备"
+    ],
+    "pairingTags": [
+      "露营灯",
+      "野餐垫"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "露营或野餐时轻松储水，小而美的实用礼物。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "sweatband-set",
+    "name": "运动吸汗发带套装",
+    "category": "sports_outdoor",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "under_200"
+    ],
+    "recipientStyle": [
+      "aesthetic"
+    ],
+    "toneFit": [
+      "playful"
+    ],
+    "personaTags": [
+      "fitness",
+      "outdoorsy"
+    ],
+    "gender": [
+      "female",
+      "male"
+    ],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "看头围"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "吸汗",
+      "多色可选"
+    ],
+    "pairingTags": [
+      "运动毛巾",
+      "水壶"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "跑步或健身时保持清爽，时尚又实用的运动配饰。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "yoga-strap-set",
+    "name": "瑜伽伸展带套装",
+    "category": "sports_outdoor",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "under_200"
+    ],
+    "recipientStyle": [
+      "practical",
+      "quality"
+    ],
+    "toneFit": [
+      "warm"
+    ],
+    "personaTags": [
+      "fitness",
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "看材质"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "拉伸辅助",
+      "初学友好"
+    ],
+    "pairingTags": [
+      "瑜伽垫",
+      "瑜伽砖"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "帮助提升柔韧性，让瑜伽练习更深入专业。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "sports-knee-pads",
+    "name": "运动护膝礼盒",
+    "category": "sports_outdoor",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "fitness",
+      "outdoorsy"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "需确认运动习惯",
+      "尺码"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "关节保护",
+      "透气"
+    ],
+    "pairingTags": [
+      "运动鞋",
+      "压力袜"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "跑步或球类运动的好搭档，贴心呵护膝盖健康。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "hiking-pole",
+    "name": "轻便登山杖",
+    "category": "sports_outdoor",
+    "target": [
+      "partner",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "festival"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical",
+      "quality"
+    ],
+    "toneFit": [
+      "sincere"
+    ],
+    "personaTags": [
+      "outdoorsy"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "看身高和握柄"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "减震",
+      "可折叠"
+    ],
+    "pairingTags": [
+      "登山包",
+      "登山鞋"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "徒步登山省力又安全，送给热爱自然的伙伴。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "album-storage-book",
+    "name": "专辑收纳册",
+    "category": "fandom_ip",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget": [
+      "under_200",
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical",
+      "aesthetic"
+    ],
+    "toneFit": [
+      "warm",
+      "surprise"
+    ],
+    "personaTags": [
+      "fandom_gamer",
+      "bookish"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "可能已有同类"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "保护专辑",
+      "分类清晰"
+    ],
+    "pairingTags": [
+      "小卡册",
+      "手写标签"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "让专辑收纳整齐又有仪式感，追星必备实用好物。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "ticket-stub-collection-book",
+    "name": "票根收藏册",
+    "category": "fandom_ip",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary",
+      "daily"
+    ],
+    "budget": [
+      "under_200"
+    ],
+    "recipientStyle": [
+      "experiential",
+      "aesthetic"
+    ],
+    "toneFit": [
+      "memory",
+      "warm"
+    ],
+    "personaTags": [
+      "fandom_gamer",
+      "creative"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [],
+    "requiresKnownPreference": false,
+    "tags": [
+      "纪念意义",
+      "防氧化"
+    ],
+    "pairingTags": [
+      "照片角贴",
+      "签字笔"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "把每次演出的票根变成可翻阅的回忆，适合珍藏美好瞬间。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "photocard-storage-kit",
+    "name": "小卡收纳套装",
+    "category": "fandom_ip",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "quality",
+      "aesthetic"
+    ],
+    "toneFit": [
+      "surprise",
+      "sincere"
+    ],
+    "personaTags": [
+      "fandom_gamer",
+      "beauty_lover"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "可能已集齐"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "卡砖防刮",
+      "多层分类"
+    ],
+    "pairingTags": [
+      "卡膜",
+      "镭射票"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "专业级小卡收纳方案，保护每张珍贵卡片，提升收藏体验。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "merch-display-stand",
+    "name": "周边展示架",
+    "category": "fandom_ip",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "experiential"
+    ],
+    "toneFit": [
+      "surprise",
+      "playful"
+    ],
+    "personaTags": [
+      "fandom_gamer",
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "注意尺寸适配"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "亚克力材质",
+      "多层可调"
+    ],
+    "pairingTags": [
+      "手办",
+      "徽章"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "把心爱周边变成桌面艺术品，展示热爱又整洁美观。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "light-stick-storage-case",
+    "name": "应援灯收纳",
+    "category": "fandom_ip",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "festival"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical",
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "fandom_gamer",
+      "night_owl"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "确认灯尺寸"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "防尘防撞",
+      "可手提"
+    ],
+    "pairingTags": [
+      "电池",
+      "挂绳"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "专用收纳盒保护应援灯，方便携带赴约每场演出。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "poster-storage-tube",
+    "name": "海报收纳筒",
+    "category": "fandom_ip",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "daily"
+    ],
+    "budget": [
+      "under_200"
+    ],
+    "recipientStyle": [
+      "practical",
+      "aesthetic"
+    ],
+    "toneFit": [
+      "warm",
+      "surprise"
+    ],
+    "personaTags": [
+      "fandom_gamer",
+      "bookish"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "注意海报长度"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "可伸缩",
+      "防卷边"
+    ],
+    "pairingTags": [
+      "海报夹",
+      "挂轴"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "让珍贵海报平整如新，存放或携带都方便。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "vinyl-record-player-starter-set",
+    "name": "入门黑胶唱片机套装",
+    "category": "books_music_video",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary",
+      "daily"
+    ],
+    "budget": [
+      "500_1000",
+      "1000_2000"
+    ],
+    "recipientStyle": [
+      "experiential",
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "surprise"
+    ],
+    "personaTags": [
+      "creative",
+      "homebody",
+      "bookish"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "需确认已有设备",
+      "唱片来源"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "复古仪式感",
+      "音质体验"
+    ],
+    "pairingTags": [
+      "黑胶唱片",
+      "唱片清洁套装"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "把数字音乐换成实体触碰，适合热爱仪式感和声音质感的文艺灵魂。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "retro-eye-care-reading-lamp",
+    "name": "复古护眼阅读灯",
+    "category": "books_music_video",
+    "target": [
+      "partner",
+      "parents",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "daily",
+      "festival"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "practical",
+      "aesthetic"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "bookish",
+      "night_owl",
+      "homebody",
+      "student"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "参数无特殊要求"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "护眼舒适",
+      "氛围感"
+    ],
+    "pairingTags": [
+      "阅读书架",
+      "书签礼盒"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "一盏好灯让阅读和深夜工作都拥有温柔陪伴，是实用又显心意的礼物。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "creative-metal-bookend-set",
+    "name": "创意金属书立摆件",
+    "category": "books_music_video",
+    "target": [
+      "bestie",
+      "partner"
+    ],
+    "scene": [
+      "birthday",
+      "daily",
+      "festival"
+    ],
+    "budget": [
+      "under_200",
+      "200_500"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "quality"
+    ],
+    "toneFit": [
+      "playful",
+      "surprise"
+    ],
+    "personaTags": [
+      "creative",
+      "bookish",
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "款式偏好"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "桌面装饰",
+      "收纳实用"
+    ],
+    "pairingTags": [
+      "同系列文具",
+      "手写卡片"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "既是书挡又是桌面艺术品，适合喜欢用细节装点生活的人。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "classic-movie-blu-ray-collection",
+    "name": "经典电影蓝光收藏盒",
+    "category": "books_music_video",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary",
+      "daily"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "quality",
+      "experiential"
+    ],
+    "toneFit": [
+      "memory",
+      "sincere"
+    ],
+    "personaTags": [
+      "fandom_gamer",
+      "creative",
+      "homebody"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "需确认播放设备",
+      "版本重复"
+    ],
+    "requiresKnownPreference": true,
+    "tags": [
+      "影迷珍藏",
+      "画质收藏"
+    ],
+    "pairingTags": [
+      "蓝光机",
+      "电影海报"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "把共同回忆或心头好封装成实体碟，适合送给资深影迷做珍藏。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "podcast-usb-microphone-kit",
+    "name": "播客USB麦克风套件",
+    "category": "books_music_video",
+    "target": [
+      "partner",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "daily",
+      "festival"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "practical",
+      "experiential"
+    ],
+    "toneFit": [
+      "surprise",
+      "playful"
+    ],
+    "personaTags": [
+      "creative",
+      "tech_geek",
+      "office_pro",
+      "student"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "兼容电脑系统"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "即插即用",
+      "录音入门"
+    ],
+    "pairingTags": [
+      "防喷罩",
+      "话筒支架"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "送想尝试播客或线上会议/创作的人，低门槛开启高质量录音体验。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "retro-wooden-bluetooth-speaker",
+    "name": "复古木质蓝牙音箱",
+    "category": "books_music_video",
+    "target": [
+      "partner",
+      "parents",
+      "bestie"
+    ],
+    "scene": [
+      "birthday",
+      "festival",
+      "daily"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "romantic"
+    ],
+    "personaTags": [
+      "homebody",
+      "bookish",
+      "coffee_tea",
+      "creative"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "low",
+    "riskTags": [
+      "音质口味"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "颜值音箱",
+      "居家氛围"
+    ],
+    "pairingTags": [
+      "黑胶唱片",
+      "绿植摆件"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "听播客或音乐都能成为角落里的温暖点缀，适合喜欢氛围感的家。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "pet-photo-custom-portrait",
+    "name": "宠物照片定制肖像画",
+    "category": "pet_lifestyle",
+    "target": [
+      "partner",
+      "bestie",
+      "parents"
+    ],
+    "scene": [
+      "birthday",
+      "anniversary",
+      "daily"
+    ],
+    "budget": [
+      "200_500",
+      "500_1000"
+    ],
+    "recipientStyle": [
+      "aesthetic",
+      "quality"
+    ],
+    "toneFit": [
+      "romantic",
+      "memory",
+      "warm"
+    ],
+    "personaTags": [
+      "pet_owner",
+      "homebody",
+      "creative"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "需提供清晰照片",
+      "画风需确认"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "有纪念意义",
+      "独一无二",
+      "可装饰"
+    ],
+    "pairingTags": [
+      "宠物照片",
+      "相框"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "将爱宠形象艺术化，是铲屎官无法拒绝的走心礼物。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  },
+  {
+    "_status": "pending",
+    "_source": "deepseek",
+    "_note": "",
+    "id": "wireless-pet-fountain",
+    "name": "无线宠物智能饮水机",
+    "category": "pet_lifestyle",
+    "target": [
+      "parents",
+      "bestie"
+    ],
+    "scene": [
+      "daily",
+      "festival"
+    ],
+    "budget": [
+      "200_500"
+    ],
+    "recipientStyle": [
+      "practical",
+      "quality"
+    ],
+    "toneFit": [
+      "warm",
+      "sincere"
+    ],
+    "personaTags": [
+      "pet_owner",
+      "homebody",
+      "fitness"
+    ],
+    "gender": [],
+    "commerceType": "ecommerce",
+    "riskLevel": "medium",
+    "riskTags": [
+      "需适应饮水机",
+      "看宠物接受度"
+    ],
+    "requiresKnownPreference": false,
+    "tags": [
+      "活水循环",
+      "静音",
+      "UV杀菌"
+    ],
+    "pairingTags": [
+      "宠物水碗",
+      "滤芯"
+    ],
+    "specificOccasions": [],
+    "seasons": [],
+    "recommendReason": "让宠物喝上流动活水，贴心实用又提升生活品质。",
+    "_updatedAt": "2026-06-02T18:04:49.589Z"
+  }
+]

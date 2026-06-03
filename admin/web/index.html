@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>送了么 · 离线管理后台</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>送了么 · 推荐品方向管理</h1>
+    <span class="badge" id="health">离线本地</span>
+    <div class="actions">
+      <button id="btn-import">导入种子</button>
+      <button id="btn-export" class="primary">导出运行时</button>
+    </div>
+  </header>
+
+  <section class="toolbar">
+    <input id="q" placeholder="按名称搜索…" />
+    <select id="f-status"><option value="">全部状态</option></select>
+    <select id="f-category"><option value="">全部品类</option></select>
+    <select id="f-target"><option value="">全部对象</option></select>
+    <select id="f-scene"><option value="">全部场景</option></select>
+    <button id="btn-new">+ 新建方向</button>
+    <span id="count" class="muted"></span>
+  </section>
+
+  <main>
+    <table id="list">
+      <thead>
+        <tr>
+          <th><input type="checkbox" id="check-all" /></th>
+          <th>名称</th><th>品类</th><th>对象</th><th>场景</th><th>预算</th><th>状态</th><th>来源</th><th></th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="batch-bar">
+      <span id="sel-count" class="muted">已选 0</span>
+      <button data-batch="approved">批量通过</button>
+      <button data-batch="rejected">批量拒绝</button>
+    </div>
+  </main>
+
+  <!-- 编辑抽屉 -->
+  <div id="drawer" class="drawer hidden">
+    <div class="drawer-inner">
+      <div class="drawer-head">
+        <h2 id="drawer-title">编辑方向</h2>
+        <button id="drawer-close">×</button>
+      </div>
+      <form id="form"></form>
+      <div id="form-errors" class="errors"></div>
+      <div class="drawer-foot">
+        <button id="btn-save" class="primary">保存（先校验）</button>
+        <button id="btn-approve">通过</button>
+        <button id="btn-reject">拒绝</button>
+        <button id="btn-delete" class="danger">删除</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 导出 diff 预览 -->
+  <div id="export-modal" class="drawer hidden">
+    <div class="drawer-inner">
+      <div class="drawer-head"><h2>导出预览（diff）</h2><button id="export-close">×</button></div>
+      <p id="export-summary" class="muted"></p>
+      <pre id="export-diff"></pre>
+      <div class="drawer-foot">
+        <button id="btn-export-confirm" class="primary">确认导出两份</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

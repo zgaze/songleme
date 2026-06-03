@@ -17,8 +17,15 @@ Design notes (why this is a rewrite, not a tweak):
       * loop-until-count with hard caps (max calls / consecutive empty batches)
       * semantic dedup (strip 套装/礼盒/款... before comparing)
       * cross-run dedup: load prior data/generated-gifts-*.{gifts.jsonl,json}
-      * incremental avoid-list: each call is told the MOST RECENT names (no [:160]
-        front-truncation that hid newly-generated names from the model)
+      * cells = category × budget tier: each cell has its own quota + its own
+        small tail avoid-list, so coverage drives stopping (not an absolute count)
+      * static cacheable prefix: principles / enums / field-rules / few-shot are
+        byte-identical on every call; the per-cell avoid-list lives at the very
+        END so DeepSeek's prefix cache keeps hitting (usage.prompt_cache_hit_tokens
+        is logged per call and summarized at the end)
+      * searchKeywords: the model emits real hot-item / classic / brand names as
+        downstream e-commerce search seeds; direction names themselves stay
+        brand-free and concise (fixes the "X礼盒/X套装" name collapse)
       * finish_reason==length detection + per-object salvage parse (a truncated
         batch loses only its last object, not all of it)
   - Only 6 fields are hard-required (name/target/budget/scene/recommendReason/
@@ -110,11 +117,15 @@ GIFT_PRINCIPLES_PROMPT = """
 
 礼物性原则：
 - 要像礼物：有印象点、有包装感、可郑重交付；不是随手买的日用补货品或公司采购品。
-- 名称要具体到可搜索购买，例如“专柜口红礼盒”“手冲咖啡入门套装”，不要写“化妆品”“数码产品”。
-- 不编造具体品牌、型号、明星或 IP。
+- 名称（name）要具体到可搜索购买、且简洁好匹配，例如“补水面膜”“手冲咖啡套装”，不要写“化妆品”“数码产品”这类大词。
+- 方向名（name）不写具体品牌、型号、明星或 IP（如写“补水面膜”而不是“可复美胶原棒”），保持可跨多个商品匹配。
 - 高风险品类给真实、简短的购买风险提示（色号/肤质/尺码/口味/兼容/需确认习惯）。
 - 推荐理由要说明“为什么适合作为礼物”，不要只描述功能。
 - 预算由商品方向自然决定，不要为凑便宜生成低价值感的小物。
+
+搜索关键词（searchKeywords）：
+- 为每条方向额外给 3~8 个 searchKeywords：可以且应当是真实存在的爆品/经典款/品牌名（如 面膜→补水面膜、森田玻尿酸面膜、可复美），作为下游电商平台检索真实商品的搜索种子。
+- 这些关键词只用于检索，不参与问卷匹配与打分；方向名本身仍不得出现品牌，品牌只进 searchKeywords。
 """.strip()
 
 FEW_SHOT_EXAMPLE = {
@@ -134,63 +145,100 @@ FEW_SHOT_EXAMPLE = {
     "requiresKnownPreference": False,
     "tags": ["有仪式感", "上手简单"],
     "pairingTags": ["挂耳咖啡", "手写卡片"],
+    "searchKeywords": ["手冲咖啡套装", "Hario V60 套装", "手冲壶礼盒", "泰摩栗子c2"],
     "specificOccasions": [],
     "seasons": [],
     "recommendReason": "把日常一杯咖啡变成有仪式感的小爱好，适合想被好好对待的人。",
 }
 
-# Each call focuses on ONE category so the model stays specific and we can run a
-# per-category dedup quota. Cycled round-robin and looped until count is met.
+# Each call focuses on ONE category × ONE budget tier ("cell") so the model stays
+# specific, gets a price anchor, and each cell keeps an independent dedup quota +
+# avoid-list. `budgets` lists the tiers worth generating for that category.
 CATEGORY_PROFILES = [
     {"category": "beauty_personal_care", "title": "美妆个护", "temperature": 0.8, "top_p": 0.9,
-     "directions": "专柜口红礼盒、护手霜礼盒、身体护理礼盒、化妆刷套装、抗老护肤礼盒、头发护理套装",
-     "notes": "可写专柜/正品渠道/热门色号；风险关注色号、肤质、正品渠道。"},
+     "budgets": ["under_200", "200_500", "500_1000"],
+     "directions": "口红/彩妆礼盒、护手霜礼盒、身体护理礼盒、化妆刷套装、抗老护肤礼盒、头发护理套装",
+     "notes": "可写专柜/正品渠道；风险关注色号、肤质、正品渠道。品牌/爆品放进 searchKeywords。"},
     {"category": "fragrance", "title": "香水香氛", "temperature": 0.82, "top_p": 0.92,
+     "budgets": ["200_500", "500_1000", "1000_2000"],
      "directions": "香水试香套装、旅行装香水、无火香薰、香薰蜡烛礼盒、车载香氛、衣物香氛",
      "notes": "风险关注气味偏好、可能晕香；试香套装是低风险首选。"},
     {"category": "bags_accessories", "title": "包袋配饰", "temperature": 0.78, "top_p": 0.9,
+     "budgets": ["200_500", "500_1000", "1000_2000"],
      "directions": "通勤托特包、卡包钱包、银饰项链手链、围巾披肩、真丝发饰、证件包",
      "notes": "强调质感与日常使用频率；风险关注风格、材质。"},
     {"category": "digital_accessories", "title": "数码配件", "temperature": 0.76, "top_p": 0.88,
+     "budgets": ["200_500", "500_1000", "1000_2000"],
      "directions": "降噪耳机、桌面充电站、移动电源、拍摄补光灯、平板支架、键盘成品（非客制套件）",
      "notes": "要像礼物不像办公采购；风险关注兼容、已有设备。"},
     {"category": "desk_office", "title": "桌面办公", "temperature": 0.78, "top_p": 0.9,
+     "budgets": ["under_200", "200_500", "500_1000"],
      "directions": "品质钢笔、桌面氛围灯、显示器支架、理线套装、设计感笔记本、护眼台灯",
      "notes": "避免普通文具批发感；强调质感与长期使用。"},
     {"category": "coffee_tea", "title": "咖啡茶饮", "temperature": 0.8, "top_p": 0.9,
+     "budgets": ["under_200", "200_500", "500_1000"],
      "directions": "手冲咖啡套装、精品咖啡豆礼盒、冷萃壶、茶具入门套装、茶叶品鉴礼盒、便携咖啡杯",
      "notes": "风险关注口味偏好、使用门槛。"},
     {"category": "food_dessert", "title": "食品甜品", "temperature": 0.82, "top_p": 0.9,
+     "budgets": ["under_200", "200_500"],
      "directions": "手工甜品礼盒、精品巧克力礼盒、低糖点心礼盒、节日糕点礼盒、地方风味礼盒",
      "notes": "可做主礼或搭配礼；风险关注忌口、保质期、冷链。"},
     {"category": "home_appliance", "title": "居家小家电", "temperature": 0.76, "top_p": 0.88,
+     "budgets": ["200_500", "500_1000", "1000_2000"],
      "directions": "胶囊咖啡机、早餐机、桌面加湿器、小型投影、香薰机、便携熨烫机",
      "notes": "要有品质升级感而非家庭采购；风险关注空间、噪音、维护。"},
     {"category": "nutrition_wellness", "title": "营养滋补（父母向）", "temperature": 0.72, "top_p": 0.88,
+     "budgets": ["200_500", "500_1000", "1000_2000"],
      "directions": "蛋白粉礼盒、钙片维生素礼盒、低糖滋补礼盒、花胶燕窝礼盒、护眼/护嗓礼盒",
      "notes": "只表达健康关心，不写功效；优先正规渠道，风险写看适宜人群、按说明食用。"},
     {"category": "travel_commute", "title": "旅行通勤", "temperature": 0.78, "top_p": 0.9,
+     "budgets": ["under_200", "200_500", "500_1000"],
      "directions": "旅行收纳系统、降噪睡眠眼罩、通勤背包、护照证件包、便携洗漱包、颈枕升级款",
      "notes": "强调使用场景与品质升级；风险关注尺寸、出行频率。"},
     {"category": "sports_outdoor", "title": "运动户外", "temperature": 0.8, "top_p": 0.92,
+     "budgets": ["under_200", "200_500", "500_1000"],
      "directions": "运动训练包、筋膜放松套装、保温运动水壶、露营灯具、野餐垫、跑步腰包",
      "notes": "不宣称疗效；风险关注运动习惯、是否已有装备。"},
     {"category": "fandom_ip", "title": "追星/IP/潮玩", "temperature": 0.84, "top_p": 0.93,
+     "budgets": ["under_200", "200_500"],
      "directions": "专辑收纳册、票根收藏册、小卡收纳套装、周边展示架、应援灯收纳、海报收纳筒",
      "notes": "不写具体明星/IP；风险关注对方是否已有同类周边。"},
     {"category": "books_music_video", "title": "书影音", "temperature": 0.82, "top_p": 0.92,
+     "budgets": ["under_200", "200_500", "500_1000"],
      "directions": "黑胶唱片机入门、阅读灯、书立摆件、电影蓝光收藏、播客麦克风入门套件",
      "notes": "具体到兴趣场景；风险关注口味、版本、是否重复。"},
     {"category": "pet_lifestyle", "title": "宠物友好生活", "temperature": 0.82, "top_p": 0.92,
+     "budgets": ["under_200", "200_500", "500_1000"],
      "directions": "宠物肖像定制、宠物收纳、智能饮水机、宠物友好家居、出行包",
      "notes": "送给铲屎官本人或宠物友好生活；不默认送宠物食品。"},
     {"category": "o2o_experience", "title": "本地体验", "temperature": 0.8, "top_p": 0.9,
+     "budgets": ["200_500", "500_1000", "1000_2000"],
      "directions": "写真套餐、调香体验、烘焙课程、陶艺体验、皮具手作课、展览年卡",
      "notes": "必须可线上预约/购买；commerceType 用 o2o；风险关注时间、地点、需预约。"},
     {"category": "custom_craft", "title": "定制手作", "temperature": 0.8, "top_p": 0.92,
+     "budgets": ["200_500", "500_1000"],
      "directions": "定制银饰、刻字礼物、手作香薰、定制帆布包、姓名印章礼盒",
      "notes": "周期与审美有风险；不要相册/照片书；风险写需提前、确认风格。"},
 ]
+
+
+def build_cells() -> list[dict[str, Any]]:
+    """Expand category profiles into category × budget-tier cells."""
+    cells: list[dict[str, Any]] = []
+    for profile in CATEGORY_PROFILES:
+        for budget in profile["budgets"]:
+            cells.append({
+                "category": profile["category"],
+                "title": profile["title"],
+                "directions": profile["directions"],
+                "notes": profile["notes"],
+                "temperature": profile["temperature"],
+                "top_p": profile["top_p"],
+                "budget": budget,
+                "budget_label": LABELS["budget"][budget],
+                "cell_key": f'{profile["category"]}|{budget}',
+            })
+    return cells
 
 
 def main() -> int:
@@ -226,6 +274,10 @@ def main() -> int:
         flush=True,
     )
     print(f"Dropped: {dict(stats['dropped'])}")
+    cache_total = stats["cache_hit"] + stats["cache_miss"]
+    cache_rate = (stats["cache_hit"] / cache_total * 100) if cache_total else 0.0
+    print(f"Prompt cache: {stats['cache_hit']} hit / {stats['cache_miss']} miss tokens "
+          f"({cache_rate:.1f}% hit).")
     print(f"Wrote {paths['gifts'].relative_to(ROOT)}")
     print(f"Wrote {paths['json'].relative_to(ROOT)}")
     if stats["truncated"]:
@@ -245,6 +297,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--token-file", type=Path, default=TOKEN_PATH)
     p.add_argument("--batch-size", type=positive_int, default=DEFAULT_BATCH_SIZE,
                    help="gifts requested per call")
+    p.add_argument("--per-cell", type=positive_int, default=None,
+                   help="target accepted gifts per category×budget cell (default: batch-size)")
     p.add_argument("--max-calls", type=positive_int, default=None,
                    help="hard cap on API calls (default: ceil(count/batch)*4 + 10)")
     p.add_argument("--max-empty", type=positive_int, default=DEFAULT_MAX_EMPTY,
@@ -319,7 +373,10 @@ def load_existing(include_generated: bool = True) -> dict[str, Any]:
                     if isinstance(gift, dict):
                         add(gift.get("name"), gift.get("id"))
 
-    return {"ids": ids, "name_keys": name_keys, "names_order": names_order}
+    # names_by_cell is filled DURING a run (prior files carry no cell info, so a
+    # cell with no history degrades to the global most-recent names).
+    return {"ids": ids, "name_keys": name_keys, "names_order": names_order,
+            "names_by_cell": {}}
 
 
 def name_key(name: str) -> str:
@@ -339,13 +396,19 @@ def run_generation(
     existing: dict[str, Any],
     paths: dict[str, Path],
 ) -> dict[str, Any]:
+    cells = build_cells()
+    per_cell = args.per_cell or args.batch_size
     max_calls = args.max_calls or (((args.count + args.batch_size - 1) // args.batch_size) * 4 + 10)
     stats: dict[str, Any] = {
         "accepted": 0, "calls": 0, "truncated": 0,
         "dropped": _counter(), "dedup": 0,
+        "cache_hit": 0, "cache_miss": 0,
     }
-    empty_streak = 0
-    cat_index = 0
+    accepted_in_cell = {c["cell_key"]: 0 for c in cells}
+    empty_in_cell = {c["cell_key"]: 0 for c in cells}
+    cell_index = 0
+    print(f"Cells: {len(cells)} (category × budget); per-cell quota {per_cell}; "
+          f"max_calls {max_calls}.", flush=True)
 
     with (
         JsonlWriter(paths["raw"]) as raw_writer,
@@ -354,26 +417,24 @@ def run_generation(
         StreamingGiftJsonWriter(paths["json"], args.model) as json_writer,
     ):
         try:
-            while (
-                stats["accepted"] < args.count
-                and stats["calls"] < max_calls
-                and empty_streak < args.max_empty
-            ):
-                profile = CATEGORY_PROFILES[cat_index % len(CATEGORY_PROFILES)]
-                cat_index += 1
-                want = min(args.batch_size, args.count - stats["accepted"])
-                job = {
-                    "category": profile["category"],
-                    "title": profile["title"],
-                    "directions": profile["directions"],
-                    "notes": profile["notes"],
-                    "count": want,
-                    "temperature": profile["temperature"],
-                    "top_p": profile["top_p"],
-                }
+            # Coverage drives stopping: keep cycling cells that are neither full
+            # (quota) nor exhausted (consecutive-empty cap). args.count is only an
+            # overall ceiling (keeps the smoke test small).
+            while stats["accepted"] < args.count and stats["calls"] < max_calls:
+                active = [c for c in cells
+                          if accepted_in_cell[c["cell_key"]] < per_cell
+                          and empty_in_cell[c["cell_key"]] < args.max_empty]
+                if not active:
+                    break
+                cell = active[cell_index % len(active)]
+                cell_index += 1
+                key = cell["cell_key"]
+                want = min(args.batch_size, per_cell - accepted_in_cell[key],
+                           args.count - stats["accepted"])
+                job = {**cell, "count": want}
                 prompt = build_job_prompt(job, existing)
                 print(
-                    f"Call {stats['calls'] + 1} [{job['category']}] want {want}; "
+                    f"Call {stats['calls'] + 1} [{key}] want {want}; "
                     f"accepted {stats['accepted']}/{args.count}",
                     flush=True,
                 )
@@ -382,20 +443,26 @@ def run_generation(
                     result = call_with_retries(args, token, prompt, job)
                 except Exception as error:
                     error_writer.write(error_record(job, "deepseek", error))
-                    empty_streak += 1
+                    empty_in_cell[key] += 1
                     sleep(args.pause)
                     continue
 
                 stats["calls"] += 1
+                usage = result.get("usage") or {}
+                hit = usage.get("prompt_cache_hit_tokens")
+                miss = usage.get("prompt_cache_miss_tokens")
+                stats["cache_hit"] += hit or 0
+                stats["cache_miss"] += miss or 0
                 raw_writer.write({"time": now_iso(), "category": job["category"],
-                                  "finish": result["finish_reason"], "response": result["response"]})
+                                  "cell": key, "finish": result["finish_reason"],
+                                  "usage": usage, "response": result["response"]})
                 if result["finish_reason"] == "length":
                     stats["truncated"] += 1
 
                 gifts = parse_gifts(result["content"])
                 new_in_batch = 0
                 for raw in gifts:
-                    if stats["accepted"] >= args.count:
+                    if stats["accepted"] >= args.count or accepted_in_cell[key] >= per_cell:
                         break
                     gift, reason = clean_gift_v3(raw, job, existing)
                     if gift is None:
@@ -409,17 +476,21 @@ def run_generation(
                                                 "category": job["category"], "reason": reason,
                                                 "name": raw.get("name")})
                         continue
-                    gift_writer.write({"time": now_iso(), "category": job["category"], "gift": gift})
+                    gift_writer.write({"time": now_iso(), "category": job["category"],
+                                       "cell": key, "gift": gift})
                     json_writer.write_gift(gift)
                     existing["ids"].add(gift["id"])
                     existing["name_keys"].add(name_key(gift["name"]))
                     existing["names_order"].append(gift["name"])
+                    existing["names_by_cell"].setdefault(key, []).append(gift["name"])
                     stats["accepted"] += 1
+                    accepted_in_cell[key] += 1
                     new_in_batch += 1
 
-                empty_streak = 0 if new_in_batch else empty_streak + 1
-                print(f"  +{new_in_batch} new (dedup {stats['dedup']}, "
-                      f"empty_streak {empty_streak})", flush=True)
+                empty_in_cell[key] = 0 if new_in_batch else empty_in_cell[key] + 1
+                print(f"  +{new_in_batch} new (cell {accepted_in_cell[key]}/{per_cell}, "
+                      f"cache hit {hit}/miss {miss}, dedup {stats['dedup']}, "
+                      f"empty_streak {empty_in_cell[key]})", flush=True)
                 sleep(args.pause)
         except KeyboardInterrupt:
             error_writer.write({"time": now_iso(), "stage": "interrupted",
@@ -431,19 +502,17 @@ def run_generation(
 
 # ---- prompt building --------------------------------------------------------
 
-def build_common_prefix(existing: dict[str, Any]) -> str:
-    # Feed the MOST RECENT names (not a sorted [:160] prefix) so the model is
-    # told to avoid the very names this run just produced.
-    recent = existing["names_order"][-140:]
-    avoid = "、".join(recent) if recent else "暂无"
+def build_common_prefix() -> str:
+    # 100% STATIC and byte-identical on every call — this is the cacheable prefix.
+    # The per-cell avoid-list is NOT here; it lives at the tail of build_job_prompt
+    # so a changing avoid-list never invalidates DeepSeek's prefix cache.
     return f"""
 {GIFT_PRINCIPLES_PROMPT}
 
 基础安全规则：
 1. 不要性别刻板印象，不要写“女生一定喜欢”“爸妈都需要”。
 2. 不要奢侈品炫耀、投资理财、烟酒。
-3. 不要“爆款”“必买”“闭眼入”“全网最”这类话术。
-4. 避免与下列已有礼物重名或近义改写（务必产出不同方向）：{avoid}
+3. 不要“爆款”“必买”“闭眼入”“全网最”这类营销话术（searchKeywords 里的真实品牌/爆品名不在此限）。
 
 枚举（数组里只能填等号左侧的英文 value）：
 - target: {fmt_enum("target", TARGETS)}
@@ -466,7 +535,8 @@ def build_common_prefix(existing: dict[str, Any]) -> str:
   id(英文kebab-case,唯一), name(4-12汉字,可搜索购买的具体方向), category(=本次品类),
   target[1-3], scene[1-3], budget[1-3], recipientStyle[1-3], toneFit[1-3], personaTags[1-4],
   gender[0-2], commerceType, riskLevel, riskTags[0-2,每个≤8字], requiresKnownPreference(true/false),
-  tags[2-3,每个≤6字], pairingTags[1-3,每个≤6字], recommendReason(一句话,≤32字,说明为什么适合作为礼物)
+  tags[2-3,每个≤6字], pairingTags[1-3,每个≤6字], searchKeywords[3-8,每个2-20字,真实爆品/经典款/品牌名,可含品牌],
+  recommendReason(一句话,≤32字,说明为什么适合作为礼物)
 
 字段与值的示例（仅示意格式，请勿照抄内容或名称）：
 {json.dumps(FEW_SHOT_EXAMPLE, ensure_ascii=False)}
@@ -474,13 +544,21 @@ def build_common_prefix(existing: dict[str, Any]) -> str:
 
 
 def build_job_prompt(job: dict[str, Any], existing: dict[str, Any]) -> str:
+    # Tail-only, cell-scoped avoid-list (~30 names). A cell with no history yet
+    # degrades to the global most-recent 30. Keeping it small + at the END means
+    # it barely perturbs the request and never invalidates the static prefix cache.
+    cell_names = existing.get("names_by_cell", {}).get(job["cell_key"]) or existing["names_order"]
+    recent = cell_names[-30:]
+    avoid = "、".join(recent) if recent else "暂无"
     return f"""
-{build_common_prefix(existing)}
+{build_common_prefix()}
 
 本次只生成「{job['title']}」品类（category 必须等于 "{job['category']}"）的礼物 {job['count']} 个。
+本次预算档：{job['budget_label']}（budget 数组请包含 "{job['budget']}"，可再加 1-2 个相邻区间）。
 允许的方向：{job['directions']}
 本品类补充规则：{job['notes']}
-请确保 {job['count']} 个礼物彼此方向不同，并且都不与上面“已有礼物”重复或近义改写。
+请确保 {job['count']} 个礼物彼此方向不同、价位贴合该预算档；方向名简洁可搜索且不含品牌，品牌/爆品放进 searchKeywords。
+请避免与下列同档已有礼物重名或近义改写：{avoid}
 """.strip()
 
 
@@ -490,14 +568,20 @@ def fmt_enum(key: str, values: list[str]) -> str:
 
 
 def write_sample_prompts(path: Path, existing: dict[str, Any], args: argparse.Namespace) -> None:
+    # One sample per category (its first budget cell) — enough to diff the static
+    # prefix across categories without dumping every cell.
     with path.open("w", encoding="utf-8") as file:
         for profile in CATEGORY_PROFILES:
+            budget = profile["budgets"][0]
             job = {
                 "category": profile["category"], "title": profile["title"],
                 "directions": profile["directions"], "notes": profile["notes"],
+                "budget": budget, "budget_label": LABELS["budget"][budget],
+                "cell_key": f'{profile["category"]}|{budget}',
                 "count": args.batch_size,
             }
-            record = {"category": job["category"], "prompt": build_job_prompt(job, existing)}
+            record = {"category": job["category"], "cell": job["cell_key"],
+                      "prompt": build_job_prompt(job, existing)}
             file.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
@@ -546,6 +630,7 @@ def call_deepseek(args: argparse.Namespace, token: str, prompt: str, job: dict[s
         "response": payload,
         "content": (choice.get("message") or {}).get("content") or "",
         "finish_reason": choice.get("finish_reason"),
+        "usage": payload.get("usage") or {},
     }
 
 
@@ -666,6 +751,8 @@ def clean_gift_v3(raw: dict[str, Any], job: dict[str, Any], existing: dict[str, 
         "requiresKnownPreference": bool(raw.get("requiresKnownPreference", False)),
         "tags": clean_text_array(raw.get("tags"), limit=3, max_len=8),
         "pairingTags": clean_text_array(raw.get("pairingTags"), limit=3, max_len=8),
+        # Soft field: brand/hot-item search seeds. Missing = empty, never required.
+        "searchKeywords": clean_text_array(raw.get("searchKeywords"), limit=8, max_len=20, min_len=2),
         "specificOccasions": clean_enum_array(raw.get("specificOccasions"), SPECIFIC_OCCASIONS),
         "seasons": clean_enum_array(raw.get("seasons"), SEASONS),
         "recommendReason": reason,
@@ -700,12 +787,12 @@ def clean_enum_array(value: Any, allowed: list[str]) -> list[str]:
     return result
 
 
-def clean_text_array(value: Any, limit: int, max_len: int) -> list[str]:
+def clean_text_array(value: Any, limit: int, max_len: int, min_len: int = 0) -> list[str]:
     values = value if isinstance(value, list) else ([] if value in (None, "") else [value])
     result: list[str] = []
     for item in values:
         text = norm_text(item)
-        if not text or text in result:
+        if not text or len(text) < min_len or text in result:
             continue
         result.append(text[:max_len])
         if len(result) >= limit:

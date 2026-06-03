@@ -9,7 +9,7 @@
   padding: 24rpx 56rpx calc(24rpx + env(safe-area-inset-bottom));
   background: rgba(255, 255, 255, 0.94);
   border-radius: var(--r-lg) var(--r-lg) 0 0;
-  box-shadow: 0 -24rpx 54rpx rgba(31, 45, 61, 0.10);
+  box-shadow: 0 -24rpx 54rpx rgba(74, 48, 60, 0.10);
   box-sizing: content-box;
 }
 

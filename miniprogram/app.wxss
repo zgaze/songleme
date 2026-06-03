@@ -10,17 +10,17 @@
 
 page {
   /* --- Canvas & surfaces ---------------------------------- */
-  /* Mid-tone canvas: clay needs a non-white ground so the white
-     highlight and dark shadow both register. */
-  --bg: #e6ebf3;
-  --bg-veil: rgba(230, 235, 243, 0.88);   /* sticky headers over --bg */
-  --surface: rgba(255, 255, 255, 0.86);    /* translucent white card  */
-  --surface-solid: #eef2f8;                /* opaque raised tile      */
+  /* Bright, warm blush ground — romantic gift mood. Kept light;
+     clay depth comes from the tinted insets + outer floats below. */
+  --bg: #fdf4f7;
+  --bg-veil: rgba(253, 244, 247, 0.88);    /* sticky headers over --bg */
+  --surface: rgba(255, 255, 255, 0.9);      /* translucent white card  */
+  --surface-solid: #fff7fa;                 /* opaque raised tile      */
 
-  /* --- Text (cool charcoal, accessible on pastels) -------- */
-  --text: #1b232b;       /* primary  */
-  --text-2: #3d454d;     /* secondary */
-  --text-3: #5b636b;     /* tertiary / meta */
+  /* --- Text (warm charcoal, accessible on pastels) -------- */
+  --text: #2a2126;       /* primary  */
+  --text-2: #4a4046;     /* secondary */
+  --text-3: #6b626a;     /* tertiary / meta */
 
   /* --- Pastel fills --------------------------------------- */
   --blue: #cde5ff;
@@ -28,7 +28,7 @@ page {
   --blue-deep: #a2d2ff;
   --rose: #ffd9e4;
   --rose-soft: #ffeaf1;
-  --rose-deep: #ffb0cd;
+  --rose-deep: #ffd0df;
   --gold: #ffddb2;
   --gold-soft: #fff0d4;
   --mint: #c9efd9;
@@ -65,23 +65,23 @@ page {
      inset tint, e.g.:
          box-shadow: var(--out-md), var(--ins-blue);
      Use --ins-press (concave, no outer) for :active and sunken
-     inputs. Outer opacities are deliberately stronger than the
-     old 0.05–0.08 so elements actually read as "floating". */
+     inputs. Outer + neutral tints are warm-toned so depth still
+     reads softly on the bright blush canvas. */
 
-  /* outer float */
-  --out-sm: 8rpx 10rpx 22rpx rgba(31, 45, 61, 0.10);
-  --out-md: 14rpx 18rpx 36rpx rgba(31, 45, 61, 0.13);
-  --out-lg: 18rpx 24rpx 48rpx rgba(31, 45, 61, 0.16);
+  /* outer float (warm shadow) */
+  --out-sm: 8rpx 10rpx 22rpx rgba(74, 48, 60, 0.09);
+  --out-md: 14rpx 18rpx 36rpx rgba(74, 48, 60, 0.12);
+  --out-lg: 18rpx 24rpx 48rpx rgba(74, 48, 60, 0.15);
 
   /* inset tints: white top-left highlight + tinted bottom-right depth */
-  --ins-neutral: inset 8rpx 8rpx 18rpx rgba(255, 255, 255, 0.92), inset -8rpx -8rpx 18rpx rgba(163, 177, 198, 0.30);
+  --ins-neutral: inset 8rpx 8rpx 18rpx rgba(255, 255, 255, 0.95), inset -8rpx -8rpx 18rpx rgba(196, 168, 180, 0.32);
   --ins-blue: inset 9rpx 9rpx 19rpx rgba(255, 255, 255, 0.85), inset -9rpx -10rpx 20rpx rgba(48, 98, 138, 0.18);
   --ins-rose: inset 8rpx 8rpx 18rpx rgba(255, 255, 255, 0.82), inset -8rpx -8rpx 18rpx rgba(116, 51, 77, 0.16);
   --ins-gold: inset 8rpx 8rpx 18rpx rgba(255, 255, 255, 0.84), inset -8rpx -8rpx 18rpx rgba(98, 64, 0, 0.14);
   --ins-mint: inset 8rpx 8rpx 18rpx rgba(255, 255, 255, 0.84), inset -8rpx -8rpx 18rpx rgba(47, 107, 66, 0.14);
 
   /* pressed / concave (no outer float) */
-  --ins-press: inset 9rpx 10rpx 20rpx rgba(31, 45, 61, 0.15), inset -8rpx -8rpx 18rpx rgba(255, 255, 255, 0.70);
+  --ins-press: inset 9rpx 10rpx 20rpx rgba(74, 48, 60, 0.16), inset -8rpx -8rpx 18rpx rgba(255, 255, 255, 0.75);
 
   min-height: 100%;
   background: var(--bg);

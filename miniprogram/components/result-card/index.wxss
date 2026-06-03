@@ -150,7 +150,7 @@
   width: 8rpx;
   height: 8rpx;
   border-radius: 50%;
-  background: rgba(27, 35, 43, 0.5);
+  background: rgba(42, 33, 38, 0.5);
 }
 
 .result-card__share-dot--left {
@@ -174,7 +174,7 @@
   width: 16rpx;
   height: 3rpx;
   border-radius: var(--r-pill);
-  background: rgba(27, 35, 43, 0.36);
+  background: rgba(42, 33, 38, 0.36);
   transform-origin: left center;
 }
 

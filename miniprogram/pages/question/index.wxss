@@ -19,7 +19,7 @@
   font-size: var(--fs-title);
   font-weight: 600;
   line-height: 1.28;
-  text-shadow: 0 8rpx 18rpx rgba(31, 45, 61, 0.08);
+  text-shadow: 0 8rpx 18rpx rgba(74, 48, 60, 0.08);
 }
 
 .question__options {
@@ -76,7 +76,7 @@
   width: 14rpx;
   height: 14rpx;
   border-radius: var(--r-pill);
-  background: rgba(31, 45, 61, 0.55);
+  background: rgba(42, 33, 38, 0.55);
   box-shadow: 0 0 0 7rpx rgba(255, 255, 255, 0.58);
 }
 
