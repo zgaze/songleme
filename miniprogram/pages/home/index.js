@@ -12,7 +12,13 @@ Page({
 
   startQuestionnaire() {
     wx.navigateTo({
-      url: "/pages/question/index",
+      url: "/pages/contacts/index?mode=pick",
+    });
+  },
+
+  openCard() {
+    wx.navigateTo({
+      url: "/pages/card/index",
     });
   },
 

@@ -3,7 +3,7 @@
 
 const QUESTIONNAIRE_CONFIG = {
   "$schema": "../../schemas/questionnaire.schema.json",
-  "version": "2026-05-30-candidate-v2",
+  "version": "2026-06-03-tags-v3",
   "startQuestionId": "target",
   "resultNode": "result",
   "questions": [
@@ -156,7 +156,7 @@ const QUESTIONNAIRE_CONFIG = {
       "id": "budget",
       "title": "大概想花多少",
       "type": "single",
-      "defaultNext": "result",
+      "defaultNext": "emotionalTags",
       "options": [
         {
           "value": "under_200",
@@ -182,6 +182,114 @@ const QUESTIONNAIRE_CONFIG = {
           "value": "2000_plus",
           "label": "2000 以上",
           "size": "sm"
+        }
+      ]
+    },
+    {
+      "id": "emotionalTags",
+      "title": "想表达什么心意",
+      "type": "multi",
+      "max": 3,
+      "allowCustom": true,
+      "defaultNext": "visualStyle",
+      "options": [
+        {
+          "value": "romantic",
+          "label": "浪漫表达"
+        },
+        {
+          "value": "company",
+          "label": "陪伴感"
+        },
+        {
+          "value": "care",
+          "label": "贴心实用"
+        },
+        {
+          "value": "surprise",
+          "label": "有惊喜"
+        },
+        {
+          "value": "memory",
+          "label": "纪念感"
+        },
+        {
+          "value": "gratitude",
+          "label": "感恩感谢"
+        },
+        {
+          "value": "encourage",
+          "label": "鼓励打气"
+        },
+        {
+          "value": "healing",
+          "label": "治愈解压"
+        },
+        {
+          "value": "playful",
+          "label": "有趣好玩"
+        },
+        {
+          "value": "prestige",
+          "label": "有面子"
+        },
+        {
+          "value": "sincere",
+          "label": "走心用心"
+        },
+        {
+          "value": "ritual",
+          "label": "仪式感"
+        }
+      ]
+    },
+    {
+      "id": "visualStyle",
+      "title": "偏好什么风格",
+      "type": "multi",
+      "max": 3,
+      "allowCustom": true,
+      "defaultNext": "result",
+      "options": [
+        {
+          "value": "minimal",
+          "label": "简洁耐看"
+        },
+        {
+          "value": "warm",
+          "label": "温柔治愈"
+        },
+        {
+          "value": "delicate",
+          "label": "包装精美"
+        },
+        {
+          "value": "tech",
+          "label": "科技感"
+        },
+        {
+          "value": "classic",
+          "label": "质感高级"
+        },
+        {
+          "value": "cute",
+          "label": "可爱有趣"
+        },
+        {
+          "value": "retro",
+          "label": "复古怀旧"
+        },
+        {
+          "value": "natural",
+          "label": "自然清新"
+        },
+        {
+          "value": "elegant",
+          "label": "优雅气质"
+        },
+        {
+          "value": "festive",
+          "label": "节日氛围"
         }
       ]
     }

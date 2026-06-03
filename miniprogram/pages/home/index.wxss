@@ -43,6 +43,12 @@
   box-shadow: var(--out-md), var(--ins-blue);
 }
 
+.home-button--card {
+  background: var(--mint);
+  color: var(--on-mint);
+  box-shadow: var(--out-md), var(--ins-mint);
+}
+
 .home-button:active {
   transform: scale(0.975);
   box-shadow: var(--out-sm), var(--ins-press);

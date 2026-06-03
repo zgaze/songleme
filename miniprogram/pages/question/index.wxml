@@ -16,6 +16,23 @@
     </view>
   </view>
 
+  <view wx:if="{{current.allowCustom}}" class="question__custom">
+    <view wx:if="{{!customInputVisible}}" class="custom-chip" bindtap="openCustomInput">＋ 自定义</view>
+    <view wx:else class="custom-input-row">
+      <input
+        class="custom-input"
+        type="text"
+        value="{{customInputValue}}"
+        placeholder="输入你的标签"
+        maxlength="12"
+        confirm-type="done"
+        bindinput="onCustomInput"
+        bindconfirm="addCustomValue"
+      />
+      <button class="custom-add" bindtap="addCustomValue">添加</button>
+    </view>
+  </view>
+
   <view class="question__footer">
     <button class="ghost-button" bindtap="goBack">上一个</button>
     <button wx:if="{{showNextButton}}" class="dark-button" bindtap="goNext">{{nextButtonText}}</button>

@@ -14,7 +14,11 @@ Page({
   },
 
   openEntry(event) {
-    const title = event.currentTarget.dataset.title;
+    const { title, value } = event.currentTarget.dataset;
+    if (value === "recipients") {
+      wx.navigateTo({ url: "/pages/contacts/index" });
+      return;
+    }
     wx.showToast({
       title,
       icon: "none",

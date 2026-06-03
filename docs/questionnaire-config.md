@@ -61,6 +61,7 @@ node scripts/validate-questionnaire.js --write-runtime
 - `type`：`single` 或 `multi`。
 - `defaultNext`：默认下一题 ID，也可以是 `result`。
 - `max`：可选，只对多选题生效；不写则不限选择数量。
+- `allowCustom`：可选布尔，默认 `false`；开启后问卷页会显示「＋自定义」输入框，用户可填入自由文本作为答案值（多选追加进数组，单选作为答案）。默认对 `emotionalTags`、`visualStyle` 开启。
 - `options`：选项数组。
 
 ## 选项字段
@@ -104,6 +105,7 @@ node scripts/validate-questionnaire.js --write-runtime
 - 是否存在循环
 - 是否至少有一条路径到结果页
 - 多选 `max` 是否超过选项数量
+- `allowCustom` 是否为布尔
 - 选项 `value` 是否重复
 - `size` 是否只使用 `xl` / `lg` / `md` / `sm`
 - 运行时 `questionnaire.js` 是否与 JSON 同步

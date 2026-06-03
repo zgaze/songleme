@@ -1,0 +1,99 @@
+<view class="page card-edit safe-bottom">
+  <!-- 预览区（动画，可见）-->
+  <view class="card-stage">
+    <view
+      class="card-canvas {{template.animationClass}}"
+      style="background: {{palette.bg}}; color: {{palette.text}};"
+    >
+      <view class="card-canvas__accent" style="background: {{palette.accent}};"></view>
+      <text class="card-canvas__salu">{{salutation || template.fields[0].placeholder}}</text>
+      <text class="card-canvas__bless">{{blessing || template.fields[1].placeholder}}</text>
+      <text class="card-canvas__sign">—— 送了么</text>
+    </view>
+  </view>
+
+  <!-- 换模板 -->
+  <view class="card-edit__section">
+    <text class="card-edit__label">换模板</text>
+    <scroll-view class="card-edit__row-scroll" scroll-x enhanced show-scrollbar="{{false}}">
+      <view class="card-edit__row">
+        <view
+          wx:for="{{templates}}"
+          wx:key="id"
+          class="card-tpl {{template.id == item.id ? 'card-tpl--active' : ''}}"
+          data-id="{{item.id}}"
+          bindtap="switchTemplate"
+        >
+          {{item.name}}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 换配色 -->
+  <view class="card-edit__section">
+    <text class="card-edit__label">换配色</text>
+    <view class="card-edit__palettes">
+      <view
+        wx:for="{{template.palettes}}"
+        wx:key="id"
+        class="card-swatch {{paletteId == item.id ? 'card-swatch--active' : ''}}"
+        style="background: {{item.bg}};"
+        data-id="{{item.id}}"
+        bindtap="switchPalette"
+      ></view>
+    </view>
+  </view>
+
+  <!-- 表单 -->
+  <view class="card-edit__form">
+    <view class="card-field">
+      <view class="card-field__head">
+        <text class="card-field__label">收礼人称呼</text>
+        <text class="card-field__count">{{salutation.length}}/{{saluMax}}</text>
+      </view>
+      <input
+        class="card-field__input"
+        value="{{salutation}}"
+        placeholder="{{template.fields[0].placeholder}}"
+        maxlength="{{saluMax}}"
+        bindinput="onSalutationInput"
+      />
+    </view>
+
+    <view class="card-field">
+      <view class="card-field__head">
+        <text class="card-field__label">一句祝福</text>
+        <text class="card-field__count">{{blessing.length}}/{{blesMax}}</text>
+      </view>
+      <textarea
+        class="card-field__textarea"
+        value="{{blessing}}"
+        placeholder="{{template.fields[1].placeholder}}"
+        maxlength="{{blesMax}}"
+        auto-height
+        bindinput="onBlessingInput"
+      />
+    </view>
+  </view>
+
+  <!-- 底部操作 -->
+  <view class="card-edit__actions">
+    <button
+      class="card-btn card-btn--save"
+      loading="{{exporting}}"
+      bindtap="saveToAlbum"
+    >
+      保存到相册
+    </button>
+    <button class="card-btn card-btn--share" open-type="share">分享给好友</button>
+  </view>
+
+  <!-- 离屏导出 canvas（不可见，移出视口而非 display:none）-->
+  <canvas
+    type="2d"
+    id="cardCanvas"
+    class="card-export-canvas"
+    style="width: {{exportW}}px; height: {{exportH}}px;"
+  ></canvas>
+</view>

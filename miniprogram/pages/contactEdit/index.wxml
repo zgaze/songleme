@@ -1,0 +1,96 @@
+<view class="page edit safe-bottom">
+  <view class="edit__field">
+    <text class="edit__label">称呼</text>
+    <input
+      class="edit__input"
+      value="{{nickname}}"
+      placeholder="给 TA 起个称呼"
+      maxlength="30"
+      bindinput="onNickname"
+    />
+  </view>
+
+  <view class="edit__field">
+    <text class="edit__label">关系</text>
+    <view class="chip-row">
+      <view
+        wx:for="{{relationOptions}}"
+        wx:key="value"
+        class="chip {{target == item.value ? 'chip--active' : ''}}"
+        data-field="target"
+        data-value="{{item.value}}"
+        bindtap="pickSingle"
+      >{{item.label}}</view>
+    </view>
+  </view>
+
+  <view class="edit__field">
+    <text class="edit__label">性别</text>
+    <view class="chip-row">
+      <view
+        wx:for="{{genderOptions}}"
+        wx:key="value"
+        class="chip {{gender == item.value ? 'chip--active' : ''}}"
+        data-field="gender"
+        data-value="{{item.value}}"
+        bindtap="pickSingle"
+      >{{item.label}}</view>
+    </view>
+  </view>
+
+  <view class="edit__field">
+    <text class="edit__label">职业</text>
+    <view class="chip-row">
+      <view
+        wx:for="{{occupationOptions}}"
+        wx:key="value"
+        class="chip {{occupation == item.value ? 'chip--active' : ''}}"
+        data-field="occupation"
+        data-value="{{item.value}}"
+        bindtap="pickSingle"
+      >{{item.label}}</view>
+    </view>
+  </view>
+
+  <view class="edit__field">
+    <text class="edit__label">风格</text>
+    <view class="chip-row">
+      <view
+        wx:for="{{styleOptions}}"
+        wx:key="value"
+        class="chip {{recipientStyle == item.value ? 'chip--active' : ''}}"
+        data-field="recipientStyle"
+        data-value="{{item.value}}"
+        bindtap="pickSingle"
+      >{{item.label}}</view>
+    </view>
+  </view>
+
+  <view class="edit__field">
+    <text class="edit__label">兴趣爱好（最多{{maxPersona}}个）</text>
+    <view class="chip-row">
+      <view
+        wx:for="{{personaOptions}}"
+        wx:key="value"
+        class="chip {{personaTags.indexOf(item.value) >= 0 ? 'chip--active' : ''}}"
+        data-value="{{item.value}}"
+        bindtap="togglePersona"
+      >{{item.label}}</view>
+    </view>
+  </view>
+
+  <view class="edit__field">
+    <text class="edit__label">备注</text>
+    <textarea
+      class="edit__textarea"
+      value="{{notes}}"
+      maxlength="200"
+      placeholder="可补充年龄、星座、生活环境等"
+      bindinput="onNotes"
+    />
+  </view>
+
+  <view class="edit__actions">
+    <button class="dark-button" loading="{{saving}}" bindtap="onSave">完成</button>
+  </view>
+</view>

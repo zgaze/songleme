@@ -1,0 +1,38 @@
+<view class="page contacts safe-bottom">
+  <view class="contacts__head">
+    <text class="contacts__title">{{mode == 'pick' ? '送给谁' : '收礼人档案'}}</text>
+    <text wx:if="{{mode == 'pick'}}" class="contacts__sub">选一个人，跳过身份问题</text>
+  </view>
+
+  <view wx:if="{{loading}}" class="contacts__hint">加载中…</view>
+  <view wx:elif="{{error}}" class="contacts__hint" bindtap="loadList">{{error}}（点此重试）</view>
+
+  <view wx:else class="contacts__list">
+    <view
+      wx:for="{{items}}"
+      wx:key="recipientId"
+      class="contact-card"
+      data-id="{{item.recipientId}}"
+      bindtap="{{mode == 'pick' ? 'onPick' : 'goEdit'}}"
+    >
+      <view class="contact-card__main">
+        <text class="contact-card__name">{{item.nickname}}</text>
+        <text wx:if="{{item.summary}}" class="contact-card__summary">{{item.summary}}</text>
+      </view>
+      <view
+        wx:if="{{mode == 'manage'}}"
+        class="contact-card__del"
+        catchtap="onDelete"
+        data-id="{{item.recipientId}}"
+      >删除</view>
+      <text wx:else class="contact-card__arrow">›</text>
+    </view>
+
+    <view wx:if="{{items.length === 0}}" class="contacts__empty">还没有联系人，新建一个吧</view>
+  </view>
+
+  <view class="contacts__actions">
+    <button class="dark-button" bindtap="goCreate">＋ 新建联系人</button>
+    <button wx:if="{{mode == 'pick'}}" class="ghost-button" bindtap="onSkip">跳过 / 匿名送</button>
+  </view>
+</view>

@@ -6,7 +6,11 @@
     "pages/result/index",
     "pages/shareMystery/index",
     "pages/shareProduct/index",
-    "pages/profile/index"
+    "pages/profile/index",
+    "pages/contacts/index",
+    "pages/contactEdit/index",
+    "pages/card/index",
+    "pages/cardEdit/index"
   ],
   "window": {
     "navigationBarTitleText": "送了么",

@@ -9,6 +9,8 @@ const QUESTION_BY_ID = QUESTIONS.reduce((map, question) => {
   return map;
 }, {});
 
+const SKIPPABLE_IDS = ["target", "gender", "occupation", "recipientStyle"]; // master C3
+
 Page({
   data: {
     questions: QUESTIONS,
@@ -19,10 +21,55 @@ Page({
     selectedValues: [],
     answers: {},
     isAdvancing: false,
+    skipIds: [],
+    customInputVisible: false,
+    customInputValue: "",
   },
 
-  onLoad() {
-    this.setQuestion(START_QUESTION_ID, []);
+  onLoad(options) {
+    const prefill = this.parsePrefill(options && options.prefill);
+    const skipIds = this.parseSkip(options && options.skip).filter(
+      (id) => prefill[id] !== undefined && prefill[id] !== null && prefill[id] !== ""
+    );
+    // 预置答案（单选字段存字符串，与既有 answers 形态一致）
+    this.setData({ answers: { ...prefill }, skipIds });
+    this.setQuestion(this.getFirstQuestionId(skipIds), []);
+  },
+
+  parsePrefill(raw) {
+    // 注：此处 decodeURIComponent 是有意冗余——小程序 onLoad options 已自动解码一次。
+    // 与结果页 pages/result 解析 answers 的写法保持一致；因 prefill 仅含 ASCII 枚举值
+    // (target/gender/occupation/recipientStyle)，二次解码是无害 no-op。
+    if (!raw) return {};
+    try {
+      const obj = JSON.parse(decodeURIComponent(raw));
+      return obj && typeof obj === "object" && !Array.isArray(obj) ? obj : {};
+    } catch (e) {
+      return {};
+    }
+  },
+
+  parseSkip(raw) {
+    if (!raw) return [];
+    return decodeURIComponent(raw)
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+  },
+
+  // 沿可见链找第一道不在 skipIds 里的题
+  getFirstQuestionId(skipIds) {
+    let question = QUESTION_BY_ID[START_QUESTION_ID];
+    let guard = 0;
+    while (question && guard < QUESTIONS.length) {
+      if (skipIds.indexOf(question.id) < 0) return question.id;
+      const values = this.getSelectedValuesFromAnswers(question, this.data.answers);
+      const nextId = this.getNextQuestionId(question, values, this.data.answers);
+      if (!nextId) break;
+      question = QUESTION_BY_ID[nextId];
+      guard += 1;
+    }
+    return START_QUESTION_ID;
   },
 
   setQuestion(questionId, history) {
@@ -39,17 +86,24 @@ Page({
       nextButtonText: nextQuestionId ? "下一步" : "查看推荐",
       selectedValues,
       isAdvancing: false,
+      customInputVisible: false,
+      customInputValue: "",
     });
   },
 
   buildQuestionState(question, selectedValues) {
+    const baseValues = question.options.map((o) => o.value);
+    const customOptions = (selectedValues || [])
+      .filter((v) => baseValues.indexOf(v) < 0)
+      .map((v) => ({ value: v, label: v, _custom: true }));
+    const allOptions = question.options.concat(customOptions);
     return {
       ...question,
-      options: question.options.map((option, index) => ({
+      options: allOptions.map((option, index) => ({
         ...option,
         selected: selectedValues.indexOf(option.value) >= 0,
         shapeClass: `option--shape-${index % 6}`,
-        sizeClass: `option--size-${option.size || this.getAutoOptionSize(question.options.length, index)}`,
+        sizeClass: `option--size-${option.size || this.getAutoOptionSize(allOptions.length, index)}`,
       })),
     };
   },
@@ -121,8 +175,47 @@ Page({
     });
   },
 
+  openCustomInput() {
+    this.setData({ customInputVisible: true, customInputValue: "" });
+  },
+
+  onCustomInput(e) {
+    this.setData({ customInputValue: e.detail.value });
+  },
+
+  addCustomValue() {
+    const raw = (this.data.customInputValue || "").trim();
+    if (!raw) {
+      wx.showToast({ title: "先输入内容", icon: "none" });
+      return;
+    }
+    const { current, selectedValues } = this.data;
+    // 去重：与已选/内置 option 同名则忽略
+    if (selectedValues.indexOf(raw) >= 0) {
+      this.setData({ customInputVisible: false, customInputValue: "" });
+      return;
+    }
+    if (current.type === "multi" && current.max && selectedValues.length >= current.max) {
+      wx.showToast({ title: `最多选${current.max}个`, icon: "none" });
+      return;
+    }
+    const nextValues = current.type === "multi" ? selectedValues.concat(raw) : [raw];
+    // 单选自定义：直接当作选中并前进；多选：累积等用户点下一步
+    if (current.type === "single") {
+      this.persistAnswer(nextValues, () => setTimeout(() => this.goNext(), 140));
+      this.setData({ customInputVisible: false, customInputValue: "" });
+      return;
+    }
+    this.setData({
+      selectedValues: nextValues,
+      current: this.buildQuestionState(current, nextValues),
+      customInputVisible: false,
+      customInputValue: "",
+    });
+  },
+
   goBack() {
-    const { history } = this.data;
+    const { history, skipIds } = this.data;
 
     if (!history.length) {
       if (getCurrentPages().length > 1) {
@@ -136,8 +229,22 @@ Page({
       return;
     }
 
-    const previousQuestionId = history[history.length - 1];
-    this.setQuestion(previousQuestionId, history.slice(0, -1));
+    // 跳过被 skip 的题（正常流程它们不入 history，此为冗余防御）
+    let idx = history.length - 1;
+    while (idx >= 0 && skipIds.indexOf(history[idx]) >= 0) idx -= 1;
+    if (idx < 0) {
+      if (getCurrentPages().length > 1) {
+        wx.navigateBack();
+        return;
+      }
+
+      wx.switchTab({
+        url: "/pages/home/index",
+      });
+      return;
+    }
+
+    this.setQuestion(history[idx], history.slice(0, idx));
   },
 
   goNext() {

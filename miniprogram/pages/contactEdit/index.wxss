@@ -1,0 +1,106 @@
+.edit {
+  min-height: 100vh;
+  padding: 48rpx 32rpx 220rpx;
+  background: var(--bg);
+  box-sizing: border-box;
+}
+
+.edit__field {
+  margin-bottom: 36rpx;
+}
+
+.edit__label {
+  display: block;
+  margin-bottom: 16rpx;
+  padding-left: 8rpx;
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+/* 凹陷输入框 */
+.edit__input {
+  width: 100%;
+  height: 92rpx;
+  padding: 0 28rpx;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--fs-body);
+  box-shadow: var(--ins-press);
+  box-sizing: border-box;
+}
+
+.edit__textarea {
+  width: 100%;
+  height: 180rpx;
+  padding: 22rpx 28rpx;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--fs-body);
+  line-height: 1.4;
+  box-shadow: var(--ins-press);
+  box-sizing: border-box;
+}
+
+/* chip 组（复用 guide__channel 模式） */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96rpx;
+  height: 62rpx;
+  padding: 0 28rpx;
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  color: var(--text-2);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  line-height: 62rpx;
+  box-shadow: var(--out-sm), var(--ins-neutral);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.chip:active {
+  transform: scale(0.96);
+  box-shadow: var(--ins-press);
+}
+
+.chip--active {
+  background: var(--rose);
+  color: var(--on-rose);
+  transform: translateY(-2rpx);
+  box-shadow: var(--out-md), var(--ins-rose);
+}
+
+.edit__actions {
+  position: fixed;
+  right: 44rpx;
+  bottom: calc(44rpx + env(safe-area-inset-bottom));
+  left: 44rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.dark-button {
+  min-width: 360rpx;
+  height: 82rpx;
+  border-radius: var(--r-pill);
+  background: var(--rose);
+  color: var(--on-rose);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 82rpx;
+  box-shadow: var(--out-md), var(--ins-rose);
+}
+
+.dark-button::after {
+  border: 0;
+}

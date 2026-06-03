@@ -19,7 +19,8 @@
     ],
     "emotional_tags": [
       "company",
-      "memory"
+      "memory",
+      "sincere"
     ],
     "visual_style_tags": [
       "warm",
@@ -54,11 +55,13 @@
     "emotional_tags": [
       "care",
       "surprise",
-      "romantic"
+      "romantic",
+      "ritual"
     ],
     "visual_style_tags": [
       "warm",
-      "delicate"
+      "delicate",
+      "festive"
     ],
     "risk_tags": [
       "看审美"
@@ -219,7 +222,8 @@
     ],
     "emotional_tags": [
       "romantic",
-      "care"
+      "care",
+      "healing"
     ],
     "visual_style_tags": [
       "warm",
@@ -252,7 +256,8 @@
     "emotional_tags": [
       "company",
       "memory",
-      "surprise"
+      "surprise",
+      "encourage"
     ],
     "visual_style_tags": [
       "warm",
@@ -284,11 +289,13 @@
       "within_7_days"
     ],
     "emotional_tags": [
-      "care"
+      "care",
+      "gratitude"
     ],
     "visual_style_tags": [
       "classic",
-      "minimal"
+      "minimal",
+      "natural"
     ],
     "risk_tags": [],
     "recommend_reason": "适合表达照顾身体和生活节奏的心意。"
@@ -316,11 +323,13 @@
     ],
     "emotional_tags": [
       "care",
-      "romantic"
+      "romantic",
+      "gratitude"
     ],
     "visual_style_tags": [
       "classic",
-      "delicate"
+      "delicate",
+      "elegant"
     ],
     "risk_tags": [],
     "recommend_reason": "适合有温度的节日表达，既体面也容易被使用。"
@@ -380,11 +389,13 @@
     ],
     "emotional_tags": [
       "romantic",
-      "surprise"
+      "surprise",
+      "ritual"
     ],
     "visual_style_tags": [
       "delicate",
-      "warm"
+      "warm",
+      "festive"
     ],
     "risk_tags": [],
     "recommend_reason": "适合轻巧地补上仪式感，也方便和其它小礼物组合。"
@@ -412,11 +423,13 @@
     ],
     "emotional_tags": [
       "romantic",
-      "surprise"
+      "surprise",
+      "prestige"
     ],
     "visual_style_tags": [
       "delicate",
-      "classic"
+      "classic",
+      "elegant"
     ],
     "risk_tags": [],
     "recommend_reason": "适合不知道具体香型时降低选择压力，也有精致感。"
@@ -476,7 +489,8 @@
     ],
     "emotional_tags": [
       "company",
-      "care"
+      "care",
+      "prestige"
     ],
     "visual_style_tags": [
       "tech",
@@ -507,7 +521,8 @@
       "within_3_days"
     ],
     "emotional_tags": [
-      "care"
+      "care",
+      "healing"
     ],
     "visual_style_tags": [
       "warm",
@@ -538,11 +553,14 @@
     ],
     "emotional_tags": [
       "care",
-      "company"
+      "company",
+      "encourage"
     ],
     "visual_style_tags": [
       "warm",
-      "minimal"
+      "minimal",
+      "cute",
+      "natural"
     ],
     "risk_tags": [],
     "recommend_reason": "适合日常关心场景，让桌面多一点持续的陪伴感。"
@@ -570,11 +588,13 @@
     ],
     "emotional_tags": [
       "company",
-      "romantic"
+      "romantic",
+      "prestige"
     ],
     "visual_style_tags": [
       "classic",
-      "delicate"
+      "delicate",
+      "elegant"
     ],
     "risk_tags": [],
     "recommend_reason": "适合把礼物变成一次相处，而不是只送一个物品。"
@@ -601,11 +621,13 @@
     ],
     "emotional_tags": [
       "memory",
-      "care"
+      "care",
+      "sincere"
     ],
     "visual_style_tags": [
       "warm",
-      "classic"
+      "classic",
+      "cute"
     ],
     "risk_tags": [],
     "recommend_reason": "适合把小回忆做成可日常使用的物件。"
@@ -632,7 +654,8 @@
       "within_7_days"
     ],
     "emotional_tags": [
-      "care"
+      "care",
+      "healing"
     ],
     "visual_style_tags": [
       "minimal",
@@ -662,11 +685,14 @@
     ],
     "emotional_tags": [
       "romantic",
-      "memory"
+      "memory",
+      "sincere",
+      "ritual"
     ],
     "visual_style_tags": [
       "classic",
-      "delicate"
+      "delicate",
+      "retro"
     ],
     "risk_tags": [],
     "recommend_reason": "适合偏纪念和浪漫的表达，体积小但情绪明确。"
@@ -730,7 +756,8 @@
     "visual_style_tags": [
       "minimal",
       "warm",
-      "classic"
+      "classic",
+      "elegant"
     ],
     "risk_tags": [],
     "recommend_reason": "适合把审美和回忆放进空间里，表达更含蓄。"
@@ -756,11 +783,14 @@
       "within_3_days"
     ],
     "emotional_tags": [
-      "care"
+      "care",
+      "gratitude"
     ],
     "visual_style_tags": [
       "classic",
-      "warm"
+      "warm",
+      "natural",
+      "festive"
     ],
     "risk_tags": [],
     "recommend_reason": "适合需要稳妥送达的关心表达，接受度比较高。"
@@ -789,7 +819,8 @@
     ],
     "emotional_tags": [
       "care",
-      "surprise"
+      "surprise",
+      "healing"
     ],
     "visual_style_tags": [
       "delicate",
@@ -849,11 +880,13 @@
     ],
     "emotional_tags": [
       "memory",
-      "surprise"
+      "surprise",
+      "playful"
     ],
     "visual_style_tags": [
       "tech",
-      "classic"
+      "classic",
+      "retro"
     ],
     "risk_tags": [],
     "recommend_reason": "适合把之后的相处也变成可以保存的回忆。"
@@ -881,11 +914,14 @@
     ],
     "emotional_tags": [
       "care",
-      "memory"
+      "memory",
+      "gratitude",
+      "prestige"
     ],
     "visual_style_tags": [
       "classic",
-      "minimal"
+      "minimal",
+      "retro"
     ],
     "risk_tags": [],
     "recommend_reason": "适合更正式、低调的表达，质感容易被感知。"
@@ -911,7 +947,8 @@
       "within_3_days"
     ],
     "emotional_tags": [
-      "care"
+      "care",
+      "healing"
     ],
     "visual_style_tags": [
       "delicate",
@@ -943,7 +980,9 @@
     ],
     "emotional_tags": [
       "company",
-      "surprise"
+      "surprise",
+      "encourage",
+      "playful"
     ],
     "visual_style_tags": [
       "warm",
@@ -970,7 +1009,8 @@
     ],
     "emotional_tags": [
       "romantic",
-      "surprise"
+      "surprise",
+      "ritual"
     ],
     "visual_style_tags": [
       "delicate",
@@ -997,11 +1037,13 @@
     ],
     "emotional_tags": [
       "romantic",
-      "surprise"
+      "surprise",
+      "playful"
     ],
     "visual_style_tags": [
       "warm",
-      "classic"
+      "classic",
+      "cute"
     ],
     "risk_tags": [],
     "recommend_reason": "把星空搬到卧室，打开投影灯，两人一起看星河，浪漫到冒泡。"
@@ -1024,7 +1066,8 @@
     ],
     "emotional_tags": [
       "memory",
-      "care"
+      "care",
+      "sincere"
     ],
     "visual_style_tags": [
       "minimal",

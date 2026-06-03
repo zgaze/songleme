@@ -10,8 +10,8 @@ const ANSWER_OPTIONS = {
   recipientStyle: ["practical", "aesthetic", "experiential", "quality"],
   budget: ["under_200", "200_500", "500_1000", "1000_2000", "2000_plus"],
   preparationTime: ["today", "tomorrow", "within_3_days", "within_7_days", "after_7_days"],
-  emotionalTags: ["romantic", "company", "care", "surprise", "memory"],
-  visualStyle: ["minimal", "warm", "delicate", "tech", "classic"],
+  emotionalTags: ["romantic", "company", "care", "surprise", "memory", "gratitude", "encourage", "healing", "playful", "prestige", "sincere", "ritual"],
+  visualStyle: ["minimal", "warm", "delicate", "tech", "classic", "cute", "retro", "natural", "elegant", "festive"],
 };
 
 const VALUE_ALIASES = {
@@ -61,6 +61,11 @@ const TAG_BY_STYLE = {
   delicate: "包装精美",
   tech: "科技感",
   classic: "质感高级",
+  cute: "可爱有趣",
+  retro: "复古怀旧",
+  natural: "自然清新",
+  elegant: "优雅气质",
+  festive: "节日氛围",
 };
 
 const TAG_BY_EMOTION = {
@@ -69,20 +74,39 @@ const TAG_BY_EMOTION = {
   care: "贴心实用",
   surprise: "有惊喜",
   memory: "纪念感",
+  gratitude: "感恩感谢",
+  encourage: "鼓励打气",
+  healing: "治愈解压",
+  playful: "有趣好玩",
+  prestige: "有面子",
+  sincere: "走心用心",
+  ritual: "仪式感",
 };
 
 function normalizeAnswers(rawAnswers) {
   const source = rawAnswers && typeof rawAnswers === "object" && !Array.isArray(rawAnswers)
     ? rawAnswers
     : {};
+  const answers = {};
+  const custom = {}; // field -> [自定义自由文本]
 
-  return Object.keys(ANSWER_OPTIONS).reduce((answers, field) => {
-    const values = normalizeValues(field, source[field]);
-    if (values.length) {
-      answers[field] = values;
-    }
-    return answers;
-  }, {});
+  Object.keys(ANSWER_OPTIONS).forEach((field) => {
+    const allowed = new Set(ANSWER_OPTIONS[field] || []);
+    const aliases = VALUE_ALIASES[field] || {};
+    const known = normalizeValues(field, source[field]);
+    if (known.length) answers[field] = known;
+    // 收集既不在 allowed、也无 alias 命中的原始字符串作为自定义值
+    const customVals = toArray(source[field]).filter((item) => {
+      if (typeof item !== "string") return false;
+      const mapped = aliases[item] || item;
+      const mappedArr = toArray(mapped);
+      return !mappedArr.some((m) => allowed.has(m));
+    });
+    if (customVals.length) custom[field] = unique(customVals);
+  });
+
+  if (Object.keys(custom).length) answers._custom = custom;
+  return answers;
 }
 
 function normalizeValues(field, value) {
@@ -222,7 +246,30 @@ function scoreGift(gift, answers) {
   if (includesAny(getGiftFieldValues(gift, "occupation"), answers.occupation)) score += 6;
   if (includesAny(getGiftFieldValues(gift, "gender"), answers.gender)) score += 3;
 
+  score += customMatchBonus(gift, answers._custom);
+
   return score;
+}
+
+function customMatchBonus(gift, custom) {
+  if (!custom) return 0;
+  // 仅对标签类字段的自定义文本做软匹配
+  const fields = ["emotionalTags", "visualStyle"];
+  const haystack = []
+    .concat(toArray(gift.searchKeywords))
+    .concat(toArray(gift.tags))
+    .concat(toArray(gift.highlights))
+    .filter((s) => typeof s === "string");
+  let bonus = 0;
+  fields.forEach((field) => {
+    toArray(custom[field]).forEach((term) => {
+      const t = String(term).trim();
+      if (!t) return;
+      const hit = haystack.some((h) => h.indexOf(t) >= 0 || t.indexOf(h) >= 0);
+      if (hit) bonus += 4;
+    });
+  });
+  return bonus;
 }
 
 function mergeCandidates(primary, fallback, limit) {

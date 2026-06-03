@@ -178,3 +178,55 @@
 .dark-button::after {
   border: 0;
 }
+
+.question__custom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 8rpx;
+  margin-bottom: 12rpx;
+}
+
+.custom-chip {
+  padding: 14rpx 30rpx;
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+  box-shadow: var(--out-md), var(--ins-neutral);
+}
+
+.custom-input-row {
+  display: flex;
+  align-items: center;
+  gap: 14rpx;
+  width: 100%;
+  max-width: 520rpx;
+}
+
+.custom-input {
+  flex: 1;
+  height: 72rpx;
+  padding: 0 24rpx;
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  box-shadow: var(--ins-press);
+}
+
+.custom-add {
+  min-width: 120rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  border-radius: var(--r-pill);
+  background: var(--rose);
+  color: var(--on-rose);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  box-shadow: var(--out-md), var(--ins-rose);
+}
+
+.custom-add::after {
+  border: 0;
+}

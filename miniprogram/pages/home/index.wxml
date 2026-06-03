@@ -2,5 +2,6 @@
   <view class="home__action">
     <button class="home-button home-button--primary" bindtap="startQuestionnaire">开始选礼物</button>
     <button class="home-button home-button--guide" bindtap="openGuide">送礼攻略</button>
+    <button class="home-button home-button--card" bindtap="openCard">制作贺卡</button>
   </view>
 </view>

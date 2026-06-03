@@ -9,6 +9,7 @@
       wx:key="value"
       class="profile__row"
       data-title="{{item.title}}"
+      data-value="{{item.value}}"
       bindtap="openEntry"
     >
       <text>{{item.title}}</text>

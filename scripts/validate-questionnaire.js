@@ -84,6 +84,14 @@ function validateConfig(config) {
         addIssue(errors, `${prefix}.max must be a positive integer.`);
       }
     }
+    // allowCustom: optional boolean. When true the question page renders a
+    // "+ custom" input whose value is free text supplied by the user at runtime.
+    // Such custom values never appear in the config's options, so they do not
+    // participate in any config-time branching/enum validation below — only the
+    // type of the flag itself is checked here.
+    if (question.allowCustom !== undefined && typeof question.allowCustom !== "boolean") {
+      addIssue(errors, `${prefix}.allowCustom must be a boolean.`);
+    }
     if (!Array.isArray(question.options) || !question.options.length) {
       addIssue(errors, `${prefix}.options must be a non-empty array.`);
       return;

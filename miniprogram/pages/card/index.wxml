@@ -1,0 +1,22 @@
+<view class="page card-gallery safe-bottom">
+  <view class="card-gallery__head">
+    <text class="card-gallery__kicker">制作贺卡</text>
+    <text class="card-gallery__title">挑一个模板，写一句心里话</text>
+  </view>
+
+  <view class="card-gallery__list">
+    <view
+      wx:for="{{templates}}"
+      wx:key="id"
+      class="card-preview {{item.animationClass}}"
+      style="background: {{item._previewBg}}; color: {{item._previewText}};"
+      data-id="{{item.id}}"
+      bindtap="chooseTemplate"
+    >
+      <view class="card-preview__accent" style="background: {{item._accent}};"></view>
+      <text class="card-preview__name">{{item.name}}</text>
+      <text class="card-preview__bless">{{item.sampleBless}}</text>
+      <text class="card-preview__sign">—— 送了么</text>
+    </view>
+  </view>
+</view>

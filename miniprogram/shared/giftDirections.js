@@ -19,7 +19,8 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "company",
-      "memory"
+      "memory",
+      "sincere"
     ],
     visualStyle: [
       "warm",
@@ -62,11 +63,13 @@ const GIFT_DIRECTIONS = [
     emotionalTags: [
       "care",
       "surprise",
-      "romantic"
+      "romantic",
+      "ritual"
     ],
     visualStyle: [
       "warm",
-      "delicate"
+      "delicate",
+      "festive"
     ],
     highlights: [
       "当天送",
@@ -264,7 +267,8 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "romantic",
-      "care"
+      "care",
+      "healing"
     ],
     visualStyle: [
       "warm",
@@ -305,7 +309,8 @@ const GIFT_DIRECTIONS = [
     emotionalTags: [
       "company",
       "memory",
-      "surprise"
+      "surprise",
+      "encourage"
     ],
     visualStyle: [
       "warm",
@@ -345,11 +350,13 @@ const GIFT_DIRECTIONS = [
       "within_7_days"
     ],
     emotionalTags: [
-      "care"
+      "care",
+      "gratitude"
     ],
     visualStyle: [
       "classic",
-      "minimal"
+      "minimal",
+      "natural"
     ],
     highlights: [
       "日常可用",
@@ -384,11 +391,13 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "care",
-      "romantic"
+      "romantic",
+      "gratitude"
     ],
     visualStyle: [
       "classic",
-      "delicate"
+      "delicate",
+      "elegant"
     ],
     highlights: [
       "贴身实用",
@@ -464,11 +473,13 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "romantic",
-      "surprise"
+      "surprise",
+      "ritual"
     ],
     visualStyle: [
       "delicate",
-      "warm"
+      "warm",
+      "festive"
     ],
     highlights: [
       "轻仪式",
@@ -504,11 +515,13 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "romantic",
-      "surprise"
+      "surprise",
+      "prestige"
     ],
     visualStyle: [
       "delicate",
-      "classic"
+      "classic",
+      "elegant"
     ],
     highlights: [
       "选择感",
@@ -584,7 +597,8 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "company",
-      "care"
+      "care",
+      "prestige"
     ],
     visualStyle: [
       "tech",
@@ -622,7 +636,8 @@ const GIFT_DIRECTIONS = [
       "within_3_days"
     ],
     emotionalTags: [
-      "care"
+      "care",
+      "healing"
     ],
     visualStyle: [
       "warm",
@@ -660,11 +675,14 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "care",
-      "company"
+      "company",
+      "encourage"
     ],
     visualStyle: [
       "warm",
-      "minimal"
+      "minimal",
+      "cute",
+      "natural"
     ],
     highlights: [
       "有生命感",
@@ -699,11 +717,13 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "company",
-      "romantic"
+      "romantic",
+      "prestige"
     ],
     visualStyle: [
       "classic",
-      "delicate"
+      "delicate",
+      "elegant"
     ],
     highlights: [
       "共同时间",
@@ -738,11 +758,13 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "memory",
-      "care"
+      "care",
+      "sincere"
     ],
     visualStyle: [
       "warm",
-      "classic"
+      "classic",
+      "cute"
     ],
     highlights: [
       "可定制",
@@ -777,7 +799,8 @@ const GIFT_DIRECTIONS = [
       "within_7_days"
     ],
     emotionalTags: [
-      "care"
+      "care",
+      "healing"
     ],
     visualStyle: [
       "minimal",
@@ -814,11 +837,14 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "romantic",
-      "memory"
+      "memory",
+      "sincere",
+      "ritual"
     ],
     visualStyle: [
       "classic",
-      "delicate"
+      "delicate",
+      "retro"
     ],
     highlights: [
       "纪念感",
@@ -896,7 +922,8 @@ const GIFT_DIRECTIONS = [
     visualStyle: [
       "minimal",
       "warm",
-      "classic"
+      "classic",
+      "elegant"
     ],
     highlights: [
       "空间感",
@@ -929,11 +956,14 @@ const GIFT_DIRECTIONS = [
       "within_3_days"
     ],
     emotionalTags: [
-      "care"
+      "care",
+      "gratitude"
     ],
     visualStyle: [
       "classic",
-      "warm"
+      "warm",
+      "natural",
+      "festive"
     ],
     highlights: [
       "好入口",
@@ -969,7 +999,8 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "care",
-      "surprise"
+      "surprise",
+      "healing"
     ],
     visualStyle: [
       "delicate",
@@ -1043,11 +1074,13 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "memory",
-      "surprise"
+      "surprise",
+      "playful"
     ],
     visualStyle: [
       "tech",
-      "classic"
+      "classic",
+      "retro"
     ],
     highlights: [
       "制造回忆",
@@ -1083,11 +1116,14 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "care",
-      "memory"
+      "memory",
+      "gratitude",
+      "prestige"
     ],
     visualStyle: [
       "classic",
-      "minimal"
+      "minimal",
+      "retro"
     ],
     highlights: [
       "体面",
@@ -1120,7 +1156,8 @@ const GIFT_DIRECTIONS = [
       "within_3_days"
     ],
     emotionalTags: [
-      "care"
+      "care",
+      "healing"
     ],
     visualStyle: [
       "delicate",
@@ -1159,7 +1196,9 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "company",
-      "surprise"
+      "surprise",
+      "encourage",
+      "playful"
     ],
     visualStyle: [
       "warm",
@@ -1193,7 +1232,8 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "romantic",
-      "surprise"
+      "surprise",
+      "ritual"
     ],
     visualStyle: [
       "delicate",
@@ -1227,11 +1267,13 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "romantic",
-      "surprise"
+      "surprise",
+      "playful"
     ],
     visualStyle: [
       "warm",
-      "classic"
+      "classic",
+      "cute"
     ],
     highlights: [
       "浪漫星空",
@@ -1261,7 +1303,8 @@ const GIFT_DIRECTIONS = [
     ],
     emotionalTags: [
       "memory",
-      "care"
+      "care",
+      "sincere"
     ],
     visualStyle: [
       "minimal",
