@@ -21,14 +21,14 @@
 - **兴趣爱好 = `personaTags`**：定义在 `schemas/gift-direction.schema.json:15-22`，14 值枚举：`tech_geek, office_pro, creative, student, night_owl, homebody, outdoorsy, fitness, coffee_tea, foodie, pet_owner, beauty_lover, fandom_gamer, bookish`。存在于 admin/gift-direction schema 与 DeepSeek 生成数据，**尚未接入运行时推荐引擎**（与「新属性仅存储展示」决策一致）。
 - 送礼攻略**已完整实现**：`pages/guide/` + `miniprogram/shared/guideContent.js` + `schemas/guide-content.schema.json` + `scripts/validate-guide-content.js`。当前 5 个频道（鲜花/巧克力/穿戴/珠宝/关系阶段），每频道 1 篇。
 - 贺卡：**全新**。代码库无任何 canvas 使用，无 @keyframes，仅有按钮 :active 过渡。主页当前 2 个按钮（开始选礼物 / 送礼攻略）。
-- 数据持久化全部走 CloudBase（无本地 storage）；用户身份用微信 `_openid`（云函数侧 `cloud.getWXContext()`）。
+- 现有数据持久化走 CloudBase；用户身份用微信 `_openid`（云函数侧 `cloud.getWXContext()`）。**本迭代 WS1 联系人改用本地存储 `wx.setStorageSync` + `recipientRepo` 抽象层**（DB 选型推迟到上线前，届时加一个实现同接口的 backend 模块即可换 SQLite/MySQL/CloudBase，见 C8）；现有 `manageRecipientProfile` 云函数本迭代**不改动**，保留为未来后端选项。注：小程序客户端无法直接跑 SQLite，真 SQLite 需服务端（云托管 CloudRun + 持久卷），故现阶段用本地存储占位。
 - 礼物数据 3 处副本需同步：`miniprogram/shared/giftDirections.js`、`cloudfunctions/recommendGift/data/giftDirections.js`、admin/seed。（**实测约 33 个方向**，非旧文档「6 个」；client/server 两份运行时副本已核实逐字一致。）
 
 ## 工作流划分与文件归属
 
 | # | 工作流 | 拥有/修改的文件 |
 |---|--------|----------------|
-| **WS1** | 联系人 | `cloudfunctions/manageRecipientProfile/index.js`、新 `pages/contacts/`、新 `pages/contactEdit/`、`pages/profile/`、`utils/cloud.js`、`pages/home/index.js`(协调·见 C7)、`app.json`(追加页面) |
+| **WS1** | 联系人 | 新 `miniprogram/shared/recipientRepo.js`(本地存储后端)、新 `pages/contacts/`、新 `pages/contactEdit/`、`pages/profile/`、`pages/home/index.js`(协调·见 C7)、`app.json`(追加页面) |
 | **WS2** | 问卷引擎与标签 | `questionnaire.config.json`(+`questionnaire.js` 重生成)、`schemas/questionnaire.schema.json`、`scripts/validate-questionnaire.js`、`pages/question/`、`recommender.js`、`localRecommender.js`、`giftDirections.js`×3(重打标签) |
 | **WS3** | 贺卡 MVP | 新 `pages/card/`、新 `pages/cardEdit/`、新 `miniprogram/shared/cardTemplates.js`、`pages/home/`、`app.json`(追加页面) |
 | **WS4** | 攻略选题 | `miniprogram/shared/guideContent.js`、`scripts/validate-guide-content.js`(运行) |
@@ -58,7 +58,7 @@ recipient = {
 - 年龄/星座/生活环境**不做结构化字段**，并入 `notes`（编辑表单 placeholder 提示「可补充年龄、星座、生活环境等」）。
 - personaTags 中文标签（WS1 表单 + 未来展示统一用这套）：
   `tech_geek 数码极客` / `office_pro 职场人` / `creative 创意工作者` / `student 学生党` / `night_owl 夜猫子` / `homebody 宅家派` / `outdoorsy 户外控` / `fitness 健身党` / `coffee_tea 咖啡茶饮` / `foodie 吃货` / `pet_owner 养宠人` / `beauty_lover 美妆控` / `fandom_gamer 追星/游戏` / `bookish 文艺书虫`
-- 后端 `cleanRecipient` 增加 `personaTags`（按枚举集合过滤，最多 5）；`toPublicRecipient` 增加 `personaTags`。其余字段逻辑不变。
+- **存储层（本迭代）**：字段清洗由客户端 `recipientRepo` 负责（见 C8）——按 14 值枚举过滤 `personaTags`（去重、最多 5）、字段白名单、长度截断、`recipientId` 客户端生成。逻辑等价于原云函数 `cleanRecipient`/`toPublicRecipient`，只是改在客户端跑；原云函数不动，未来切 CloudBase 时把同样清洗放回服务端即可。
 - **personaTags 暂不进推荐打分**（决策：新属性仅存储展示）。
 
 ### C2. 问卷入口契约（WS1 跳转 → WS2 消费）
@@ -123,6 +123,23 @@ recipient = {
 - **WS1 拥有**：`index.js` 的 `startQuestionnaire()` 处理函数——把「开始选礼物」从直接跳问卷改为先进联系人选择（`/pages/contacts/index?mode=pick`，见 C2）。仅此一处，不动 `index.wxml`/`index.wxss`。
 - **WS3 拥有**：`index.js` 新增 `openCard()` 方法 + `index.wxml` 新增「制作贺卡」按钮 + `index.wxss` 新增 `.home-button--card` 样式。
 - 两者改不同函数/元素，3-way 合并无冲突。**执行建议**：若 WS1/WS3 在隔离 worktree 并行，最后单独合并 `pages/home/`；若同树并行，把 `pages/home/index.js` 的两处改动收尾时串行落地。
+
+### C8. `recipientRepo` 存储抽象（WS1 拥有；DB 切换点）
+
+联系人所有读写都经过 `miniprogram/shared/recipientRepo.js`，接口 **Promise 化**（便于日后换异步云后端，页面代码不必改）：
+
+```js
+listRecipients()                 // -> Promise<Recipient[]>（按 updatedAt 倒序）
+createRecipient(input)           // -> Promise<{ recipientId }>
+updateRecipient(recipientId, patch)  // -> Promise<void>
+deleteRecipient(recipientId)     // -> Promise<void>
+getRecipient(recipientId)        // -> Promise<Recipient|null>（contactEdit 编辑态用）
+```
+
+- 本迭代默认 backend = **本地存储**：`wx.getStorageSync`/`wx.setStorageSync`，key `songleme:recipients`，存整数组；`recipientId` 用 `rp_${Date.now()}_${rand}` 客户端生成；`createdAt/updatedAt` 用 `Date.now()`。本地同步操作用 `Promise.resolve()` 包装以符合异步接口。
+- 字段清洗（C1）在 repo 内完成，页面不重复校验。
+- **DB 切换点**：上线前换库 = 新增一个实现上述接口的 backend 模块（如 `recipientRepo.cloud.js`）并改 `recipientRepo.js` 的默认导出，`pages/contacts`/`pages/contactEdit`/选择器代码零改动。
+- 与 C2 的关系：选择器从 `recipientRepo.listRecipients()` 读联系人，再据所选 recipient 拼 `prefill`/`skip`——存储后端是什么不影响 C2/C3 契约。
 
 ---
 
