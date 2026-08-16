@@ -1,4 +1,5 @@
 const recipientRepo = require("../../shared/recipientRepo");
+const { getPersonaLabel } = require("../../shared/recipientTags");
 
 // 中文标签字典（列表摘要展示用，value 与 master/schema 完全一致）
 const RELATION_LABELS = {
@@ -10,32 +11,6 @@ const GENDER_LABELS = {
   female: "女",
   male: "男",
 };
-const OCCUPATION_LABELS = {
-  office: "职场白领",
-  tech: "技术",
-  creative: "创意设计",
-  medical_education: "医护/教育",
-  student: "学生",
-  freelance: "自由职业",
-  homemaker: "全职照护",
-};
-const PERSONA_LABELS = {
-  tech_geek: "数码极客",
-  office_pro: "职场人",
-  creative: "创意工作者",
-  student: "学生党",
-  night_owl: "夜猫子",
-  homebody: "宅家派",
-  outdoorsy: "户外控",
-  fitness: "健身党",
-  coffee_tea: "咖啡茶饮",
-  foodie: "吃货",
-  pet_owner: "养宠人",
-  beauty_lover: "美妆控",
-  fandom_gamer: "追星/游戏",
-  bookish: "文艺书虫",
-};
-
 // 把 repo 返回的原始行包成 { recipientId, nickname, summary, raw }
 function formatRecipientForList(item) {
   const parts = [];
@@ -45,12 +20,9 @@ function formatRecipientForList(item) {
   if (item.gender && GENDER_LABELS[item.gender]) {
     parts.push(GENDER_LABELS[item.gender]);
   }
-  if (item.occupation && OCCUPATION_LABELS[item.occupation]) {
-    parts.push(OCCUPATION_LABELS[item.occupation]);
-  }
   const tags = Array.isArray(item.personaTags) ? item.personaTags : [];
   const tagLabels = tags
-    .map((t) => PERSONA_LABELS[t])
+    .map((t) => getPersonaLabel(t))
     .filter(Boolean)
     .slice(0, 3);
   if (tagLabels.length) {
@@ -64,10 +36,10 @@ function formatRecipientForList(item) {
   };
 }
 
-// C2：从 recipient 取被跳过的身份四题，逐个非空才写入
+// 从 recipient 取可预填的轻量基础信息，逐个非空才写入。
 function buildPrefill(recipient) {
   const prefill = {};
-  ["target", "gender", "occupation", "recipientStyle"].forEach((k) => {
+  ["target", "gender"].forEach((k) => {
     if (recipient[k]) prefill[k] = recipient[k];
   });
   return prefill;
@@ -141,7 +113,7 @@ Page({
     const recipient = matched.raw;
     if (!recipient) return;
     const prefill = buildPrefill(recipient);
-    const skip = "target,gender,occupation,recipientStyle"; // C3 固定
+    const skip = "target,gender";
     const url = `/pages/question/index?prefill=${encodeURIComponent(
       JSON.stringify(prefill)
     )}&skip=${skip}`;

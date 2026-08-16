@@ -11,41 +11,13 @@
  * pages/contactEdit / 主页选择器代码零改动。
  */
 
+const { ALLOWED_PERSONA_TAG_VALUES } = require("./recipientTags");
+
 const STORAGE_KEY = "songleme:recipients";
 
 const ALLOWED_TARGETS = new Set(["partner", "parents", "bestie"]);
 const ALLOWED_GENDERS = new Set(["female", "male"]);
-const ALLOWED_OCCUPATIONS = new Set([
-  "office",
-  "tech",
-  "creative",
-  "medical_education",
-  "student",
-  "freelance",
-  "homemaker",
-]);
-const ALLOWED_STYLES = new Set([
-  "practical",
-  "aesthetic",
-  "experiential",
-  "quality",
-]);
-const ALLOWED_PERSONA_TAGS = new Set([
-  "tech_geek",
-  "office_pro",
-  "creative",
-  "student",
-  "night_owl",
-  "homebody",
-  "outdoorsy",
-  "fitness",
-  "coffee_tea",
-  "foodie",
-  "pet_owner",
-  "beauty_lover",
-  "fandom_gamer",
-  "bookish",
-]);
+const ALLOWED_PERSONA_TAGS = new Set(ALLOWED_PERSONA_TAG_VALUES);
 const MAX_PERSONA_TAGS = 5;
 
 // ---- 清洗工具（移植自云函数；逻辑等价于 cleanText/cleanEnum/createId）----
@@ -88,15 +60,11 @@ function cleanRecipient(input) {
   const nickname = cleanText(input.nickname, 30);
   const target = cleanEnum(input.target, ALLOWED_TARGETS);
   const gender = cleanEnum(input.gender, ALLOWED_GENDERS);
-  const occupation = cleanEnum(input.occupation, ALLOWED_OCCUPATIONS);
-  const recipientStyle = cleanEnum(input.recipientStyle, ALLOWED_STYLES);
   const notes = cleanText(input.notes, 200);
 
   if (nickname) result.nickname = nickname;
   if (target) result.target = target;
   if (gender) result.gender = gender;
-  if (occupation) result.occupation = occupation;
-  if (recipientStyle) result.recipientStyle = recipientStyle;
   if (notes) result.notes = notes;
 
   // personaTags：仅当 input 显式带该 key 时才写入，允许写空数组（用户清空全部 tag）。

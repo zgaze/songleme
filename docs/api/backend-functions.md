@@ -130,3 +130,19 @@ Save:
   }
 }
 ```
+
+## `recommendGift`
+
+普通推荐：
+
+```json
+{ "answers": { "target": "partner", "scene": "birthday", "budget": "200_500" } }
+```
+
+AI 帮选：
+
+```json
+{ "action": "aiPick", "answers": { "target": "partner", "scene": "birthday", "budget": "200_500" } }
+```
+
+AI 帮选在云函数内读取环境变量 `DEEPSEEK_API_KEY` 调 DeepSeek，只返回候选中的一个 `pick`。如果 key 未配置或 DeepSeek 请求失败，会返回 `source: "local_fallback"` 的本地兜底结果。

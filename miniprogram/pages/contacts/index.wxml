@@ -1,7 +1,7 @@
 <view class="page contacts safe-bottom">
   <view class="contacts__head">
     <text class="contacts__title">{{mode == 'pick' ? '送给谁' : '收礼人档案'}}</text>
-    <text wx:if="{{mode == 'pick'}}" class="contacts__sub">选一个人，跳过身份问题</text>
+    <text wx:if="{{mode == 'pick'}}" class="contacts__sub">选一个人，带上已知信息</text>
   </view>
 
   <view wx:if="{{loading}}" class="contacts__hint">加载中…</view>

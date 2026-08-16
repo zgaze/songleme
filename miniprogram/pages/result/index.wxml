@@ -22,7 +22,22 @@
       >
         神秘礼物
       </button>
-      <button class="result__action result__action--primary" bindtap="aiPick">AI帮选</button>
+      <button
+        class="result__action result__action--primary"
+        loading="{{aiPicking}}"
+        disabled="{{aiPicking}}"
+        bindtap="aiPick"
+      >{{aiPicking ? 'AI在想' : 'AI帮选'}}</button>
+    </view>
+
+    <view wx:if="{{aiPick}}" class="result__ai-card">
+      <text class="result__ai-kicker">{{aiPick.headline}}</text>
+      <text class="result__ai-name">{{aiPick.giftName}}</text>
+      <text class="result__ai-reason">{{aiPick.reason}}</text>
+      <text wx:if="{{aiPick.pairingText}}" class="result__ai-pairing">可以搭配“{{aiPick.pairingText}}”</text>
+      <view wx:if="{{aiPick.tips.length}}" class="result__ai-tips">
+        <text wx:for="{{aiPick.tips}}" wx:key="*this" class="result__ai-tip">{{item}}</text>
+      </view>
     </view>
 
     <view class="result__goods-list">

@@ -1,4 +1,4 @@
-const { createGiftShare, recommendGift } = require("../../utils/cloud");
+const { aiPickGift, createGiftShare, recommendGift } = require("../../utils/cloud");
 const { recommendLocally } = require("../../shared/localRecommender");
 const {
   buildHomeShare,
@@ -11,6 +11,8 @@ Page({
   data: {
     answers: {},
     loading: true,
+    aiPicking: false,
+    aiPick: null,
     result: null,
     mysteryShareId: "",
   },
@@ -42,6 +44,7 @@ Page({
       .then((result) => {
         const decoratedResult = this.decorateResult(result);
         this.setData({
+          aiPick: null,
           result: decoratedResult,
           loading: false,
         });
@@ -50,6 +53,7 @@ Page({
       .catch(() => {
         const decoratedResult = this.decorateResult(recommendLocally(answers));
         this.setData({
+          aiPick: null,
           result: decoratedResult,
           loading: false,
         });
@@ -98,12 +102,63 @@ Page({
       .slice(0, 2);
   },
 
+  formatTips(tips) {
+    return (Array.isArray(tips) ? tips : [tips])
+      .filter(Boolean)
+      .map((tip) => String(tip).trim())
+      .filter(Boolean)
+      .slice(0, 3);
+  },
+
   refreshPlan() {
     this.loadRecommendation(this.data.answers);
   },
 
   aiPick() {
-    this.loadRecommendation(this.data.answers);
+    if (this.data.aiPicking) return;
+    const candidates = (this.data.result && this.data.result.candidates) || [];
+    if (!candidates.length) {
+      wx.showToast({ title: "先生成推荐", icon: "none" });
+      return;
+    }
+
+    this.setData({ aiPicking: true });
+    aiPickGift(this.data.answers)
+      .then((response) => {
+        const pick = this.decorateAiPick(response && response.pick);
+        this.setData({
+          aiPick: pick,
+          aiPicking: false,
+        });
+        if (pick.source === "local_fallback") {
+          wx.showToast({ title: "已用本地结果兜底", icon: "none" });
+        }
+      })
+      .catch(() => {
+        this.setData({
+          aiPick: this.decorateAiPick(null),
+          aiPicking: false,
+        });
+        wx.showToast({ title: "AI服务暂不可用", icon: "none" });
+      });
+  },
+
+  decorateAiPick(rawPick) {
+    const candidates = (this.data.result && this.data.result.candidates) || [];
+    const pick = rawPick || {};
+    const matched = candidates.find((item) => String(item.id) === String(pick.giftId))
+      || candidates[0]
+      || {};
+    const tips = this.formatTips(pick.tips || []);
+    return {
+      source: pick.source || "local_fallback",
+      giftId: matched.id || pick.giftId || "",
+      giftName: pick.giftName || matched.name || "这款礼物",
+      headline: pick.headline || "先选这款更稳",
+      reason: pick.reason || matched.recommendReason || "它和当前答案匹配度最高，送礼风险也相对可控。",
+      pairingText: pick.pairingText || (matched.pairingTags || [])[0] || "",
+      tips,
+    };
   },
 
   prepareMysteryShare(result) {

@@ -2,6 +2,8 @@
 
 ## 入参
 
+普通推荐：
+
 ```json
 {
   "answers": {
@@ -16,6 +18,21 @@
 ```
 
 云函数会兼容旧预算值，例如 `100_300` 会被归一化到 `under_200` / `200_500`。
+
+AI 帮选：
+
+```json
+{
+  "action": "aiPick",
+  "answers": {
+    "target": "partner",
+    "scene": "birthday",
+    "budget": "200_500"
+  }
+}
+```
+
+`action: "aiPick"` 会在云函数内按当前答案先生成候选，再使用 `DEEPSEEK_API_KEY` 调 DeepSeek 从候选里挑 1 个。未配置 key 或请求失败时，会返回本地兜底选择。
 
 ## 出参
 
@@ -43,6 +60,23 @@
     "persistence": {
       "saved": true
     }
+  }
+}
+```
+
+AI 帮选出参：
+
+```json
+{
+  "ok": true,
+  "pick": {
+    "source": "deepseek",
+    "giftId": "photo-book",
+    "giftName": "定制照片书",
+    "headline": "AI更推荐这款",
+    "reason": "它更适合纪念日表达回忆感，预算和关系边界也更稳。",
+    "pairingText": "手写卡片",
+    "tips": ["确认照片", "预留制作期"]
   }
 }
 ```

@@ -1,4 +1,5 @@
 const recipientRepo = require("../../shared/recipientRepo");
+const { getPersonaOptions } = require("../../shared/recipientTags");
 
 // 选项字典（value 必须与 master/schema 完全一致）
 const RELATION_OPTIONS = [
@@ -10,39 +11,21 @@ const GENDER_OPTIONS = [
   { value: "female", label: "女" },
   { value: "male", label: "男" },
 ];
-const OCCUPATION_OPTIONS = [
-  { value: "office", label: "职场白领" },
-  { value: "tech", label: "技术" },
-  { value: "creative", label: "创意设计" },
-  { value: "medical_education", label: "医护/教育" },
-  { value: "student", label: "学生" },
-  { value: "freelance", label: "自由职业" },
-  { value: "homemaker", label: "全职照护" },
-];
-const STYLE_OPTIONS = [
-  { value: "practical", label: "实用派" },
-  { value: "aesthetic", label: "颜值控" },
-  { value: "experiential", label: "体验型" },
-  { value: "quality", label: "品质感" },
-];
-// personaTags —— 14 值，中文标签按 master C1（权威）
-const PERSONA_OPTIONS = [
-  { value: "tech_geek", label: "数码极客" },
-  { value: "office_pro", label: "职场人" },
-  { value: "creative", label: "创意工作者" },
-  { value: "student", label: "学生党" },
-  { value: "night_owl", label: "夜猫子" },
-  { value: "homebody", label: "宅家派" },
-  { value: "outdoorsy", label: "户外控" },
-  { value: "fitness", label: "健身党" },
-  { value: "coffee_tea", label: "咖啡茶饮" },
-  { value: "foodie", label: "吃货" },
-  { value: "pet_owner", label: "养宠人" },
-  { value: "beauty_lover", label: "美妆控" },
-  { value: "fandom_gamer", label: "追星/游戏" },
-  { value: "bookish", label: "文艺书虫" },
-];
 const MAX_PERSONA = 5;
+
+function filterPersonaTags(selectedTags, target) {
+  const selected = Array.isArray(selectedTags) ? selectedTags : [];
+  const allowed = getPersonaOptions(target).map((option) => option.value);
+  return selected.filter((value) => allowed.indexOf(value) >= 0);
+}
+
+function buildPersonaOptions(selectedTags, target) {
+  const selected = filterPersonaTags(selectedTags, target);
+  return getPersonaOptions(target).map((option) => ({
+    ...option,
+    selected: selected.indexOf(option.value) >= 0,
+  }));
+}
 
 Page({
   data: {
@@ -50,15 +33,11 @@ Page({
     nickname: "",
     target: "",
     gender: "",
-    occupation: "",
-    recipientStyle: "",
     personaTags: [], // value 数组
     notes: "",
     relationOptions: RELATION_OPTIONS,
     genderOptions: GENDER_OPTIONS,
-    occupationOptions: OCCUPATION_OPTIONS,
-    styleOptions: STYLE_OPTIONS,
-    personaOptions: PERSONA_OPTIONS,
+    personaOptions: buildPersonaOptions([], ""),
     maxPersona: MAX_PERSONA,
     saving: false,
   },
@@ -75,13 +54,14 @@ Page({
       .getRecipient(id)
       .then((r) => {
         if (!r) return; // 已被删/不存在：静默，按空表渲染
+        const target = r.target || "";
+        const personaTags = filterPersonaTags(r.personaTags, target);
         this.setData({
           nickname: r.nickname || "",
-          target: r.target || "",
+          target,
           gender: r.gender || "",
-          occupation: r.occupation || "",
-          recipientStyle: r.recipientStyle || "",
-          personaTags: Array.isArray(r.personaTags) ? r.personaTags : [],
+          personaTags,
+          personaOptions: buildPersonaOptions(personaTags, target),
           notes: r.notes || "",
         });
       })
@@ -96,26 +76,46 @@ Page({
     this.setData({ notes: e.detail.value });
   },
 
-  // 单选维度：再次点选中项 = 取消（关系/性别/职业/风格均非必填）
+  // 单选维度：再次点选中项 = 取消（关系/性别均非必填）
   pickSingle(e) {
     const { field, value } = e.currentTarget.dataset;
-    this.setData({ [field]: this.data[field] === value ? "" : value });
+    const nextValue = this.data[field] === value ? "" : value;
+
+    if (field === "target") {
+      const personaTags = filterPersonaTags(this.data.personaTags, nextValue);
+      this.setData({
+        target: nextValue,
+        personaTags,
+        personaOptions: buildPersonaOptions(personaTags, nextValue),
+      });
+      return;
+    }
+
+    this.setData({ [field]: nextValue });
   },
 
   // personaTags 多选，最多 5
   togglePersona(e) {
     const value = e.currentTarget.dataset.value;
-    const cur = this.data.personaTags;
+    const cur = Array.isArray(this.data.personaTags) ? this.data.personaTags : [];
     const idx = cur.indexOf(value);
     if (idx >= 0) {
-      this.setData({ personaTags: cur.filter((v) => v !== value) });
+      const next = cur.filter((v) => v !== value);
+      this.setData({
+        personaTags: next,
+        personaOptions: buildPersonaOptions(next, this.data.target),
+      });
       return;
     }
     if (cur.length >= this.data.maxPersona) {
       wx.showToast({ title: `最多选${this.data.maxPersona}个`, icon: "none" });
       return;
     }
-    this.setData({ personaTags: cur.concat(value) });
+    const next = cur.concat(value);
+    this.setData({
+      personaTags: next,
+      personaOptions: buildPersonaOptions(next, this.data.target),
+    });
   },
 
   // 「完成」= 自动保存：组装 recipient → create/update → 成功后 navigateBack
@@ -125,8 +125,6 @@ Page({
       nickname: this.data.nickname.trim(),
       target: this.data.target,
       gender: this.data.gender,
-      occupation: this.data.occupation,
-      recipientStyle: this.data.recipientStyle,
       personaTags: this.data.personaTags, // 始终带上（含空数组，配合 repo hasOwnProperty 语义）
       notes: this.data.notes.trim(),
     };

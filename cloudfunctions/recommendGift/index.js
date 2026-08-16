@@ -6,6 +6,7 @@ const {
   normalizeAnswers,
   recommendGift,
 } = require("./lib/recommender");
+const { pickGiftWithAI } = require("./lib/aiPicker");
 
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV,
@@ -16,7 +17,23 @@ const db = cloud.database();
 exports.main = async (event = {}) => {
   const wxContext = cloud.getWXContext();
   const answers = event.answers || {};
+  const normalizedAnswers = normalizeAnswers(answers);
   const result = recommendGift(answers);
+
+  if (event.action === "aiPick") {
+    const pick = await pickGiftWithAI({ answers: normalizedAnswers, result });
+    return {
+      ok: true,
+      pick,
+      meta: {
+        userScoped: Boolean(wxContext.OPENID),
+        schemaVersion: SCHEMA_VERSION,
+        questionnaireVersion: QUESTIONNAIRE_VERSION,
+        modelVersion: MODEL_VERSION,
+      },
+    };
+  }
+
   const runId = createRunId();
   const persistence = await persistRecommendationRun({
     runId,

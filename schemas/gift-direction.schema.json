@@ -15,7 +15,7 @@
     "personaTag": {
       "type": "string",
       "enum": [
-        "tech_geek", "office_pro", "creative", "student", "night_owl", "homebody",
+        "tech_geek", "office_pro", "creative", "student", "aesthetic_lover", "night_owl", "homebody",
         "outdoorsy", "fitness", "coffee_tea", "foodie", "pet_owner", "beauty_lover",
         "fandom_gamer", "bookish"
       ]

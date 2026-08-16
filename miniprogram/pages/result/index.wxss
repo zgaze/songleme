@@ -103,6 +103,62 @@
   border: 0;
 }
 
+.result__ai-card {
+  margin-bottom: 22rpx;
+  padding: 26rpx 28rpx;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  box-shadow: var(--out-md), var(--ins-neutral);
+  box-sizing: border-box;
+}
+
+.result__ai-kicker {
+  display: block;
+  color: var(--rose-deep);
+  font-size: var(--fs-cap);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.result__ai-name {
+  display: block;
+  margin-top: 8rpx;
+  color: var(--text);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: 1.32;
+}
+
+.result__ai-reason,
+.result__ai-pairing {
+  display: block;
+  margin-top: 10rpx;
+  color: var(--text-2);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  line-height: 1.42;
+}
+
+.result__ai-tips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+  margin-top: 16rpx;
+}
+
+.result__ai-tip {
+  display: inline-flex;
+  align-items: center;
+  height: 42rpx;
+  padding: 0 18rpx;
+  border-radius: var(--r-pill);
+  background: var(--rose-soft);
+  color: var(--on-rose);
+  font-size: var(--fs-cap);
+  font-weight: 700;
+  line-height: 42rpx;
+}
+
 .result__goods-list {
   display: flex;
   flex-wrap: wrap;

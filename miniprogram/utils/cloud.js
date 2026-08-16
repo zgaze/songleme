@@ -11,6 +11,13 @@ function recommendGift(answers) {
   });
 }
 
+function aiPickGift(answers) {
+  return callCloudFunction("recommendGift", {
+    action: "aiPick",
+    answers,
+  });
+}
+
 function createGiftShare(data) {
   return callCloudFunction("giftShare", {
     ...data,
@@ -26,6 +33,7 @@ function getGiftShare(shareId) {
 }
 
 module.exports = {
+  aiPickGift,
   callCloudFunction,
   createGiftShare,
   getGiftShare,
